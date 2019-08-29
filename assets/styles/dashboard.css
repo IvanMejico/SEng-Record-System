@@ -2,7 +2,7 @@
 * {
     box-sizing: border-box;
 }
-body, h2, h4 {
+body, h2, h4, ul {
     margin: 0;
 }
 .row {
@@ -180,95 +180,122 @@ body, h2, h4 {
     margin-left: 300px;
     padding: 95px 45px 0;
 }
-
-.ttr-school-info {
+.school-info {
+    padding: 20px 40px;
+}
+.program-info {
+    padding: 35px 50px 20px;
+    position: relative;
+}
+.student-info {
+    padding: 20px 40px;
+}
+.display-flex-normal {
+    display: flex;
+    align-items: center;
+}
+.display-flex-reverse {
     display: flex;
     flex-direction: row-reverse;
-    padding: 20px 40px;
+    align-items: center;
+}
+.ttr-main-panel {
     border: 1px solid #9fa5a3;
     border-radius: 4px;
     background: #cfd0d0;
     color: rgb(100, 98, 98);
     filter: drop-shadow(0 0 7px rgb(148, 145, 145));
 }
-.ttr-school-info div:first-child {
+.ttr-main-panel .panel-logo-box {
+    margin: 0 20px;  
+}
+.ttr-main-panel .panel-buttons {
     position: relative;
 }
-.ttr-school-info div:first-child img {
-    margin-top: 20px;
-}
-.ttr-school-info div:first-child span {
+.ttr-main-panel .panel-buttons span {
     position: absolute;
-    right: 0;
-    top: 0;
+    top: 0px;
+    right: 0px;
 }
-.ttr-school-info div:first-child a {
+.ttr-main-panel .panel-buttons span i::before {
+    margin: 0 4px 0 0;
+}
+.ttr-main-panel .panel-buttons a {
     text-decoration: none;
 }
-.ttr-school-info div:first-child a span i:before {
+.ttr-main-panel .panel-buttons a:hover {
+    opacity: .9;
+}
+.ttr-main-panel .panel-buttons span a i:before {
     font-size: 1.7em;
     color: #2c3946;
 }
 
-.ttr-school-info table {
+.ttr-main-panel table {
     padding-right: 30px;
     font-size: .9em;
 }
-.ttr-school-info table tr td {
+.ttr-main-panel table tr td {
     vertical-align: top;
 }
-.ttr-school-info table tr td:first-child {
+.ttr-main-panel table tr td:first-child {
     text-align: right;
     padding-right: 20px;
 }
 table {
     border-collapse: collapse;
 }
-#acad-programs {
+#ttr-table {
     font-size: .9em;
     border: 1px solid #cccfce;
+    width: 100%;
+    margin-bottom: 15px;
 }
-#acad-programs img {
+#ttr-table:last-child {
+    margin: 0;
+}
+#ttr-table img {
     margin-left: 10px;
 }
-#acad-programs th {
+#ttr-table th {
     text-align: left;
     color: #2c3946;    
     padding: 0 10px;
 }
-#acad-programs td {
+#ttr-table td {
     min-width: 100px;
+    padding: 5px 10px;
 }
-#acad-programs .table-action {
-    margin: 0 10px;
+#ttr-table .table-action {
+    margin: 0 0 0 10px;
     text-align: right;
 }
-#acad-programs .table-action a {
+#ttr-table .table-action a {
     text-decoration: none;
     padding: 2px 4px;
     background-color: #e5ebe9;
     color: #04242e;
     border: 1px solid #c0c4c5;
 }
-#acad-programs .table-action a:first-child {
+#ttr-table .table-action a:first-child {
     border-radius: 6px 2px 2px 6px;
 }
-#acad-programs .table-action a:last-child {
+#ttr-table .table-action a:last-child {
     border-radius: 2px 6px 6px 2px;
 }
-#acad-programs .table-action a:hover {
+#ttr-table .table-action a:hover {
     background-color: #d4dad7;
 }
-#acad-programs .table-action i:before {
+#ttr-table .table-action i:before {
     font-size: .9em;
     margin: 0;
 }
-#acad-programs tr:first-child {
+#ttr-table tr:first-child {
     background-color: #c9d1ce;
     color: #eaeaea;
     height: 35px;
 }
-#acad-programs tr:nth-child(even) {
+#ttr-table tr:nth-child(even) {
     background-color: #eceeed;
 }
 .section-title {
@@ -306,6 +333,9 @@ table {
 }
 .panel-content {
     padding: 15px 18px;    
+}
+.panel-content h4 {
+    margin-bottom: 5px;
 }
 .db-breadcrumb {
     display: flex;
@@ -475,4 +505,53 @@ table {
     padding: 10px;
     resize: none;
     outline: none;
+}
+.tab-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #a8a2a2;
+    padding: 0 20px;
+}
+.tab-control {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.tab-control li {
+    display: inline-block;
+    margin: 0 6px;
+    padding: 4px 10px;
+}
+.tab-control li a {
+    text-decoration: none;
+    /* color: inherit; */
+    color: #2f3131
+}
+.table-add {
+    float: right;
+    font-size: .8em;
+    line-height: 10px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    background-color: #05a376;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+}
+.table-add:hover {
+    background-color: #068a64;
+}
+.y-level {
+    color: #fff;
+    height: 35px;
+    line-height: 1.7em;
+}
+.y-level li {
+    height: 35px;
+}
+.full-width {
+    width: 100%;
 }
