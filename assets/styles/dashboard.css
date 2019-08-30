@@ -190,6 +190,9 @@ body, h2, h4, ul {
 .student-info {
     padding: 20px 40px;
 }
+.student-table {
+    padding: 35px 20px 20px;
+}
 .display-flex-normal {
     display: flex;
     align-items: center;
@@ -206,12 +209,52 @@ body, h2, h4, ul {
     color: rgb(100, 98, 98);
     filter: drop-shadow(0 0 7px rgb(148, 145, 145));
 }
+.ttr-main-panel2 {
+    border: 1px solid #9fa5a3;
+    border-radius: 4px;
+    background: #e3e7e7;
+    color: rgb(100, 98, 98);
+    filter: drop-shadow(0 0 7px rgb(148, 145, 145));
+}
 .ttr-main-panel .panel-logo-box {
     margin: 0 20px;  
 }
 .ttr-main-panel .panel-buttons {
     position: relative;
 }
+
+.panel-control {
+    margin-bottom: 10px;
+}
+.panel-control .control-group {
+    display: inline-block;
+}
+.panel-control .control-group:nth-child(2) {
+    margin-left: 90px;
+}
+.panel-control .control-group:last-child {
+    float: right;
+}
+.panel-control .control-group input[type="text"] {
+    border: 1px solid #bcc2c0;
+    border-radius: 4px;
+    color: rgb(148, 139, 139);
+    padding: 5px 10px;
+    outline: none;
+    line-height: 1.2em;
+    text-align: center;
+}
+.panel-control .control-group input[type="text"]::placeholder {
+    text-align: center;
+}
+.panel-control .control-group select {
+    padding: 4px 10px;
+    border-radius: 4px;
+    outline: none;
+    background-color: #dddddd;
+    color: rgb(148, 139, 139);
+}
+
 .ttr-main-panel .panel-buttons span {
     position: absolute;
     top: 0px;
@@ -245,58 +288,75 @@ body, h2, h4, ul {
 table {
     border-collapse: collapse;
 }
-#ttr-table {
+.ttr-table {
     font-size: .9em;
     border: 1px solid #cccfce;
     width: 100%;
+    max-width: 100%;
     margin-bottom: 15px;
 }
-#ttr-table:last-child {
+.ttr-table:last-child {
     margin: 0;
 }
-#ttr-table img {
+.ttr-table img {
     margin-left: 10px;
+    vertical-align: middle;
 }
-#ttr-table th {
+.ttr-table th {
     text-align: left;
     color: #2c3946;    
     padding: 0 10px;
+    vertical-align: middle;
 }
-#ttr-table td {
-    min-width: 100px;
+.ttr-table td {
     padding: 5px 10px;
+    vertical-align: middle;
 }
-#ttr-table .table-action {
+.ttr-table .table-action {
     margin: 0 0 0 10px;
     text-align: right;
 }
-#ttr-table .table-action a {
+.ttr-table .table-action a {
     text-decoration: none;
     padding: 2px 4px;
     background-color: #e5ebe9;
     color: #04242e;
     border: 1px solid #c0c4c5;
 }
-#ttr-table .table-action a:first-child {
+.ttr-table .table-action a:first-child {
     border-radius: 6px 2px 2px 6px;
 }
-#ttr-table .table-action a:last-child {
+.ttr-table .table-action a:last-child {
     border-radius: 2px 6px 6px 2px;
 }
-#ttr-table .table-action a:hover {
+.ttr-table .table-action a:hover {
     background-color: #d4dad7;
 }
-#ttr-table .table-action i:before {
+.ttr-table .table-action i:before {
     font-size: .9em;
     margin: 0;
 }
-#ttr-table tr:first-child {
+.ttr-table tr:nth-child(even) {
+    background-color: #eceeed;
+}
+.ttr-table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+.ttr-table tr:first-child {
     background-color: #c9d1ce;
     color: #eaeaea;
     height: 35px;
 }
-#ttr-table tr:nth-child(even) {
-    background-color: #eceeed;
+.stud-list tr td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.stud-list tr td:nth-child(1) {
+    padding-right: 0;
+}
+.stud-list tr td:nth-child(2) img {
+    margin: 0;
+    padding: 0;
 }
 .section-title {
     margin-bottom: 10px;
@@ -401,20 +461,44 @@ table {
     color: #fff;
     padding: 5px 10px;
     line-height: 1.5em;
+    
+    background: #cac7c7;
+    margin-right: 4px;
+    border: 1px solid #adafaf;
+    border-radius: 4px;
+    vertical-align: middle;
 }
 .btn:hover {
     opacity: .9;
 }
+.btn i:before {
+    margin: 0;
+    vertical-align: middle;
+    font-size: .9em;
+}
+.btn-selectall {
+    background-color: #7cb942;
+    border: 1px solid #7cb942;
+    font-size: .8em;
+}
+.btn-delete {
+    background-color: #ec4b0be7;
+    border: 1px solid #ec4b0be7;
+    font-size: .8em;
+}
 .generate-csv {
     background: #2d7cc0;
+    border: 1px solid #2d7cc0;
     border-radius: 30px;
 }
 .select-csv {
     background: #18a9ce;
+    border: 1px solid #18a9ce;
     border-radius: 2px;
 }
 .import-csv {
     background: #05a376;
+    border: 1px solid #05a376;
     border-radius: 30px;
 }
 .ttr-instructions {
@@ -488,8 +572,10 @@ table {
     border: 1px solid;
     float: right;
     background-color: #2d7cc0;
+    border: 1px solid #2d7cc0;
 }
 .btn-upload {
+    background-color: #fff;
     border: 1px solid #9fa5a3;
     color: #454948;
     border-radius: 50px;    
@@ -513,22 +599,31 @@ table {
     width: 100%;
     border-bottom: 1px solid #a8a2a2;
     padding: 0 20px;
+    height: 24px;
 }
 .tab-control {
     display: block;
     list-style: none;
     padding: 0;
     margin: 0;
+    height: 100%;
 }
 .tab-control li {
     display: inline-block;
     margin: 0 6px;
-    padding: 4px 10px;
+    padding: 0;
+    height: 100%;
 }
 .tab-control li a {
     text-decoration: none;
-    /* color: inherit; */
-    color: #2f3131
+    color: #2f3131;
+    display: inline-block;
+    height: 100%;
+    line-height: 1.5em;
+    padding: 0 10px;
+}
+.tab-control li a.active {
+    border-bottom: 2px solid #05a376;
 }
 .table-add {
     float: right;
@@ -548,6 +643,13 @@ table {
     color: #fff;
     height: 35px;
     line-height: 1.7em;
+}
+.y-level li a {
+    color: #fff;
+    line-height: 2em;
+}
+.y-level li a.active {
+    border-bottom: 3px solid #05a376;
 }
 .y-level li {
     height: 35px;

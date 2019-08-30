@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SEng Database</title>
+    <link rel="stylesheet" href="assets/font/flaticon.css">
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/senglogo.png" />
+</head>
+<body>
+    <header class="ttr-header">
+        <div class="ttr-header-wrapper">
+            <div class="ttr-toggle-sidebar">
+                <i class="flaticon-menu ttr-menu-icon"></i>
+                <i class="flaticon-close ttr-close-icon"></i>
+            </div>
+            <div class="ttr-logo-box">
+                 <a href="#">
+                     <img src="assets/images/senglogo.png" alt="seng logo" width="45px" height="45px">
+                     <div class="logo-text">
+                         <span>MSC School of Engineering</span>
+                         <span>School Database</span>
+                     </div>
+                 </a>
+            </div>
+            <div class="ttr-header-right">
+                <ul class="ttr-account-control">
+                    <li>
+                        <a href="#">
+                            <i class="flaticon-man-user"></i>my account
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="flaticon-logout"></i>log out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="ttr-sidebar pinned-sidebar">
+        <div class="ttr-sidebar-wrapper">
+            <nav class="ttr-sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="ttr-icon">
+                                <i class="flaticon-home"></i>
+                            </span>
+                            <span class="ttr-label">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        
+                        <a href="#">
+                            <span class="ttr-icon">
+                                <i class="flaticon-user"></i>
+                            </span>
+                            <span class="ttr-label">Manage Students</span>
+                            <span class="ttr-arrow-icon">
+                                <i class="flaticon-down-arrow"></i>
+                            </span>
+                        </a>
+                        <ul>
+                            <li>Add Student</li>
+                            <li>Student Information</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="ttr-icon">
+                                <i class="flaticon-book"></i>
+                            </span>
+                            <span class="ttr-label">Manage Programs</span>
+                            <span class="ttr-arrow-icon">
+                                <i class="flaticon-down-arrow"></i>
+                            </span>
+                        </a>
+                        <ul>
+                            <li>Add Program</li>
+                            <li>Program Information</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="ttr-icon">
+                                <i class="flaticon-parthenon"></i>
+                            </span>
+                            <span class="ttr-label">Manage Department</span>
+                            <span class="ttr-arrow-icon">
+                                <i class="flaticon-down-arrow"></i>
+                            </span>
+                        </a>
+                        <ul>
+                            <li>Department Information</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="ttr-icon">
+                                <i class="flaticon-settings"></i>
+                            </span>
+                            <span class="ttr-label">Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main class="ttr-main">
+        <div class="container">
+            <div class="row">
+                <!-- Breadcrumb -->
+                <div class="db-breadcrumb">
+                    <h4 class="breadcrumb-title">Dashboard</h4>
+                    <ul class="db-breadcrumb-list">
+                        <li>
+                            <a href=""><i class="flaticon-home-1"></i>Manage Students</a>
+                        </li>
+                        <li>
+                            <a href="">Student List</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Program Information Panel -->
+                <div class="section-title">
+                    <h2>Student List</h2>
+                    <a href="">Add New Student</a>
+                </div>
+                <div class="ttr-main-panel2 student-table">
+                    <div class="tab-container">
+                        <ul class="tab-control">
+                            <li><a href="">BSCE</a></li>
+                            <li><a href="">BSEE</a></li>
+                            <li><a href="">BSECE</a></li>
+                            <li><a  class="active" href="">BSCPE</a></li>
+                            <li><a href="">BSME</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="panel-control">
+                        <div class="control-group">
+                            <span>Show</span>
+                            <select name="" id="">
+                                <option value="">10</option>
+                                <option value="">20</option>
+                                <option value="">30</option>
+                                <option value="">40</option>
+                            </select>
+                            <span>entries</span>
+
+                        </div>
+                        <div class="control-group">
+                            <a href="" class="btn btn-selectall">
+                                <i class="flaticon-task-complete"></i> Select All
+                            </a>
+                            <a href="" class="btn btn-delete">
+                                <i class="flaticon-minus-sign-inside-a-black-circle"></i> Delete
+                            </a>
+                        </div>
+
+                        <div class="control-group">
+                            <input type="text" placeholder="search">
+                            <select name="" id="">
+                                <option value="">Year Level</option>
+                                <option value="">First Year</option>
+                                <option value="">Second Year</option>
+                                <option value="">Third Year</option>
+                                <option value="">Fourth Year</option>
+                                <option value="">Fifth Year</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <table class="ttr-table stud-list">
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>ID No.</th>
+                            <th>First Name</th>
+                            <th>Middle Name</th>
+                            <th>Last Name</th>
+                            <th>Gender</th>
+                            <th>Year Level</th>
+                            <th>Section</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <img src="assets/images/user.svg" alt="" width="25px" height="25px">
+                            </td>
+                            <td>12B1192</td>
+                            <td>Mark Anthony Ivan</td>
+                            <td>Sotto</td>
+                            <td>Mejico</td>
+                            <td>Male</td>
+                            <td>Fifth Year</td>
+                            <td>1</td>
+                            <td>
+                                <div class="table-action">
+                                    <a href="">
+                                        <i class="flaticon-pencil-edit-button"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="flaticon-garbage"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <img src="assets/images/user.svg" alt="" width="25px" height="25px">
+                            </td>
+                            <td>12B1192</td>
+                            <td>Mark Anthony Ivan</td>
+                            <td>Sotto</td>
+                            <td>Mejico</td>
+                            <td>Male</td>
+                            <td>Fifth Year</td>
+                            <td>1</td>
+                            <td>
+                                <div class="table-action">
+                                    <a href="">
+                                        <i class="flaticon-pencil-edit-button"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="flaticon-garbage"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <img src="assets/images/user.svg" alt="" width="25px" height="25px">
+                            </td>
+                            <td>12B1192</td>
+                            <td>Mark Anthony Ivan</td>
+                            <td>Sotto</td>
+                            <td>Mejico</td>
+                            <td>Male</td>
+                            <td>Fifth Year</td>
+                            <td>1</td>
+                            <td>
+                                <div class="table-action">
+                                    <a href="">
+                                        <i class="flaticon-pencil-edit-button"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="flaticon-garbage"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <img src="assets/images/user.svg" alt="" width="25px" height="25px">
+                            </td>
+                            <td>12B1192</td>
+                            <td>Mark Anthony Ivan</td>
+                            <td>Sotto</td>
+                            <td>Mejico</td>
+                            <td>Male</td>
+                            <td>Fifth Year</td>
+                            <td>1</td>
+                            <td>
+                                <div class="table-action">
+                                    <a href="">
+                                        <i class="flaticon-pencil-edit-button"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="flaticon-garbage"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <img src="assets/images/user.svg" alt="" width="25px" height="25px">
+                            </td>
+                            <td>12B1192</td>
+                            <td>Mark Anthony Ivan</td>
+                            <td>Sotto</td>
+                            <td>Mejico</td>
+                            <td>Male</td>
+                            <td>Fifth Year</td>
+                            <td>1</td>
+                            <td>
+                                <div class="table-action">
+                                    <a href="">
+                                        <i class="flaticon-pencil-edit-button"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="flaticon-garbage"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <img src="assets/images/user.svg" alt="" width="25px" height="25px">
+                            </td>
+                            <td>12B1192</td>
+                            <td>Mark Anthony Ivan</td>
+                            <td>Sotto</td>
+                            <td>Mejico</td>
+                            <td>Male</td>
+                            <td>Fifth Year</td>
+                            <td>1</td>
+                            <td>
+                                <div class="table-action">
+                                    <a href="">
+                                        <i class="flaticon-pencil-edit-button"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="flaticon-garbage"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <img src="assets/images/user.svg" alt="" width="25px" height="25px">
+                            </td>
+                            <td>12B1192</td>
+                            <td>Mark Anthony Ivan</td>
+                            <td>Sotto</td>
+                            <td>Mejico</td>
+                            <td>Male</td>
+                            <td>Fifth Year</td>
+                            <td>1</td>
+                            <td>
+                                <div class="table-action">
+                                    <a href="">
+                                        <i class="flaticon-pencil-edit-button"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="flaticon-garbage"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <img src="assets/images/user.svg" alt="" width="25px" height="25px">
+                            </td>
+                            <td>12B1192</td>
+                            <td>Mark Anthony Ivan</td>
+                            <td>Sotto</td>
+                            <td>Mejico</td>
+                            <td>Male</td>
+                            <td>Fifth Year</td>
+                            <td>1</td>
+                            <td>
+                                <div class="table-action">
+                                    <a href="">
+                                        <i class="flaticon-pencil-edit-button"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="flaticon-garbage"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <img src="assets/images/user.svg" alt="" width="25px" height="25px">
+                            </td>
+                            <td>12B1192</td>
+                            <td>Mark Anthony Ivan</td>
+                            <td>Sotto</td>
+                            <td>Mejico</td>
+                            <td>Male</td>
+                            <td>Fifth Year</td>
+                            <td>1</td>
+                            <td>
+                                <div class="table-action">
+                                    <a href="">
+                                        <i class="flaticon-pencil-edit-button"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="flaticon-garbage"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <img src="assets/images/user.svg" alt="" width="25px" height="25px">
+                            </td>
+                            <td>12B1192</td>
+                            <td>Mark Anthony Ivan</td>
+                            <td>Sotto</td>
+                            <td>Mejico</td>
+                            <td>Male</td>
+                            <td>Fifth Year</td>
+                            <td>1</td>
+                            <td>
+                                <div class="table-action">
+                                    <a href="">
+                                        <i class="flaticon-pencil-edit-button"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="flaticon-garbage"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <img src="assets/images/user.svg" alt="" width="25px" height="25px">
+                            </td>
+                            <td>12B1192</td>
+                            <td>Mark Anthony Ivan</td>
+                            <td>Sotto</td>
+                            <td>Mejico</td>
+                            <td>Male</td>
+                            <td>Fifth Year</td>
+                            <td>1</td>
+                            <td>
+                                <div class="table-action">
+                                    <a href="">
+                                        <i class="flaticon-pencil-edit-button"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="flaticon-garbage"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <img src="assets/images/user.svg" alt="" width="25px" height="25px">
+                            </td>
+                            <td>12B1192</td>
+                            <td>Mark Anthony Ivan</td>
+                            <td>Sotto</td>
+                            <td>Mejico</td>
+                            <td>Male</td>
+                            <td>Fifth Year</td>
+                            <td>1</td>
+                            <td>
+                                <div class="table-action">
+                                    <a href="">
+                                        <i class="flaticon-pencil-edit-button"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="flaticon-garbage"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <img src="assets/images/user.svg" alt="" width="25px" height="25px">
+                            </td>
+                            <td>12B1192</td>
+                            <td>Mark Anthony Ivan</td>
+                            <td>Sotto</td>
+                            <td>Mejico</td>
+                            <td>Male</td>
+                            <td>Fifth Year</td>
+                            <td>1</td>
+                            <td>
+                                <div class="table-action">
+                                    <a href="">
+                                        <i class="flaticon-pencil-edit-button"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="flaticon-garbage"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <img src="assets/images/user.svg" alt="" width="25px" height="25px">
+                            </td>
+                            <td>12B1192</td>
+                            <td>Mark Anthony Ivan</td>
+                            <td>Sotto</td>
+                            <td>Mejico</td>
+                            <td>Male</td>
+                            <td>Fifth Year</td>
+                            <td>1</td>
+                            <td>
+                                <div class="table-action">
+                                    <a href="">
+                                        <i class="flaticon-pencil-edit-button"></i>
+                                    </a>
+                                    <a href="">
+                                        <i class="flaticon-garbage"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
