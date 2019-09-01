@@ -1,6 +1,7 @@
 /* RESET RULES */
 * {
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 body, h2, h4, ul {
     margin: 0;
@@ -15,7 +16,9 @@ body, h2, h4, ul {
 } */
 
 
-/* HEADER STYLES */
+/*----------------------------------------------------------------
+HEADER STYLES 
+*---------------------------------------------------------------*/
 
 .ttr-header {
     width: 100%;
@@ -27,11 +30,17 @@ body, h2, h4, ul {
     /* background: linear-gradient(to right, #ff8814 0%,#db4b24 100%); */
     /* background: linear-gradient(to right, #222927 0%,#020202 100%); */
     /* background: linear-gradient(to right, #7e2f0b 0%,rgba(243, 85, 23, 0.973) 100%); */
+
     box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);    
     position: fixed;
     left: 0;
     top: 0;
     color: #eaeaea;
+
+    -webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-moz-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-o-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
 }
 .ttr-toggle-sidebar {
     position: relative;
@@ -53,8 +62,6 @@ body, h2, h4, ul {
 }
 .ttr-close-icon {
     display: none;
-}
-.ttr-header-wrapper {
 }
 .ttr-toggle-sidebar {
     float: left;
@@ -98,7 +105,7 @@ body, h2, h4, ul {
 .ttr-account-control li {
     display: inline;
 }
-.ttr-account-control li a{
+.ttr-account-control li a {
     height: 60px;
     display: table-cell !important;
     vertical-align: middle;
@@ -106,12 +113,26 @@ body, h2, h4, ul {
     color: #eaeaea;
     text-transform: capitalize;
     font-size: 0.9em;
+
+    -webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-moz-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-o-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
 }
 .ttr-account-control li a i:before {
     font-size: 0.9em;
 }
+.ttr-account-control li a span {
+    margin-left: 4px;
+}
+.ttr-account-control li a:hover {
+    opacity: .8;
+}
 
-/* SIDEBAR STYLES */
+/*----------------------------------------------------------------
+SIDEBAR STYLES
+*---------------------------------------------------------------*/
+
 .ttr-sidebar {
     position: fixed;
     width: 300px;
@@ -120,6 +141,11 @@ body, h2, h4, ul {
     bottom: 0;
     background: #04242e;
     padding-top: 20px;
+
+	-webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-moz-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-o-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
 }
 .pinned-sidebar {
     top: 60px;
@@ -135,8 +161,15 @@ body, h2, h4, ul {
     display: block;
     width: 100%;
 }
-.ttr-sidebar-nav ul > li > ul {
-    display: none;
+.ttr-sidebar-nav ul ul {
+    display: block;
+    background-color: #032e3b;
+}
+.ttr-sidebar-nav ul > li > ul > li > a {
+    padding: 0 20px 0 60px;
+    line-height: 40px;
+    height: 40px;
+    font-size: 95%;
 }
 .ttr-icon i:before {
     margin: 0;
@@ -150,6 +183,11 @@ body, h2, h4, ul {
     white-space: nowrap;
     display: table;
     width: 100%;
+
+    -webkit-transition: all 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-moz-transition: all 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-o-transition: all 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	transition: all 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
 }
 .ttr-sidebar-nav a:hover {
     background-color: #2c3946;
@@ -175,21 +213,30 @@ body, h2, h4, ul {
 }
 
 
-/* MAIN CONTENT STYLE */
+/*----------------------------------------------------------------
+MAIN CONTENT STYLES
+*---------------------------------------------------------------*/
+
 .ttr-main {
     margin-left: 300px;
     padding: 95px 45px 0;
+
+    -webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-moz-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-o-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
 }
-.school-info {
+
+
+.school-info,
+.student-info {
     padding: 20px 40px;
 }
 .program-info {
     padding: 35px 50px 20px;
     position: relative;
 }
-.student-info {
-    padding: 20px 40px;
-}
+
 .student-table {
     padding: 35px 20px 20px;
 }
@@ -244,6 +291,10 @@ body, h2, h4, ul {
     line-height: 1.2em;
     text-align: center;
 }
+.panel-control .control-group input[type="text"]:hover {
+    border-color: #719ECE;
+    box-shadow: 0 0 4px #719ECE;
+}
 .panel-control .control-group input[type="text"]::placeholder {
     text-align: center;
 }
@@ -288,6 +339,12 @@ body, h2, h4, ul {
 table {
     border-collapse: collapse;
 }
+
+
+/*----------------------------------------------------------------
+TABLE STYLES
+*---------------------------------------------------------------*/
+
 .ttr-table {
     font-size: .9em;
     border: 1px solid #cccfce;
@@ -298,8 +355,10 @@ table {
 .ttr-table:last-child {
     margin: 0;
 }
+.ttr-table tr:hover {
+    background-color: #bbafafaa !important;
+}
 .ttr-table img {
-    margin-left: 10px;
     vertical-align: middle;
 }
 .ttr-table th {
@@ -358,15 +417,15 @@ table {
     margin: 0;
     padding: 0;
 }
-.section-title {
+.ttr-section-head {
     margin-bottom: 10px;
     display: inline-block;
     width: 100%;
 }
-.section-title h2 {
+.ttr-section-head .section-title {
     display: inline-block;
 }
-.section-title a {
+.ttr-section-head .section-button {
     text-decoration: none;
     color: #ffffff;
     background-color: #549cd9;
@@ -375,8 +434,13 @@ table {
     border-radius: 20px;
     font-size: .8em;
     float: right;
+
+	-webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-moz-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-o-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
 }
-.section-title a:hover {
+.ttr-section-head .section-button:hover {
     background-color: #2d7cc0;
 }
 .panel-container {
@@ -397,6 +461,12 @@ table {
 .panel-content h4 {
     margin-bottom: 5px;
 }
+
+
+/*----------------------------------------------------------------
+BREADCRUMB STYLES 
+*---------------------------------------------------------------*/
+
 .db-breadcrumb {
     display: flex;
     align-items: center;
@@ -419,6 +489,9 @@ table {
 }
 .db-breadcrumb-list li {
     display: inline-block;
+}
+.db-breadcrumb-list li:first-child a {
+    color: #1a6982 !important;
 }
 .db-breadcrumb-list li a {
     text-decoration: none;
@@ -598,19 +671,18 @@ table {
     top: 0;
     width: 100%;
     border-bottom: 1px solid #a8a2a2;
-    padding: 0 20px;
     height: 24px;
 }
 .tab-control {
     display: block;
     list-style: none;
-    padding: 0;
     margin: 0;
     height: 100%;
+    padding: 0 10px;
 }
 .tab-control li {
     display: inline-block;
-    margin: 0 6px;
+    margin: 0;
     padding: 0;
     height: 100%;
 }
@@ -621,6 +693,33 @@ table {
     height: 100%;
     line-height: 1.5em;
     padding: 0 10px;
+}
+.panel-heading .tab-control {
+    color: #fff;
+    height: 35px;
+    line-height: 1.7em;
+}
+.panel-heading .tab-control li {
+    height: 35px;
+}
+.panel-heading .tab-control li a {
+    color: #fff;
+    line-height: 2em;
+}
+.panel-heading .tab-control li a:hover {
+    background: #082f3b;
+}
+.panel-heading .tab-control li a.active {
+    border-bottom: 3px solid #05a376;
+}
+.full-width {
+    width: 100%;
+}
+.ttr-main-panel .tab-control li a:hover {
+    background-color: #aab3b0;
+}
+.ttr-main-panel2 .tab-control li a:hover {
+    background-color: #ccd4d2;
 }
 .tab-control li a.active {
     border-bottom: 2px solid #05a376;
@@ -639,21 +738,18 @@ table {
 .table-add:hover {
     background-color: #068a64;
 }
-.y-level {
-    color: #fff;
-    height: 35px;
-    line-height: 1.7em;
-}
-.y-level li a {
-    color: #fff;
-    line-height: 2em;
-}
-.y-level li a.active {
-    border-bottom: 3px solid #05a376;
-}
-.y-level li {
-    height: 35px;
-}
-.full-width {
-    width: 100%;
+
+
+
+
+
+
+
+@media (max-width: 1000px) {
+    .ttr-sidebar {
+        left: -300px;
+    }
+    .ttr-main {
+        margin-left: 0;
+    }
 }
