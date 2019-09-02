@@ -15,6 +15,9 @@ body, h2, h4, ul {
     display: none;
 } */
 
+body {
+    background-color: #f1f2f7;
+}
 
 /*----------------------------------------------------------------
 HEADER STYLES 
@@ -27,6 +30,7 @@ HEADER STYLES
 
     background: #222927;
 
+    background: linear-gradient(to top, rgb(214, 84, 44),#ff7d04);
     /* background: linear-gradient(to right, #ff8814 0%,#db4b24 100%); */
     /* background: linear-gradient(to right, #222927 0%,#020202 100%); */
     /* background: linear-gradient(to right, #7e2f0b 0%,rgba(243, 85, 23, 0.973) 100%); */
@@ -110,7 +114,7 @@ HEADER STYLES
     display: table-cell !important;
     vertical-align: middle;
     text-decoration: none;
-    color: #eaeaea;
+    color: #fff;
     text-transform: capitalize;
     font-size: 0.9em;
 
@@ -415,7 +419,20 @@ TABLE STYLES
     margin: 0;
     padding: 0;
 }
-
+.table-add {
+    float: right;
+    font-size: .8em;
+    line-height: 10px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    background-color: #05a376;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+}
+.table-add:hover {
+    background-color: #068a64;
+}
 .ttr-section-head {
     margin-bottom: 10px;
     /* display: inline-block; */
@@ -446,13 +463,14 @@ TABLE STYLES
     display: inline-block;
 }
 .ttr-panel {
-    border: 1px solid #12202d;
+    border: 1px solid #282a3c;
     border-radius: 4px;
     box-shadow: 0 0 20px rgb(148, 145, 145);
+    background-color: #fff;
 }
 .panel-heading {
     height: 35px;
-    background-color: #12202d;
+    background-color: #282a3c;
 }
 .panel-content {
     padding: 15px 18px;    
@@ -743,20 +761,7 @@ BREADCRUMB STYLES
 .tab-control li a.active {
     border-bottom: 2px solid #05a376;
 }
-.table-add {
-    float: right;
-    font-size: .8em;
-    line-height: 10px;
-    padding: 4px 6px;
-    border-radius: 4px;
-    background-color: #05a376;
-    text-decoration: none;
-    color: #fff;
-    text-align: center;
-}
-.table-add:hover {
-    background-color: #068a64;
-}
+
 
 
 
