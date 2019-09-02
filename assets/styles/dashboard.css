@@ -226,20 +226,6 @@ MAIN CONTENT STYLES
 	-o-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
 	transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
 }
-
-
-.school-info,
-.student-info {
-    padding: 20px 40px;
-}
-.program-info {
-    padding: 35px 50px 20px;
-    position: relative;
-}
-
-.student-table {
-    padding: 35px 20px 20px;
-}
 .display-flex-normal {
     display: flex;
     align-items: center;
@@ -252,17 +238,18 @@ MAIN CONTENT STYLES
 .ttr-main-panel {
     border: 1px solid #9fa5a3;
     border-radius: 4px;
+    color: rgb(100, 98, 98);
+    filter: drop-shadow(0 0 7px rgb(148, 145, 145));
+    background: #e5e7e7;
+    padding: 20px 40px;
+}
+.dark-background {
     background: #cfd0d0;
-    color: rgb(100, 98, 98);
-    filter: drop-shadow(0 0 7px rgb(148, 145, 145));
 }
-.ttr-main-panel2 {
-    border: 1px solid #9fa5a3;
-    border-radius: 4px;
+.light-background {
     background: #e3e7e7;
-    color: rgb(100, 98, 98);
-    filter: drop-shadow(0 0 7px rgb(148, 145, 145));
 }
+
 .ttr-main-panel .panel-logo-box {
     margin: 0 20px;  
 }
@@ -336,6 +323,16 @@ MAIN CONTENT STYLES
     text-align: right;
     padding-right: 20px;
 }
+
+.tabbed {
+    padding-top: 35px;
+    position: relative;
+}
+.table {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 table {
     border-collapse: collapse;
 }
@@ -369,7 +366,7 @@ TABLE STYLES
 }
 .ttr-table td {
     padding: 5px 10px;
-    vertical-align: middle;
+    vertical-align: middle !important;
 }
 .ttr-table .table-action {
     margin: 0 0 0 10px;
@@ -406,21 +403,23 @@ TABLE STYLES
     color: #eaeaea;
     height: 35px;
 }
+
 .stud-list tr td {
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .stud-list tr td:nth-child(1) {
-    padding-right: 0;
+    padding-right: 0 !important;
 }
 .stud-list tr td:nth-child(2) img {
     margin: 0;
     padding: 0;
 }
+
 .ttr-section-head {
     margin-bottom: 10px;
-    display: inline-block;
-    width: 100%;
+    /* display: inline-block; */
+    /* width: 100%; */
 }
 .ttr-section-head .section-title {
     display: inline-block;
@@ -449,7 +448,7 @@ TABLE STYLES
 .ttr-panel {
     border: 1px solid #12202d;
     border-radius: 4px;
-    box-shadow: 0 0 12px rgb(148, 145, 145);
+    box-shadow: 0 0 20px rgb(148, 145, 145);
 }
 .panel-heading {
     height: 35px;
@@ -522,8 +521,8 @@ BREADCRUMB STYLES
     border-bottom: 1px solid #e7e9e8;
     margin-bottom: 15px;
     padding: 0 0 15px;
-    width: 500px;
-    /* flex-basis: 700px; */
+    width: 100%;
+    
 }
 .bulk-add span:last-child {
     border: 0;
@@ -574,6 +573,9 @@ BREADCRUMB STYLES
     border: 1px solid #05a376;
     border-radius: 30px;
 }
+.instruction-container {
+    margin-top: 38px;
+}
 .ttr-instructions {
     padding: 20px;
     background: #2d7cc0;
@@ -581,21 +583,38 @@ BREADCRUMB STYLES
     border-radius: 5px;
     font-size: .9em;
     width: auto;
-    margin: 38px 0 0 20px;
+
+    /* background-image:
+    radial-gradient(
+      circle at top right,
+      rgb(16, 170, 218),
+      #2d7cc0
+    ); */
+
+    background-image:
+    linear-gradient(
+      to top, 
+      rgb(101, 33, 211),
+      #5578eb
+    );
 }
 .ttr-instructions h4 {
     text-decoration: underline;
-    margin-bottom: 10px;
+    margin-bottom: 10px;    
 }
 .ttr-instructions p {
     margin: 0;
+    font-size: 1em;
 }
-.ttr-manage {
-    display: flex;
+.display-grid {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: 3fr 2fr;
 }
 
 .form-content {
-    width:500px;
+    width:100%;
+    margin: 0 auto;
 }
 .form-content .form-group {
     padding-bottom: 15px;
@@ -677,8 +696,8 @@ BREADCRUMB STYLES
     display: block;
     list-style: none;
     margin: 0;
-    height: 100%;
     padding: 0 10px;
+    height: 100%;
 }
 .tab-control li {
     display: inline-block;
@@ -742,8 +761,9 @@ BREADCRUMB STYLES
 
 
 
-
-
+/*----------------------------------------------------------------
+RESPONSIVE DESIGN
+*---------------------------------------------------------------*/
 
 @media (max-width: 1000px) {
     .ttr-sidebar {

@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+.main {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    
+}
+.img-left {
+    background: url("../images/school");
+    background-size: cover;
+}
+.txt-right {
+    background-color: #f2eaea;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.form-group span {
+    line-height: 2em;
+    flex-basis: 15%;
+    border-right: 1px solid rgb(190, 190, 190);
+    background-color: #fff;
+}
+.form-group span:before {
+    margin: 0;
+    font-size: 1.2em;
+    color: rgb(95, 94, 94);
+}
+.login-form {
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 3px;
+    display: inline-block;
+    text-align: center;
+    width: 300px;
+    background-color: rgb(252, 247, 247)
+}
+.login-school-logo {
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 10px;
+    border: 1px solid rgb(190, 190, 190);
+    display: flex;
+    border-radius: 3px;
+    background-color: inherit;
+}
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    border: none;
+    outline: none;
+    padding: 3px 10px;
+    flex-basis: 90%;
+    width: 100%;
+    line-height: 1.5em;
+    color: rgb(92, 88, 88);
+    background-color: #fff;
+}
+.button {
+    padding: 5px 0 0;
+    width: 100%;
+}
+.button input[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    background-color: #5453ad;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+}
+.button input[type="submit"]:hover {
+    background-color: #464597;
+
+    -webkit-transition: all 800ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-moz-transition: all 800ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	-o-transition: all 800ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	transition: all 800ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+}
