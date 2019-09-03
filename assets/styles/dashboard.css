@@ -239,6 +239,9 @@ MAIN CONTENT STYLES
     flex-direction: row-reverse;
     align-items: center;
 }
+
+
+/* MAIN PANEL STYLES */
 .ttr-main-panel {
     border: 1px solid #9fa5a3;
     border-radius: 4px;
@@ -247,6 +250,50 @@ MAIN CONTENT STYLES
     background: #e5e7e7;
     padding: 20px 40px;
 }
+.ttr-main-panel .tab-control li a:hover {
+    background-color: #aab3b0;
+}
+.ttr-main-panel2 .tab-control li a:hover {
+    background-color: #ccd4d2;
+}
+.ttr-main-panel .panel-logo-box {
+    margin: 0 20px;  
+}
+.ttr-main-panel .panel-buttons {
+    position: relative;
+}
+.ttr-main-panel .panel-buttons span {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.ttr-main-panel .panel-buttons span i::before {
+    margin: 0 4px 0 0;
+}
+.ttr-main-panel .panel-buttons a {
+    text-decoration: none;
+}
+.ttr-main-panel .panel-buttons a:hover {
+    opacity: .9;
+}
+.ttr-main-panel .panel-buttons span a i:before {
+    font-size: 1.7em;
+    color: #2c3946;
+}
+
+.ttr-main-panel table {
+    padding-right: 30px;
+    font-size: .9em;
+}
+.ttr-main-panel table tr td {
+    vertical-align: top;
+}
+.ttr-main-panel table tr td:first-child {
+    text-align: right;
+    padding-right: 20px;
+}
+
+/* BACKGOUND THEMES */
 .dark-background {
     background: #cfd0d0;
 }
@@ -254,13 +301,7 @@ MAIN CONTENT STYLES
     background: #e3e7e7;
 }
 
-.ttr-main-panel .panel-logo-box {
-    margin: 0 20px;  
-}
-.ttr-main-panel .panel-buttons {
-    position: relative;
-}
-
+/* PANEL STYLES */
 .panel-control {
     margin-bottom: 10px;
 }
@@ -296,38 +337,46 @@ MAIN CONTENT STYLES
     background-color: #dddddd;
     color: rgb(148, 139, 139);
 }
-
-.ttr-main-panel .panel-buttons span {
-    position: absolute;
-    top: 0px;
-    right: 0px;
+.panel-container {
+    display: inline-block;
 }
-.ttr-main-panel .panel-buttons span i::before {
-    margin: 0 4px 0 0;
+.ttr-panel {
+    border: 1px solid #282a3c;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgb(148, 145, 145);
+    background-color: #fff;
 }
-.ttr-main-panel .panel-buttons a {
-    text-decoration: none;
+.panel-heading {
+    height: 35px;
+    background-color: #282a3c;
 }
-.ttr-main-panel .panel-buttons a:hover {
-    opacity: .9;
+.panel-content {
+    padding: 15px 18px;    
 }
-.ttr-main-panel .panel-buttons span a i:before {
-    font-size: 1.7em;
-    color: #2c3946;
-}
-
-.ttr-main-panel table {
-    padding-right: 30px;
-    font-size: .9em;
-}
-.ttr-main-panel table tr td {
-    vertical-align: top;
-}
-.ttr-main-panel table tr td:first-child {
-    text-align: right;
-    padding-right: 20px;
+.panel-content h4 {
+    margin-bottom: 5px;
 }
 
+.panel-heading .tab-control {
+    color: #fff;
+    height: 35px;
+    line-height: 1.7em;
+}
+.panel-heading .tab-control li {
+    height: 35px;
+}
+.panel-heading .tab-control li a {
+    color: #fff;
+    line-height: 2em;
+}
+.panel-heading .tab-control li a:hover {
+    background: #082f3b;
+}
+.panel-heading .tab-control li a.active {
+    border-bottom: 3px solid #05a376;
+}
+
+/* PANEL ATTRIBUTES */
 .tabbed {
     padding-top: 35px;
     position: relative;
@@ -337,15 +386,11 @@ MAIN CONTENT STYLES
     padding-right: 20px;
 }
 
+/* TABLE STYLES */
+
 table {
     border-collapse: collapse;
 }
-
-
-/*----------------------------------------------------------------
-TABLE STYLES
-*---------------------------------------------------------------*/
-
 .ttr-table {
     font-size: .9em;
     border: 1px solid #cccfce;
@@ -419,6 +464,9 @@ TABLE STYLES
     margin: 0;
     padding: 0;
 }
+
+/* table add button */
+
 .table-add {
     float: right;
     font-size: .8em;
@@ -433,10 +481,10 @@ TABLE STYLES
 .table-add:hover {
     background-color: #068a64;
 }
+
+
 .ttr-section-head {
     margin-bottom: 10px;
-    /* display: inline-block; */
-    /* width: 100%; */
 }
 .ttr-section-head .section-title {
     display: inline-block;
@@ -459,30 +507,10 @@ TABLE STYLES
 .ttr-section-head .section-button:hover {
     background-color: #2d7cc0;
 }
-.panel-container {
-    display: inline-block;
-}
-.ttr-panel {
-    border: 1px solid #282a3c;
-    border-radius: 4px;
-    box-shadow: 0 0 20px rgb(148, 145, 145);
-    background-color: #fff;
-}
-.panel-heading {
-    height: 35px;
-    background-color: #282a3c;
-}
-.panel-content {
-    padding: 15px 18px;    
-}
-.panel-content h4 {
-    margin-bottom: 5px;
-}
 
 
-/*----------------------------------------------------------------
-BREADCRUMB STYLES 
-*---------------------------------------------------------------*/
+
+/* BREADCRUMB STYLES  */
 
 .db-breadcrumb {
     display: flex;
@@ -533,6 +561,7 @@ BREADCRUMB STYLES
 
 
 /* BULK ADD STUDENTS */
+
 .bulk-add span {
     text-align: center;
     display: block;
@@ -546,6 +575,9 @@ BREADCRUMB STYLES
     border: 0;
     margin: 0;
 }
+
+/* BUTTON STYLES */
+
 .btn {
     text-decoration: none;
     color: #fff;
@@ -576,6 +608,21 @@ BREADCRUMB STYLES
     border: 1px solid #ec4b0be7;
     font-size: .8em;
 }
+.btn-submit {
+    padding: 0 25px;
+    line-height: 2em;
+    border-radius: 50px;
+    border: 1px solid;
+    float: right;
+    background-color: #2d7cc0;
+    border: 1px solid #2d7cc0;
+}
+.btn-upload {
+    background-color: #fff;
+    border: 1px solid #9fa5a3;
+    color: #454948;
+    border-radius: 50px;    
+}
 .generate-csv {
     background: #2d7cc0;
     border: 1px solid #2d7cc0;
@@ -591,6 +638,9 @@ BREADCRUMB STYLES
     border: 1px solid #05a376;
     border-radius: 30px;
 }
+
+/* INSTRUCTION STYLE */
+
 .instruction-container {
     margin-top: 38px;
 }
@@ -601,13 +651,6 @@ BREADCRUMB STYLES
     border-radius: 5px;
     font-size: .9em;
     width: auto;
-
-    /* background-image:
-    radial-gradient(
-      circle at top right,
-      rgb(16, 170, 218),
-      #2d7cc0
-    ); */
 
     background-image:
     linear-gradient(
@@ -629,6 +672,8 @@ BREADCRUMB STYLES
     grid-gap: 2em;
     grid-template-columns: 3fr 2fr;
 }
+
+/* FORM STYLES */
 
 .form-content {
     width:100%;
@@ -673,28 +718,6 @@ BREADCRUMB STYLES
     border-color: #719ECE;
     box-shadow: 0 0 4px #719ECE;
 }
-
-
-.btn-submit {
-    padding: 0 25px;
-    line-height: 2em;
-    border-radius: 50px;
-    border: 1px solid;
-    float: right;
-    background-color: #2d7cc0;
-    border: 1px solid #2d7cc0;
-}
-.btn-upload {
-    background-color: #fff;
-    border: 1px solid #9fa5a3;
-    color: #454948;
-    border-radius: 50px;    
-}
-.upload-pic {
-    display: inline-block;
-    background-color: #d0d2d4;
-    margin-bottom: 4px;
-}
 .form-group textarea {
     width: 100%;
     border-radius: 4px;
@@ -702,6 +725,14 @@ BREADCRUMB STYLES
     resize: none;
     outline: none;
 }
+.upload-pic {
+    display: inline-block;
+    background-color: #d0d2d4;
+    margin-bottom: 4px;
+}
+
+/* FORM TAB STYLES */
+
 .tab-container {
     position: absolute;
     left: 0;
@@ -731,39 +762,13 @@ BREADCRUMB STYLES
     line-height: 1.5em;
     padding: 0 10px;
 }
-.panel-heading .tab-control {
-    color: #fff;
-    height: 35px;
-    line-height: 1.7em;
-}
-.panel-heading .tab-control li {
-    height: 35px;
-}
-.panel-heading .tab-control li a {
-    color: #fff;
-    line-height: 2em;
-}
-.panel-heading .tab-control li a:hover {
-    background: #082f3b;
-}
-.panel-heading .tab-control li a.active {
-    border-bottom: 3px solid #05a376;
-}
-.full-width {
-    width: 100%;
-}
-.ttr-main-panel .tab-control li a:hover {
-    background-color: #aab3b0;
-}
-.ttr-main-panel2 .tab-control li a:hover {
-    background-color: #ccd4d2;
-}
 .tab-control li a.active {
     border-bottom: 2px solid #05a376;
 }
 
-
-
+.full-width {
+    width: 100%;
+}
 
 
 /*----------------------------------------------------------------
