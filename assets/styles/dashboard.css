@@ -1,3 +1,8 @@
+/* TEMPORARY MINIMUM WIDTH SIZE */
+.container {
+    min-width: 596px;
+}
+
 /* RESET RULES */
 * {
     box-sizing: border-box;
@@ -118,10 +123,10 @@ HEADER STYLES
     text-transform: capitalize;
     font-size: 0.9em;
 
-    -webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+    /* -webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
 	-moz-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
 	-o-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
-	transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+	transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); */
 }
 .ttr-account-control li a i:before {
     font-size: 0.9em;
@@ -146,10 +151,10 @@ SIDEBAR STYLES
     background: #04242e;
     padding-top: 20px;
 
-	-webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+	/* -webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
 	-moz-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
 	-o-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
-	transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+	transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); */
 }
 .pinned-sidebar {
     top: 60px;
@@ -188,10 +193,10 @@ SIDEBAR STYLES
     display: table;
     width: 100%;
 
-    -webkit-transition: all 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+    /* -webkit-transition: all 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
 	-moz-transition: all 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
 	-o-transition: all 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
-	transition: all 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+	transition: all 400ms cubic-bezier(0.215, 0.610, 0.355, 1.000); */
 }
 .ttr-sidebar-nav a:hover {
     background-color: #2c3946;
@@ -225,10 +230,10 @@ MAIN CONTENT STYLES
     margin-left: 300px;
     padding: 95px 45px 0;
 
-    -webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+    /* -webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
 	-moz-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
 	-o-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
-	transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+	transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); */
 }
 .display-flex-normal {
     display: flex;
