@@ -7,14 +7,15 @@
     <title>SEng Database</title>
     <link rel="stylesheet" href="assets/font/flaticon.css">
     <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/vendors/calendar/fullcalendar.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/senglogo.png" />
 </head>
 <body class="ttr-pinned-sidebar ttr-opened-sidebar">
     <header class="ttr-header">
         <div class="ttr-header-wrapper">
-            <div class="ttr-toggle-sidebar ttr-material-button">
-                <i class="flaticon-menu ttr-open-icon"></i>
-                <i class="flaticon-close ttr-close-icon"></i>
+            <div class="ttr-toggle-sidebar">
+                <i class="flaticon-menu ttr-close-icon"></i>
+                <i class="flaticon-close ttr-open-icon"></i>
             </div>
             <div class="ttr-logo-box">
                  <a href="#">
@@ -48,7 +49,7 @@
             <nav class="ttr-sidebar-nav">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="home.html">
                             <span class="ttr-icon">
                                 <i class="flaticon-home"></i>
                             </span>
@@ -115,16 +116,55 @@
 
     <main class="ttr-main">
         <div class="container">
-            <div>
-                <div>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+            <div class="row">
+                <div class="grid-home">
+                    <div class="widget-card grid-full cs">
+                        <div class="wc-item">
+                            <h4 class="wc-num">1500</h4>
+                            <div class="wc-des">
+                                <span>students</span>
+                                <p>total number of students</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-card grid-full cf">
+                        <div class="wc-item">
+                            <h4 class="wc-num">54</h4>
+                            <div class="wc-des">
+                                <span>faculty members</span>
+                                <p>total number of faculties</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-card grid-full ca">
+                        <div class="wc-item">
+                            <h4 class="wc-num">5</h4>
+                            <div class="wc-des">
+                                <span>academic programs</span>
+                                <p>total number of academic programs</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-card grid-full cc">
+                        <div class="wc-item">
+                            <h4 class="wc-num">613</h4>
+                            <div class="wc-des">
+                                <span>courses</span>
+                                <p>total number of school courses</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+            </div>
+
+            <div class="row">
+                <div class="widget-box">
+                    <div class="wc-title">
+                        <h4>School Calendar</h4>
+                    </div>
+                    <div class="widget-inner">
+                        <div id="calendar"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -132,5 +172,89 @@
     <script src="assets/js/jquery-3.4.1.min.js"></script>
     <script src="assets/js/admin.js"></script>
     <script src="assets/js/newjs.js"></script>
+
+    <!-- CALENDAR -->
+    <script src="assets/vendors/calendar/moment.min.js"></script>
+    <script src="assets/vendors/calendar/fullcalendar.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+      
+          $('#calendar').fullCalendar({
+            header: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'month,agendaWeek,agendaDay,listWeek'
+            },
+            defaultDate: '2019-03-12',
+            navLinks: true, // can click day/week names to navigate views
+      
+            weekNumbers: true,
+            weekNumbersWithinDays: true,
+            weekNumberCalculation: 'ISO',
+      
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events: [
+              {
+                title: 'All Day Event',
+                start: '2019-03-01'
+              },
+              {
+                title: 'Long Event',
+                start: '2019-03-07',
+                end: '2019-03-10'
+              },
+              {
+                id: 999,
+                title: 'Repeating Event',
+                start: '2019-03-09T16:00:00'
+              },
+              {
+                id: 999,
+                title: 'Repeating Event',
+                start: '2019-03-16T16:00:00'
+              },
+              {
+                title: 'Conference',
+                start: '2019-03-11',
+                end: '2019-03-13'
+              },
+              {
+                title: 'Meeting',
+                start: '2019-03-12T10:30:00',
+                end: '2019-03-12T12:30:00'
+              },
+              {
+                title: 'Lunch',
+                start: '2019-03-12T12:00:00'
+              },
+              {
+                title: 'Meeting',
+                start: '2019-03-12T14:30:00'
+              },
+              {
+                title: 'Happy Hour',
+                start: '2019-03-12T17:30:00'
+              },
+              {
+                title: 'Dinner',
+                start: '2019-03-12T20:00:00'
+              },
+              {
+                title: 'Birthday Party',
+                start: '2019-03-13T07:00:00'
+              },
+              {
+                title: 'Click for Google',
+                url: 'http://google.com/',
+                start: '2019-03-28'
+              }
+            ]
+          });
+      
+        });
+      
+      </script>
 </body>
 </html>

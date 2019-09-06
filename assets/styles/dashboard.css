@@ -1,5 +1,10 @@
+:root {
+    --primary: #0b90dd;
+}
+
+
 /* TEMPORARY MINIMUM WIDTH SIZE */
-.container {
+.ttr-header, .container {
     min-width: 596px;
 }
 
@@ -11,6 +16,14 @@
 body, h2, h4, ul {
     margin: 0;
 }
+a {
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    /* transition: all 0.2s linear; */
+}
+
 .row {
     margin-bottom: 66px;
 }
@@ -202,7 +215,7 @@ SIDEBAR STYLES
     width: 100%;
 }
 .ttr-sidebar-nav ul ul {
-    display: block;
+    display: none;
     background-color: #032e3b;
 }
 .ttr-sidebar-nav ul > li > ul > li > a {
@@ -246,6 +259,11 @@ SIDEBAR STYLES
     width: 24px;
     line-height: 0;
     text-align: center;
+    
+    -webkit-transition: transform 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    -moz-transition: transform 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    -o-transition: transform 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition: transform 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000);
 }
 .ttr-sidebar-nav a > span.ttr-arrow-icon > i:before {
     font-size: 11px;
@@ -703,7 +721,7 @@ table {
     margin: 0;
     font-size: 1em;
 }
-.display-grid {
+.grid-panel {
     display: grid;
     grid-gap: 2em;
     grid-template-columns: 3fr 2fr;
@@ -842,7 +860,7 @@ table {
 	margin-left: 0;
 }
 
-/* .ttr-material-button{
+ .ttr-material-button{
 	position: relative;
 	overflow: hidden;
 }
@@ -857,7 +875,138 @@ table {
 	background-color: #fff;
 	border-radius: 50%;
 	opacity: 0.7;
-} */
+}
+
+
+.ttr-sidebar-nav ul li.show > a > .ttr-arrow-icon{
+	-ms-transform: rotate(180deg); /* IE 9 */
+    -ms-transform-origin: 50% 50%; /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Safari 3-8 */
+    -webkit-transform-origin: 50% 50%; /* Safari 3-8 */
+    transform: rotate(180deg);
+    transform-origin: 50% 50%;
+}
+.ttr-sidebar-nav ul li.show > a{
+	background-color: #2c3946;
+}
+.ttr-sidebar-nav>ul>li>ul>li.show > a{
+    background-color: #2c3946;
+}
+.ttr-sidebar-nav ul li.show > a{
+	color: #fff;
+}
+
+
+.grid-home {
+
+}
+
+.widget-card {
+    padding: 15px;
+    background: #ff6e0e;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    color: #fff;
+}
+.widget-card h4 {
+    font-size: 2.2em;
+    font-weight: 400;
+}
+.widget-card span {
+    font-size: 1.3em;
+    text-transform: capitalize;
+    color: #eaeaea;
+}
+.widget-card p {
+    color: #eaeaea;
+    margin: 0;
+    font-size: .9em;
+}
+.widget-card.cs {
+    background-color: #f7952c;
+}
+.widget-card.cf {
+    background-color: #c2392b;
+}
+.widget-card.ca {
+    background-color: #18aeef;
+}
+.widget-card.cc {
+    background-color: #464646;
+}
+
+
+
+/* CALENDAR STYLES */
+.widget-box{
+	background-color: #fff;
+	box-shadow:0 3px 10px 0px rgba(0,0,0,.08);
+	border-radius: 4px;
+	height: 100%;
+}
+.widget-box .widget-inner{
+	padding:30px;
+}
+.widget-box .wc-title{
+	border-bottom:1px solid rgba(0,0,0,0.05);
+	padding:20px 30px;
+}
+.widget-box .wc-title h4{
+	font-size:18px;
+	line-height:18px;
+	margin:0;
+	color:#333;
+	font-weight:500;
+}
+/* Full Calendra */
+
+.fc-toolbar button.fc-state-active{
+	background: var(--primary);
+	color: #fff;
+	
+}
+.fc-toolbar button {
+	margin: 0 !important;
+    position: relative;
+	border: 0;
+	background: rgba(0,0,0,0.05);
+	color: #707070;
+	text-transform: capitalize;
+	font-size: 14px;
+	padding: 8px 20px;
+	height: auto;
+	box-shadow: none;
+	border-right: 1px solid rgba(0,0,0,0.3);
+}
+.fc-toolbar button:last-child{
+	border-right:0;
+}
+.fc-toolbar button.fc-today-button {
+	margin-left: 10px !important;
+}
+.fc-toolbar h2 {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+}
+.fc table,
+.fc-row table{
+	margin-bottom:0;
+	font-size: 14px;
+}
+.fc-unthemed th.fc-day-header {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 400;
+	font-weight:400
+}
+.fc-event-container a:not([href]):not([tabindex]){
+	color:#fff;
+}
+
+
+
+
 
 
 /*----------------------------------------------------------------
@@ -870,5 +1019,8 @@ RESPONSIVE DESIGN
     }
     .ttr-main {
         margin-left: 0 !important;
+    }
+    .logo-text {
+        display: none;
     }
 }
