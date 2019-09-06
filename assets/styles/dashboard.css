@@ -898,13 +898,17 @@ table {
 
 
 .grid-home {
-
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: 
+        'box-a box-a box-a'
+        'box-b box-c box-d'
 }
 
 .widget-card {
     padding: 15px;
     background: #ff6e0e;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     border-radius: 4px;
     color: #fff;
 }
@@ -923,16 +927,24 @@ table {
     font-size: .9em;
 }
 .widget-card.cs {
-    background-color: #f7952c;
+    /* background-color: #f7952c; */
+    grid-area: box-a;
+    background: linear-gradient(to left,#4c86f1,#444086);
 }
 .widget-card.cf {
-    background-color: #c2392b;
+    /* background-color: #c2392b; */
+    grid-area: box-b;
+    background: linear-gradient(to left,#c2392b,#cc5143);
 }
 .widget-card.ca {
-    background-color: #18aeef;
+    /* background-color: #18aeef; */
+    grid-area: box-c;
+    background: linear-gradient(to left,#03884c,#00a65a);    
 }
 .widget-card.cc {
-    background-color: #464646;
+    /* background-color: #464646; */
+    grid-area: box-d;
+    background: linear-gradient(to left,#0a8dad,#00c0ef);    
 }
 
 
@@ -948,15 +960,18 @@ table {
 	padding:30px;
 }
 .widget-box .wc-title{
+    /* background: #282a3c; */
 	border-bottom:1px solid rgba(0,0,0,0.05);
 	padding:20px 30px;
 }
 .widget-box .wc-title h4{
-	font-size:18px;
+    font-size:18px;
 	line-height:18px;
 	margin:0;
+    /* color: #fff; */
 	color:#333;
-	font-weight:500;
+    font-weight:500;
+    font-size: 1.4em;
 }
 /* Full Calendra */
 
@@ -1005,7 +1020,32 @@ table {
 }
 
 
-
+.grid-full {
+    height: 320px;
+}
+/* CHARTJS */
+.wc-item.chart {
+    position: relative;
+    margin: 0 20px;
+}
+.wc-item.chart h4 {
+    font-size: 4em;
+    font-weight: 600;
+}
+.wc-item.chart span {
+    font-size: 2em;
+}
+.wc-item.chart p {
+    font-size: 1em;
+}
+.chart-wrapper {
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    right: 0px;
+    width: 500px;
+    filter: drop-shadow(0 0 14px rgb(80, 77, 77));
+}
 
 
 

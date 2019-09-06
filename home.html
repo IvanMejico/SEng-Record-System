@@ -119,15 +119,20 @@
             <div class="row">
                 <div class="grid-home">
                     <div class="widget-card grid-full cs">
-                        <div class="wc-item">
-                            <h4 class="wc-num">1500</h4>
-                            <div class="wc-des">
-                                <span>students</span>
-                                <p>total number of students</p>
+                        <div class="wc-item chart">
+                            <div>
+                                <h4 class="wc-num">1500</h4>
+                                <div class="wc-des">
+                                    <span>students</span>
+                                    <p>total number of students</p>
+                                </div>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="myChart"></canvas>
                             </div>
                         </div>
                     </div>
-                    <div class="widget-card grid-full cf">
+                    <div class="widget-card cf">
                         <div class="wc-item">
                             <h4 class="wc-num">54</h4>
                             <div class="wc-des">
@@ -136,7 +141,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="widget-card grid-full ca">
+                    <div class="widget-card ca">
                         <div class="wc-item">
                             <h4 class="wc-num">5</h4>
                             <div class="wc-des">
@@ -145,7 +150,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="widget-card grid-full cc">
+                    <div class="widget-card cc">
                         <div class="wc-item">
                             <h4 class="wc-num">613</h4>
                             <div class="wc-des">
@@ -176,6 +181,11 @@
     <!-- CALENDAR -->
     <script src="assets/vendors/calendar/moment.min.js"></script>
     <script src="assets/vendors/calendar/fullcalendar.js"></script>
+
+    <!-- CHARTJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="assets/js/chart_script.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
