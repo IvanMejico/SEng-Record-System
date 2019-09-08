@@ -21,7 +21,7 @@ a {
     -moz-transition: all 0.2s linear;
     -ms-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
-    /* transition: all 0.2s linear; */
+    transition: all 0.2s linear;
 }
 
 .row {
@@ -911,6 +911,16 @@ table {
     /* margin-bottom: 30px; */
     border-radius: 4px;
     color: #fff;
+    cursor: pointer;
+
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+.widget-card:hover {
+    filter: brightness(85%);
 }
 .widget-card h4 {
     font-size: 2.2em;
@@ -973,8 +983,7 @@ table {
     font-weight:500;
     font-size: 1.4em;
 }
-/* Full Calendra */
-
+/* Full Calendar */
 .fc-toolbar button.fc-state-active{
 	background: var(--primary);
 	color: #fff;
@@ -1021,7 +1030,7 @@ table {
 
 
 .grid-full {
-    height: 320px;
+    height: 389px;
 }
 /* CHARTJS */
 .wc-item.chart {
@@ -1041,12 +1050,14 @@ table {
 .chart-wrapper {
     position: absolute;
     z-index: 2;
-    top: 20px;
+    top: 28px;
     right: 0px;
-    width: 500px;
+    width: 600px;
     filter: drop-shadow(0 0 14px rgb(80, 77, 77));
 }
-
+.fc-today {
+    background-color: #dde0e0 !important;
+}
 
 
 /*----------------------------------------------------------------
@@ -1059,6 +1070,7 @@ RESPONSIVE DESIGN
     }
     .ttr-main {
         margin-left: 0 !important;
+        padding: 70px 4px 0px;
     }
     .logo-text {
         display: none;
