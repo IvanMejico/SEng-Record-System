@@ -597,7 +597,7 @@ table {
     color: #222927;
 }
 .db-breadcrumb-list li a i:before {
-    margin: 0 2px 0 0;
+    margin: 0 4px 0 0;
     font-size: .9em;
 }
 .db-breadcrumb-list li::after {
@@ -899,7 +899,7 @@ table {
 
 .grid-home {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 10px;
     grid-template-areas: 
         'box-a box-a box-a'
         'box-b box-c box-d'
@@ -1030,7 +1030,7 @@ table {
 
 
 .grid-full {
-    height: 389px;
+    height: 330px;
 }
 /* CHARTJS */
 .wc-item.chart {
@@ -1050,9 +1050,9 @@ table {
 .chart-wrapper {
     position: absolute;
     z-index: 2;
-    top: 28px;
+    top: 15px;
     right: 0px;
-    width: 600px;
+    width: 540px;
     filter: drop-shadow(0 0 14px rgb(80, 77, 77));
 }
 .fc-today {
@@ -1060,6 +1060,19 @@ table {
 }
 
 
+/* 404 PAGE STYLES */
+
+.na {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.na div {    
+    color: #a7a5a5;
+    font-size: 2em;
+    margin: 10px 0 0;
+    text-align: center;
+}
 /*----------------------------------------------------------------
 RESPONSIVE DESIGN
 *---------------------------------------------------------------*/
