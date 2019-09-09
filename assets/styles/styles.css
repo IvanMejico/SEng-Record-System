@@ -4,6 +4,27 @@
 body {
     margin: 0;
 }
+form {
+    margin-bottom: 20px;
+}
+a {
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+div a {
+    text-decoration: none;
+    /* color: rgb(73, 73, 73); */
+    color: rgb(104, 102, 102);
+}
+div a:hover {
+    color: #1dabb8;
+}
+hr {
+    border-top: 1px solid #ffffff;
+}
 .main {
     display: grid;
     grid-template-columns: 4fr 2fr;

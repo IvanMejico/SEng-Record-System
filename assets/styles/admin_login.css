@@ -1,5 +1,9 @@
 /* helpers/align.css */
-
+body {
+  background: url("../images/school");
+  background-size: cover;
+  background-position-y: -229px;
+}
 .align {
   -webkit-box-align: center;
       -ms-flex-align: center;
