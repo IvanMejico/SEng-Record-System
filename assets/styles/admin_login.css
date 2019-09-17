@@ -1,10 +1,12 @@
 /* helpers/align.css */
 body {
   background: url("../images/school");
+  background-repeat: no-repeat;
   background-size: cover;
   background-position-y: -229px;
 }
 .align {
+  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -103,6 +105,9 @@ input[type='submit'] {
   cursor: pointer;
 }
 
+.form {
+  box-shadow: 0 0 10px rgb(92, 91, 91);
+}
 .form input[type='text'],
 .form input[type='password'] {
   width: 100%;
@@ -201,4 +206,15 @@ input[type='submit'] {
 
 .login__footer p {
   margin: 0;
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background-color: #000;
+  background-image: url("../images/lattice-pattern.png");
+  background-repeat: repeat;
+  opacity: .7
 }
