@@ -455,7 +455,7 @@ table {
 .ttr-table:last-child {
     margin: 0;
 }
-.ttr-table tr:hover {
+.ttr-table tr:nth-child(n+2):nth-last-child(n+2):hover {
     background-color: #bbafafaa !important;
 }
 .ttr-table img {
@@ -506,7 +506,12 @@ table {
     color: #eaeaea;
     height: 35px;
 }
-
+.ttr-table.stud-list tr:first-child {
+    cursor: default;
+}
+.ttr-table.stud-list tr {
+    cursor: pointer;
+}
 .stud-list tr td {
     overflow: hidden;
     text-overflow: ellipsis;
