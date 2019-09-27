@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SEng Database</title>
+    <link rel="stylesheet" href="../assets/font/flaticon.css">
+    <link rel="stylesheet" href="../assets/styles/dashboard.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/senglogo.png" />
+    <style>
+        /* TEMPORARY STYLES */
+        .ttr-table td:first-child {
+            width: 20%;
+        }
+        .ttr-table td:nth-child(2) {
+            width: 40%;
+        }
+        .ttr-table td:nth-child(3) {
+            width: 20%;
+        }
+        .ttr-table td:nth-child(4) {
+            width: 10%;
+        }
+        .ttr-table td:nth-child(5) {
+            width: 10%;
+        }
+        .ttr-table td > input, select {
+            width: 100%;
+            color: rgb(72, 73, 72);
+            outline: none;
+            border-top: 0px;
+            border-right: 0px;
+            border-left: 0px;
+            border-bottom: 2px solid #f06e29;
+            background: transparent;
+            
+        }
+        .ttr-table td > select {
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+        .ttr-table td > input[type="number"] {
+            width: 38px;
+            padding: 2px 4px;
+            color: rgb(72, 73, 72);
+        }
+        .ttr-table td > input[type="text"] {
+            width: 100%;
+            padding: 2px 5px;
+            line-height: 1em;
+            color: rgb(72, 73, 72);
+        }
+    </style>
+</head>
+<body class="ttr-pinned-sidebar ttr-opened-sidebar">
+    <header class="ttr-header">
+        <div class="ttr-header-wrapper">
+            <div class="ttr-toggle-sidebar">
+                <i class="flaticon-menu ttr-close-icon"></i>
+                <i class="flaticon-close ttr-open-icon"></i>
+            </div>
+            <div class="ttr-logo-box">
+                 <a href="home.html">
+                     <img src="../assets/images/senglogo.png" alt="seng logo" width="45px" height="45px">
+                     <div class="logo-text">
+                         <span>MSC School of Engineering</span>
+                         <span>School Database</span>
+                     </div>
+                 </a>
+            </div>
+            <div class="ttr-header-right">
+                <ul class="ttr-account-control">
+                    <li>
+                        <a href="404.html">
+                            <i class="flaticon-man-user"></i><span>my profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            <i class="flaticon-logout"></i><span>log out</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="ttr-sidebar pinned-sidebar">
+        <div class="ttr-sidebar-wrapper">
+            <nav class="ttr-sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="home.html">
+                            <span class="ttr-icon">
+                                <i class="flaticon-home"></i>
+                            </span>
+                            <span class="ttr-label">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        
+                        <a href="#">
+                            <span class="ttr-icon">
+                                <i class="flaticon-user"></i>
+                            </span>
+                            <span class="ttr-label">Manage Students</span>
+                            <span class="ttr-arrow-icon">
+                                <i class="flaticon-down-arrow"></i>
+                            </span>
+                        </a>
+                        <ul>
+                            <li><a href="add_student.html">Add Student</a></li>
+                            <li><a href="bulk_add_students.html">Bulk Add Students</a></li>
+                            <li><a href="student_list.html">Student List</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="ttr-icon">
+                                <i class="flaticon-book"></i>
+                            </span>
+                            <span class="ttr-label">Manage Programs</span>
+                            <span class="ttr-arrow-icon">
+                                <i class="flaticon-down-arrow"></i>
+                            </span>
+                        </a>
+                        <ul>
+                            <li><a href="add_academic_program.html">Add Program</a></li>
+                            <li><a href="program_information.html">Program Information</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="ttr-icon">
+                                <i class="flaticon-parthenon"></i>
+                            </span>
+                            <span class="ttr-label">Manage School</span>
+                            <span class="ttr-arrow-icon">
+                                <i class="flaticon-down-arrow"></i>
+                            </span>
+                        </a>
+                        <ul>
+                            <li><a href="school_information.html">School Information</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="ttr-icon">
+                                <i class="flaticon-settings"></i>
+                            </span>
+                            <span class="ttr-label">Settings</span>
+                            <span class="ttr-arrow-icon">
+                                <i class="flaticon-down-arrow"></i>
+                            </span>
+                        </a>
+                        <ul>
+                            <li><a href="change_admin_password.html">Update Password</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main class="ttr-main">
+        <div class="container">
+            <div class="db-breadcrumb">
+                <h4 class="breadcrumb-title">Dashboard</h4>
+                <ul class="db-breadcrumb-list">
+                    <li>
+                        <a href=""><i class="flaticon-education"></i>Manage Programs</a>
+                    </li>
+                    <li>
+                        <a href="">Program Information</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <!-- Program Information Panel -->
+                <div class="ttr-main-panel dark-background tabbed">
+                    <div class="tab-container">
+                        <ul class="tab-control">
+                            <li><a href="">BSCE</a></li>
+                            <li><a href="">BSEE</a></li>
+                            <li><a href="">BSECE</a></li>
+                            <li><a class="active" href="">BSCPE</a></li>
+                            <li><a href="">BSME</a></li>
+                        </ul>
+                    </div>
+                    <div class="panel-wrapper">
+                        <div class="panel-buttons">
+                            <span>
+                                <a href="add_academic_program.html"><i class="flaticon-pencil"></i></a>
+                            </span>
+                        </div>
+                        <div class="display-flex-reverse">
+                            <div class="panel-logo-box">
+                                <img src="../assets/images/orgs/ICPEP.png" alt="" width="150px" height="150px">
+                            </div>
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td><strong>Name:</strong></td>
+                                        <td><em><b>Bachelor of Science in Computer Engineering</em></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mission:</strong></td>
+                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem autem nihil aliquid eligendi. Optio, pariatur velit possimus repellendus veritatis doloremque neque voluptas consectetur, dolorem expedita minus! Consectetur quis dolorem harum architecto labore eius animi illum incidunt saepe? Omnis, excepturi consequatur eaque placeat harum eos, ea ex nihil quam corrupti doloremque.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Vision:</strong></td>
+                                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis hic mollitia quibusdam soluta placeat impedit qui atque a nulla exercitationem voluptatem, ex optio doloremque? Obcaecati beatae quasi expedita veniam a.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Goal:</strong></td>
+                                        <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat quidem, autem dignissimos ipsa blanditiis laudantium eius illo. Voluptatibus distinctio maiores libero, recusandae placeat officiis magni, optio molestiae, impedit facilis consequatur blanditiis ducimus sunt amet rerum iste earum ratione voluptas? Obcaecati.</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Offered Programs Panel -->
+            <div class="row">
+                <div class="panel-container full-width">
+                    <div class="ttr-section-head">
+                        <h2 class="section-title">Subjects</h2>
+                    </div>
+                    <div class="ttr-panel">
+                        <div class="panel-heading">
+                            <ul class="tab-control">
+                                <li><a href="">First Year</a></li>
+                                <li><a href="">Second Year</a></li>
+                                <li><a href="">Third Year</a></li>
+                                <li><a href="">Fourth Year</a></li>
+                                <li><a class="active" href="">Fifth Year</a></li>
+                            </ul>
+                        </div>
+                        <div class="panel-content">
+                            <h4>First Semester</h4>
+                            <table class="ttr-table">
+                                <tr>
+                                    <th>Subject Code</th>
+                                    <th>Subject Title</th>
+                                    <th>Type</th>
+                                    <th>Units</th>
+                                    <th><a href="#" class="table-add">Add</a></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="" id="">
+                                    </td>
+                                    <td><input type="text" name="" id=""></td>
+                                    <td><select name="" id="">
+                                        <option value="">Lecture</option>
+                                        <option value="">Laboratory</option>
+                                    </select></td>
+                                    <td><input type="number" name="" id="" value="1""></td>
+                                    <td>
+                                        <div class="table-action">
+                                            <a href="">
+                                                <i class="flaticon-pencil-edit-button"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="flaticon-garbage"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        CPEM2113
+                                    </td>
+                                    <td>Discrete Mathematics</td>
+                                    <td>Lecture</td>
+                                    <td>3</td>
+                                    <td>
+                                        <div class="table-action">
+                                            <a href="">
+                                                <i class="flaticon-pencil-edit-button"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="flaticon-garbage"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        CPEM2113
+                                    </td>
+                                    <td>Discrete Mathematics</td>
+                                    <td>Lecture</td>
+                                    <td>3</td>
+                                    <td>
+                                        <div class="table-action">
+                                            <a href="">
+                                                <i class="flaticon-pencil-edit-button"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="flaticon-garbage"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        CPEM2113
+                                    </td>
+                                    <td>Discrete Mathematics</td>
+                                    <td>Lecture</td>
+                                    <td>3</td>
+                                    <td>
+                                        <div class="table-action">
+                                            <a href="">
+                                                <i class="flaticon-pencil-edit-button"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="flaticon-garbage"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        CPEM2113
+                                    </td>
+                                    <td>Discrete Mathematics</td>
+                                    <td>Lecture</td>
+                                    <td>3</td>
+                                    <td>
+                                        <div class="table-action">
+                                            <a href="">
+                                                <i class="flaticon-pencil-edit-button"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="flaticon-garbage"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        CPEM2113
+                                    </td>
+                                    <td>Discrete Mathematics</td>
+                                    <td>Lecture</td>
+                                    <td>3</td>
+                                    <td>
+                                        <div class="table-action">
+                                            <a href="">
+                                                <i class="flaticon-pencil-edit-button"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="flaticon-garbage"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <h4>Second Semester</h4>
+                            <table class="ttr-table">
+                                <tr>
+                                    <th>Subject Code</th>
+                                    <th>Subject Title</th>
+                                    <th>Type</th>
+                                    <th>Units</th>
+                                    <th><a href="#" class="table-add">Add</a></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        CPEM2113
+                                    </td>
+                                    <td>Discrete Mathematics</td>
+                                    <td>Lecture</td>
+                                    <td>3</td>
+                                    <td>
+                                        <div class="table-action">
+                                            <a href="">
+                                                <i class="flaticon-pencil-edit-button"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="flaticon-garbage"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        CPEM2113
+                                    </td>
+                                    <td>Discrete Mathematics</td>
+                                    <td>Lecture</td>
+                                    <td>3</td>
+                                    <td>
+                                        <div class="table-action">
+                                            <a href="">
+                                                <i class="flaticon-pencil-edit-button"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="flaticon-garbage"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        CPEM2113
+                                    </td>
+                                    <td>Discrete Mathematics</td>
+                                    <td>Lecture</td>
+                                    <td>3</td>
+                                    <td>
+                                        <div class="table-action">
+                                            <a href="">
+                                                <i class="flaticon-pencil-edit-button"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="flaticon-garbage"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        CPEM2113
+                                    </td>
+                                    <td>Discrete Mathematics</td>
+                                    <td>Lecture</td>
+                                    <td>3</td>
+                                    <td>
+                                        <div class="table-action">
+                                            <a href="">
+                                                <i class="flaticon-pencil-edit-button"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="flaticon-garbage"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        CPEM2113
+                                    </td>
+                                    <td>Discrete Mathematics</td>
+                                    <td>Lecture</td>
+                                    <td>3</td>
+                                    <td>
+                                        <div class="table-action">
+                                            <a href="">
+                                                <i class="flaticon-pencil-edit-button"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="flaticon-garbage"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        CPEM2113
+                                    </td>
+                                    <td>Discrete Mathematics</td>
+                                    <td>Lecture</td>
+                                    <td>3</td>
+                                    <td>
+                                        <div class="table-action">
+                                            <a href="">
+                                                <i class="flaticon-pencil-edit-button"></i>
+                                            </a>
+                                            <a href="">
+                                                <i class="flaticon-garbage"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <!-- <script src="assets/js/admin.js"></script> -->
+    <script src="assets/js/newjs.js"></script>
+</body>
+</html>
