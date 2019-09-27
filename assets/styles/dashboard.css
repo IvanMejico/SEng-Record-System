@@ -495,13 +495,13 @@ table {
     font-size: .9em;
     margin: 0;
 }
-.ttr-table tr:nth-child(even) {
+.ttr-table tbody tr:nth-child(even) {
     background-color: #eceeed;
 }
-.ttr-table tr:nth-child(odd) {
+.ttr-table tbody tr:nth-child(odd) {
     background-color: #ffffff;
 }
-.ttr-table tr:first-child {
+.ttr-table thead tr {
     background-color: #c9d1ce;
     color: #eaeaea;
     height: 35px;
