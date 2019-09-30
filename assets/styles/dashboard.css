@@ -455,8 +455,8 @@ table {
 .ttr-table:last-child {
     margin: 0;
 }
-.ttr-table tr:nth-child(n+2):nth-last-child(n+2):hover {
-    background-color: #bbafafaa !important;
+.ttr-table tbody tr:hover {
+    background-color: #c7e2ebaa !important;
 }
 .ttr-table img {
     vertical-align: middle;
@@ -481,11 +481,18 @@ table {
     background-color: #e5ebe9;
     color: #04242e;
     border: 1px solid #c0c4c5;
+    cursor: pointer;
 }
-.ttr-table .table-action a:first-child {
+.ttr-table .table-action a:active {
+    background-color: #a2a7a8 !important;
+    transition: none !important;
+}
+.ttr-table .table-action a.table-edit,
+.ttr-table .table-action a.table-save {
     border-radius: 6px 2px 2px 6px;
 }
-.ttr-table .table-action a:last-child {
+.ttr-table .table-action a.table-delete,
+.ttr-table .table-action a.table-cancel {
     border-radius: 2px 6px 6px 2px;
 }
 .ttr-table .table-action a:hover {
@@ -536,9 +543,13 @@ table {
     text-decoration: none;
     color: #fff;
     text-align: center;
+    cursor: pointer;
 }
 .table-add:hover {
     background-color: #068a64;
+}
+.table-add:active {
+    background-color: #067454;
 }
 
 
