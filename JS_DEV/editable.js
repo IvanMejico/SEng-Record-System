@@ -14,31 +14,49 @@
  * 8) Replace each respective elements with text content.
  * 9) When cancel is clicked, replace each respective elements with text without saving the inputted data.
  */
-
+var test;
 
 var tempRowContentBuffer = {};
 
 // form Constants
 const editOptions = {
+    /**
+     * Generates a form element using the passed ID string.
+     * @param {string} rowId ID of the table row <tr> element.
+     */
     getForm : function (rowId) {
         return `<form id=form${rowId}></form>`
     },
+
+    /**
+     * Generates a text box from the with the provided parameters.
+     * @param {string} rowId Id of the table row <tr> that contains the table data cell in which a text box will be generated.
+     * @param {string} cellName Id of the table data cell <td> in which a text box will be generated.
+     */
     getText : function(rowId, cellName) {
         return `<input type="text" name="${cellName}" value="${tempRowContentBuffer[rowId][cellName]}" form="form${rowId}"/>`; // R
     },
+
+    /**
+     * Generates select box with predefined options with the provided paremeters.
+     * @param {string} rowId Id of the table row <tr> that contains the table data cell in which a select box will be generated.
+     * @param {string} cellName Id of the table data cell <td> in which a select box will be generated.
+     */
     getSelect : function(rowId, cellName) {
+        // *I'll probably make it so that it could have dynamic options.
+
         var lec="", lab="";
         tempRowContentBuffer[rowId][cellName] == "Lecture" ? lec="selected " : lab="selected ";
         return `<select name="${cellName}" form="form${rowId}"><option ${lec}value="lecture">Lecture</option><option ${lab}value="laboratory">Laboratory</option></select>`            
     },
+
+    /**
+     * Generates number box with predefined options with the provided parameters.
+     * @param {string} rowId Id of the table row <tr> that contains the table data cell in which a select box will be generated.
+     * @param {string} cellName Id of the table data cell <td> in which a select box will be generated.
+     */
     getNumber : function(rowId, cellName) {
-        return `<input type="number" name="${cellName}" form="form${rowId}" value="${tempRowContentBuffer[rowId][cellName]}">` // R
-    },
-    getButtons : function(rowId) {
-        return `<div class="table-action"><a class="table-save" form="form${rowId}"><i class="flaticon-save"></i></a><a class="table-cancel" form="form${rowId}"><i class="flaticon-edit-tools"></i></a></div>`;
-    },
-    getDefaultButtons : function () {
-        return `<div class="table-action"><a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a></div>`;
+        return `<input type="number" name="${cellName}" form="form${rowId}" value="${tempRowContentBuffer[rowId][cellName]}">`
     }
 }
 const icons = {
@@ -72,6 +90,18 @@ function getParentTable(addButton) {
     let table = thead.parentNode;
 
     return table;
+}
+
+/**
+ * Removes all children of a parent DOM object.
+ * @param {HTMLObjectElement} parentObject Parent object.
+ */
+function removeAllChildren(parentObject) {
+    let len = parentObject.children.length;
+    for (var i=0; i < len; i++) {
+        var child = parentObject.children[0];
+        parentObject.removeChild(child);
+    }
 }
 
 /**
@@ -129,11 +159,11 @@ function inlineUpdateCell(tableCellObj, tableRowObj) {
         case "number":
             cellContent += editOptions.getNumber(rowId, cellName);
             break;
-        case "buttons":
-            cellContent += editOptions.getButtons(rowId);
-            break;
     }
     tableCellObj.innerHTML = cellContent;
+
+    if (tableCellObj.dataset.inlinetype == "buttons")         
+        tableCellObj.appendChild(generateButtons('save', 'cancel'));
 }
 
 /**
@@ -206,12 +236,6 @@ function inlineEdit() {
 
         inlineUpdateCell(tableCellObj, tableRowObj);
     }
-    
-    // Add event handler for save and cancel button
-    var save = document.querySelector(`#${rowId} .table-action .table-save`);
-    var cancel = document.querySelector(`#${rowId} .table-action .table-cancel`);
-    save.addEventListener('click', inlineSave);
-    cancel.addEventListener('click', inlineCancel);
 }
 
 /**
@@ -246,14 +270,10 @@ function inlineCancel() {
             if(tableCellObj.dataset.inlinetype != "buttons") {
                 tableCellObj.innerHTML = tempRowContentBuffer[rowId][cellName];
             } else {
-                tableCellObj.innerHTML = editOptions.getDefaultButtons();
+                removeAllChildren(tableCellObj);
+                tableCellObj.appendChild(generateButtons('edit','delete'));
             }
         }
-        // Add event handler for save and cancel button
-        var save = document.querySelector(`#${rowId} .table-action .table-edit`);
-        var cancel = document.querySelector(`#${rowId} .table-action .table-delete`);
-        save.addEventListener('click', inlineEdit);
-        cancel.addEventListener('click', inlineDelete);
     }
 }
 
