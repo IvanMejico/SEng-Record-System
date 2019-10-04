@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../assets/styles/dashboard.css">
     <link rel="shortcut icon" type="image/x-icon" href="../assets/images/senglogo.png" />
     <style>
+        
         /* TEMPORARY STYLES */
         .ttr-table td:first-child {
             width: 20%;
@@ -50,6 +51,10 @@
             padding: 2px 5px;
             line-height: 1em;
             color: rgb(72, 73, 72);
+        }
+
+        #secondyear, #thirdyear, #fourthyear,#fifthyear {
+            display: none;
         }
     </style>
     <script src="editable.js"></script>
@@ -186,7 +191,7 @@
                             <li><a href="">BSCE</a></li>
                             <li><a href="">BSEE</a></li>
                             <li><a href="">BSECE</a></li>
-                            <li><a class="active" href="">BSCPE</a></li>
+                            <li><a class="active">BSCPE</a></li>
                             <li><a href="">BSME</a></li>
                         </ul>
                     </div>
@@ -231,17 +236,17 @@
                     <div class="ttr-section-head">
                         <h2 class="section-title">Subjects</h2>
                     </div>
-                    <div class="ttr-panel">
+                    <div id="ttr-panel">
                         <div class="panel-heading">
                             <ul class="tab-control">
-                                <li><a href="">First Year</a></li>
-                                <li><a href="">Second Year</a></li>
-                                <li><a href="">Third Year</a></li>
-                                <li><a href="">Fourth Year</a></li>
-                                <li><a class="active" href="">Fifth Year</a></li>
+                                <li><a id="tabFirstYear" class="active tabBtn" data-tabname="firstyear">First Year</a></li>
+                                <li><a id="tabSecondYear" class="tabBtn" data-tabname="secondyear">Second Year</a></li>
+                                <li><a id="tabThirdYear" class="tabBtn" data-tabname="thirdyear">Third Year</a></li>
+                                <li><a id="tabFourthYear" class="tabBtn" data-tabname="fourthyear">Fourth Year</a></li>
+                                <li><a id="tabFifthYear" class="tabBtn" data-tabname="fifthyear">Fifth Year</a></li>
                             </ul>
                         </div>
-                        <div class="panel-content">
+                        <div class="panel-content" id="firstyear">
                             <h4>First Semester</h4>
                             <table class="ttr-table">
                                 <thead>
@@ -349,6 +354,435 @@
                                 </tbody>
                             </table>
                         </div>
+                        <div class="panel-content" id="secondyear">
+                            <h4>First Semester</h4>
+                            <table class="ttr-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subject Code</th>
+                                        <th>Subject Title</th>
+                                        <th>Type</th>
+                                        <th>Units</th>
+                                        <th><a class="table-add">Add</a></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    <tr id="CPEM2113">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">ENSC2313</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Chemistry</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">3</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr id="CPEM2615">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">HUM2412</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Philosophy</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Laboratory</td>
+                                        <td data-inlinetype="number" data-inlinename="units">3</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr id="CPEM2213">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">CPE4142</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Software Engineering</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Laboratory</td>
+                                        <td data-inlinetype="number" data-inlinename="units">3</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h4>Second Semester</h4>
+                            <table class="ttr-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subject Code</th>
+                                        <th>Subject Title</th>
+                                        <th>Type</th>
+                                        <th>Units</th>
+                                        <th><a class="table-add">Add</a></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="MATH2221">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">MATH2521</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Advanced Algebra</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">2</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr id="MATH2222">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">HUM2415</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Arts and Appreciation</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">2</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr id="MATH2225">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">MATH2225</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Solid Mensuration</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">4</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel-content" id="thirdyear">
+                            <h4>First Semester</h4>
+                            <table class="ttr-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subject Code</th>
+                                        <th>Subject Title</th>
+                                        <th>Type</th>
+                                        <th>Units</th>
+                                        <th><a class="table-add">Add</a></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="CPEM2615">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">HUM2412</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Philosophy</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Laboratory</td>
+                                        <td data-inlinetype="number" data-inlinename="units">3</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr id="CPEM2615">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">HUM2412</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Philosophy</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Laboratory</td>
+                                        <td data-inlinetype="number" data-inlinename="units">3</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr id="CPEM2615">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">HUM2412</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Philosophy</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Laboratory</td>
+                                        <td data-inlinetype="number" data-inlinename="units">3</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h4>Second Semester</h4>
+                            <table class="ttr-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subject Code</th>
+                                        <th>Subject Title</th>
+                                        <th>Type</th>
+                                        <th>Units</th>
+                                        <th><a class="table-add">Add</a></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="MATH2222">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">HUM2415</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Arts and Appreciation</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">2</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr id="MATH2225">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">MATH2225</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Solid Mensuration</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">4</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel-content" id="fourthyear">
+                            <h4>First Semester</h4>
+                            <table class="ttr-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subject Code</th>
+                                        <th>Subject Title</th>
+                                        <th>Type</th>
+                                        <th>Units</th>
+                                        <th><a class="table-add">Add</a></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr id="MATH2222">
+                                    <td data-inlinetype="text" data-inlinename="subjectcode">HUM2415</td>
+                                    <td data-inlinetype="text" data-inlinename="subjecttitle">Arts and Appreciation</td>
+                                    <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                    <td data-inlinetype="number" data-inlinename="units">2</td>
+                                    <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                        <div class="table-action">
+                                            <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr id="MATH2222">
+                                    <td data-inlinetype="text" data-inlinename="subjectcode">HUM2415</td>
+                                    <td data-inlinetype="text" data-inlinename="subjecttitle">Arts and Appreciation</td>
+                                    <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                    <td data-inlinetype="number" data-inlinename="units">2</td>
+                                    <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                        <div class="table-action">
+                                            <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr id="MATH2222">
+                                    <td data-inlinetype="text" data-inlinename="subjectcode">HUM2415</td>
+                                    <td data-inlinetype="text" data-inlinename="subjecttitle">Arts and Appreciation</td>
+                                    <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                    <td data-inlinetype="number" data-inlinename="units">2</td>
+                                    <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                        <div class="table-action">
+                                            <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr id="MATH2222">
+                                    <td data-inlinetype="text" data-inlinename="subjectcode">HUM2415</td>
+                                    <td data-inlinetype="text" data-inlinename="subjecttitle">Arts and Appreciation</td>
+                                    <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                    <td data-inlinetype="number" data-inlinename="units">2</td>
+                                    <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                        <div class="table-action">
+                                            <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr id="MATH2222">
+                                    <td data-inlinetype="text" data-inlinename="subjectcode">HUM2415</td>
+                                    <td data-inlinetype="text" data-inlinename="subjecttitle">Arts and Appreciation</td>
+                                    <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                    <td data-inlinetype="number" data-inlinename="units">2</td>
+                                    <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                        <div class="table-action">
+                                            <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr id="CPEM2615">
+                                    <td data-inlinetype="text" data-inlinename="subjectcode">HUM2412</td>
+                                    <td data-inlinetype="text" data-inlinename="subjecttitle">Philosophy</td>
+                                    <td data-inlinetype="select" data-inlinename="subjecttype">Laboratory</td>
+                                    <td data-inlinetype="number" data-inlinename="units">3</td>
+                                    <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                        <div class="table-action">
+                                            <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <h4>Second Semester</h4>
+                            <table class="ttr-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subject Code</th>
+                                        <th>Subject Title</th>
+                                        <th>Type</th>
+                                        <th>Units</th>
+                                        <th><a class="table-add">Add</a></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="MATH2222">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">HUM2415</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Arts and Appreciation</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">2</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr id="MATH2225">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">MATH2225</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Solid Mensuration</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">4</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr id="MATH2225">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">MATH2225</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Solid Mensuration</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">4</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr id="MATH2225">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">MATH2225</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Solid Mensuration</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">4</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel-content" id="fifthyear">
+                            <h4>First Semester</h4>
+                            <table class="ttr-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subject Code</th>
+                                        <th>Subject Title</th>
+                                        <th>Type</th>
+                                        <th>Units</th>
+                                        <th><a class="table-add">Add</a></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="CPEM2615">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">NASC1111</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Biology</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Laboratory</td>
+                                        <td data-inlinetype="number" data-inlinename="units">3</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr id="CPEM2615">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">ENG4111</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">English</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">3</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr id="CPEM2615">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">MATH3333</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Calculus</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">3</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <h4>Second Semester</h4>
+                            <table class="ttr-table">
+                                <thead>
+                                    <tr>
+                                        <th>Subject Code</th>
+                                        <th>Subject Title</th>
+                                        <th>Type</th>
+                                        <th>Units</th>
+                                        <th><a class="table-add">Add</a></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="MATH2222">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">HUM2415</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Arts and Appreciation</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">2</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr id="MATH2222">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">HUM2415</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Arts and Appreciation</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">2</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr id="MATH2222">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">HUM2415</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Arts and Appreciation</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">2</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr id="MATH2225">
+                                        <td data-inlinetype="text" data-inlinename="subjectcode">MATH2225</td>
+                                        <td data-inlinetype="text" data-inlinename="subjecttitle">Solid Mensuration</td>
+                                        <td data-inlinetype="select" data-inlinename="subjecttype">Lecture</td>
+                                        <td data-inlinetype="number" data-inlinename="units">4</td>
+                                        <td data-inlinetype="buttons" data-inlinename="actionbuttons">
+                                            <div class="table-action">
+                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -358,5 +792,6 @@
     <script src="../assets/js/jquery-3.4.1.min.js"></script>
     <!-- <script src="assets/js/admin.js"></script> -->
     <script src="../assets/js/newjs.js"></script>
+    <script src="../JS_DEV/main.js"></script>
 </body>
 </html>

@@ -394,7 +394,7 @@ MAIN CONTENT STYLES
 .panel-container {
     display: inline-block;
 }
-.ttr-panel {
+#ttr-panel {
     border: 1px solid #282a3c;
     border-radius: 4px;
     box-shadow: 0 0 20px rgb(148, 145, 145);
@@ -422,6 +422,7 @@ MAIN CONTENT STYLES
 .panel-heading .tab-control li a {
     color: #fff;
     line-height: 2em;
+    cursor: pointer;
 }
 .panel-heading .tab-control li a:hover {
     background: #082f3b;
