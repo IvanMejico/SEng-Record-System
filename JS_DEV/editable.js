@@ -68,7 +68,7 @@ const icons = {
 // Form literals for generating a new row
 const formLiterals = {
     form: '<form id="formNewRecord"></form>',
-    subjectCode: '<input type="text name="subjectcode" form="formNewRecord"/>',
+    subjectCode: '<input type="text" name="subjectcode" form="formNewRecord"/>',
     subjectTitle: '<input type="text" name="subject" form="formNewRecord"/>',
     subjectType: '<select name="subjecttype" form="formNewRecord"><option selected value="lecture">Lecture</option><option value="laboratory">Laboratory</option></select>',
     subjectUnits: '<input type="number" name="units" form="formNewRecord" value="1"/>',
@@ -246,19 +246,69 @@ function inlineDelete() {
     deleteTableRow(tableRow);
 }
 
+
+/**
+ * NOTES: 
+ *  * the buffer should be updated
+ *  * html td elements should be updated (datasets/data atributes, innerText)
+ * 
+ * inlineSave() to dos: 
+ *  - Get the values from the form elements.
+ *  - Check if the rowid from the text box exists in the buffer
+ *      - if it exists, just delete that object.
+ *      - save the new data to the buffer.
+ *  - Save changes to the database. (The same process is quite same with the buffer)
+ *      - Check if the rowid(subject id) from <tr> exists.
+ *      - Save with new data and replace the subject id if changed as well.
+ *  - Update DOM.
+ *  - Change the buttons.
+ */
+
+// To do for duplicates:
+// *NEW ROW*
+// Check for a duplicate subject code in the database.
+// If there's none, add data to buffer and insert new data to the database
+// *EDIT ROW*
+// Check for a duplicate for the inputed subject id
+//  - if there's duplicate, do not proceed(do not update the row) and show snackbar
+// Check for the current subject id from <tr> and delete it in the buffer
+// change DOM(update row)
+
 /**
  * Handles AJAX requests for saving files to the database.
  */
 function inlineSave() {
-    console.log('save');
+    let tableRow = getTableRow(this)
+    let subjectCode = tableRow.children[0].children[1].value;
+
+    if (tableRow.id !== 'newRow') {
+        // Check if object name exists in the temporary buffer
+        if (tempRowContentBuffer.hasOwnProperty(tableRow.id));
+            // Do something here...Probably
+    } else {
+        delete tempRowContentBuffer[tableRow.id];
+    }
+
+    // Initialize new property
+    tempRowContentBuffer[subjectCode] = {};
+
+    for (i=0; i < tableRow.children.length-1; i++) {
+        var tableCellObj = tableRow.children[i];
+        var cellName = tableCellObj.dataset.inlinename;
+        
+        value = i == 0 ? tableCellObj.children[1].value : tableCellObj.children[0].value
+
+        tempRowContentBuffer[subjectCode][cellName] = value;
+    }
+    console.log(tempRowContentBuffer)
 }
 
 /**
  * Cancels row edit.
  */
 function inlineCancel() {
-    var tableRow = getTableRow(this);
-    var rowId = tableRow.id;
+    let tableRow = getTableRow(this);
+    let rowId = tableRow.id;
 
     if(tempRowContentBuffer[rowId] === undefined) {
         tableRow.parentNode.removeChild(tableRow);
