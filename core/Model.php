@@ -1,6 +1,7 @@
 <?php
 
 namespace Core;
+// use H; // for debugging purposes only
 
 class Model {
     protected $_db, $_table, $_modelName, $_softDelete = false, $_validates=true, $_validationErrors=[];
@@ -121,6 +122,7 @@ class Model {
 
     public function validator() {}
 
+    // Checks the properties of the validator object for pass or fail.
     public function runValidation($validator) {
         $key = $validator->field;
         if(!$validator->success) {

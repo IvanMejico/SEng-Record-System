@@ -5,25 +5,39 @@ namespace App\Controllers;
 use Core\Controller;
 use App\Models\Login;
 
+// debugging
+use Core\H;
+
 class LoginController extends Controller {
     public function __construct($controller, $action) {
         parent::__construct($controller, $action);
         $this->view->setLayout('login');
-        // $this->load_model('Users');      // No models and database yet
+        $this->load_model('Users');      // No models and database yet
     }
 
     public function indexAction() {
         $loginModel = new Login();
         if($this->request->isPost()) {
-            // TODO: CSRF check.
-            
-
-            // TODO: Form validation.
+            // Form validation.
+            $this->request->csrfCheck();
+            $loginModel->assign($this->request->get());
+            $loginModel->validator();
+            if($loginModel->validationPassed()) {
+                $user = $this->UsersModel->findByUsername($_POST['username']); // returns an object of User class containing results as attributes
+                if($user && password_verify($this->request->get('password'), $user->password)) {
+                    $user->login(false); // Defaulted remember to false. Might change later but I don't see any need now.
+                } else {
+                    $loginModel->addErrorMessage('username', 'Incorrect password.');
+                }
+            }
         }
 
         // TODO: Display errors.
+        $this->view->login = $loginModel;
 
+        $this->view->pageTitle = "Log in";
         $this->view->bodyAttr = 'class="ttr-pinned-sidebar ttr-opened-sidebar"';    // Maket this better.
+
         $this->view->render('login/index');
     }
     

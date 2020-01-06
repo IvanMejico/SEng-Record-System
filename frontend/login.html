@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="assets/styles/styles.css">
     <link rel="stylesheet" href="assets/font/flaticon.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/senglogo.png" />
+
+    <style>
+        .error {
+            margin-bottom: 10px;
+            padding: 5px 0;
+            background-color: rgb(238, 194, 194);
+            border: 1px solid rgb(236, 142, 142);
+            border-radius: 3px;
+        }
+
+        .error span {
+            color: red;
+            font-size: .9em;
+            /* font-style: italic; */
+        }
+    </style>
+
 </head>
 <body class="ttr-pinned-sidebar ttr-opened-sidebar">
     <div class="main">
@@ -20,21 +37,24 @@
                 <div>
                     <div>
                         <form action="home.html" class="form">
+                            <div class="error">
+                                <span>Incorrect password</span>
+                            </div>
                             <div class="form-group">
                                 <span class="flaticon-education"></span>
                                 <!-- <input type="text" placeholder="username"> -->
-                                <select name="" id="">
-                                    <option value="">Department</option>
-                                    <option value="">BSCE</option>
-                                    <option value="">BSEE</option>
-                                    <option value="">BSECE</option>
-                                    <option value="">BSCpE</option>
-                                    <option value="">BSME</option>
+                                <select name="username" required>
+                                    <option selected disabled>selected department</option>
+                                    <option value="bsce">BSCE</option>
+                                    <option value="bsee">BSEE</option>
+                                    <option value="bsece">BSECE</option>
+                                    <option value="bscpe">BSCpE</option>
+                                    <option value="bsme">BSME</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <span class="flaticon-lock"></span>
-                                <input type="password" placeholder="password">
+                                <input type="password" name="password" placeholder="password" required>
                             </div>
                             <div class="button">
                                 <input type="submit" value="Log In">

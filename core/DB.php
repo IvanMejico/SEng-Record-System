@@ -4,6 +4,8 @@ namespace Core;
 use \PDO;
 use \PDOException;
 
+use core\H; // For debugging purposes only
+
 /**
  * This pretty much covers all the database processes and CRUD operations
  */
@@ -29,7 +31,7 @@ class DB {
         return self::$_instance;
     }
 
-    // Executes the query and return the object instance
+    // Executes the query and return the db object for chaining
     public function query($sql, $params = [], $class = false) {
         $this->_error = false;
         if($this->_query = $this->_pdo->prepare($sql)) {
@@ -98,7 +100,7 @@ class DB {
         }
 
         $sql = "SELECT * FROM {$table}{$conditionString}{$order}{$limit}";
-        if($this->query($sql, $bind, $class)) {
+        if(!$this->query($sql, $bind, $class)->error()) {
             if(!count($this->_result)) return false;
             return true;
         }

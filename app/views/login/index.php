@@ -1,3 +1,7 @@
+<?php
+    use Core\FH;
+?>
+
 <?php $this->start('head') ?>
 <link rel="stylesheet" href="<?=PROOT?>assets/styles/login.css">
 <link rel="stylesheet" href="<?=PROOT?>assets/font/flaticon.css">
@@ -14,22 +18,24 @@
             </div>
             <div>
                 <div>
-                    <form action="home.html" class="form">
+                    <form class="form" action="" method="post">
+                        <?= FH::csrfInput() ?>
                         <div class="form-group">
                             <span class="flaticon-education"></span>
                             <!-- <input type="text" placeholder="username"> -->
-                            <select name="" id="">
-                                <option value="">Department</option>
-                                <option value="">BSCE</option>
-                                <option value="">BSEE</option>
-                                <option value="">BSECE</option>
-                                <option value="">BSCpE</option>
-                                <option value="">BSME</option>
+                            <select name="username" id="">
+                                <?php // TODO: Generate these options automatically. ?>
+                                <option selected disabled>select department</option>
+                                <option value="bsce">BSCE</option>
+                                <option value="bsee">BSEE</option>
+                                <option value="bsece">BSECE</option>
+                                <option value="bscpe">BSCpE</option>
+                                <option value="bsme">BSME</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <span class="flaticon-lock"></span>
-                            <input type="password" placeholder="password">
+                            <input type="password" name="password" placeholder="password">
                         </div>
                         <div class="button">
                             <input type="submit" value="Log In">
