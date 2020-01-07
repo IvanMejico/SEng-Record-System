@@ -140,7 +140,7 @@ class Model {
     }
 
     public function addErrorMessage($field, $msg)    {
-        $this->_validate = false;
+        $this->_validates = false;
         $this->_validationErrors[$field] = $msg;
     }
 

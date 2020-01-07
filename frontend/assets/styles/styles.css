@@ -61,6 +61,7 @@ hr {
     line-height: 2em;
     flex-basis: 15%;
     border-right: 1px solid rgb(190, 190, 190);
+    border-radius: 5px 0 0 5px;
     background-color: rgb(224, 220, 220);
 }
 .form-group span:before {
@@ -90,13 +91,14 @@ hr {
     margin-bottom: 10px;
     border: 1px solid rgb(190, 190, 190);
     display: flex;
-    border-radius: 3px;
+    border-radius: 5px;
     background-color: inherit;
 }
 .form-group select,
 .form-group input[type="text"],
 .form-group input[type="password"] {
     border: none;
+    border-radius: 0 5px 5px 0;
     outline: none;
     padding: 3px 10px;
     flex-basis: 90%;

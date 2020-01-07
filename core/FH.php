@@ -74,11 +74,16 @@ class FH {
     }
 
     public static function displayErrors($errors) {
+        // TODO: Change this.
         $hasErrors = (!empty($errors)) ? ' has-errors' : '';
-        $html = '<div class="form-errors"><ul class="bg-danger' . $hasErrors . '">';
+        $html = '<div class="message"><ul class="' . $hasErrors . '">';
         foreach($errors as $field => $error) {
-            $html .= '<li class="text-danger">'.$error.'</li>';
-            $html .= '<script>jQuery("document").ready(function(){jQuery("#'.$field.'").parent().closest("div").addClass("has-error");});</script>';
+            $html .= '<li><span>'.$error.'</span></li>';
+            $html .= '<script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            document.getElementById("'. $field . '").parentElement.classList.add("has-errors")
+                        });
+                      </script>';
         }
         $html .= '</ul></div>';
         return $html;

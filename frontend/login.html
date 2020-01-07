@@ -10,18 +10,27 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/senglogo.png" />
 
     <style>
-        .error {
+        .message {
             margin-bottom: 10px;
-            padding: 5px 0;
             background-color: rgb(238, 194, 194);
-            border: 1px solid rgb(236, 142, 142);
             border-radius: 3px;
+            text-align: left;
         }
 
-        .error span {
+        .message span {
             color: red;
             font-size: .9em;
             /* font-style: italic; */
+        }
+
+        .message .has-errors {
+            margin: 0;
+            padding: 15px 20px;
+            list-style: none;
+        }
+
+        div.has-errors {
+            border-color: rgb(219, 78, 78);
         }
     </style>
 
@@ -37,14 +46,29 @@
                 <div>
                     <div>
                         <form action="home.html" class="form">
-                            <div class="error">
-                                <span>Incorrect password</span>
+
+                            <div class="message">
+                                <ul class="has-errors">
+                                    <li><span>Please select a department id.</span></li>
+                                    <script>
+                                        document.addEventListener("DOMContentLoaded", function(){
+                                            document.getElementById('username').parentElement.classList.add('has-errors')
+                                        });
+                                    </script>
+                                    <li><span>Entered password is incorrect.</span></li>
+                                    <script>
+                                        document.addEventListener("DOMContentLoaded", function(){
+                                            document.getElementById('password').parentElement.classList.add('has-errors')
+                                        });
+                                    </script>
+                                </ul>
                             </div>
+
                             <div class="form-group">
                                 <span class="flaticon-education"></span>
                                 <!-- <input type="text" placeholder="username"> -->
-                                <select name="username" required>
-                                    <option selected disabled>selected department</option>
+                                <select name="username" id="username">
+                                    <option selected disabled>selected department ID</option>
                                     <option value="bsce">BSCE</option>
                                     <option value="bsee">BSEE</option>
                                     <option value="bsece">BSECE</option>
@@ -54,7 +78,7 @@
                             </div>
                             <div class="form-group">
                                 <span class="flaticon-lock"></span>
-                                <input type="password" name="password" placeholder="password" required>
+                                <input type="password" name="password" id="password" placeholder="password">
                             </div>
                             <div class="button">
                                 <input type="submit" value="Log In">
