@@ -5,6 +5,7 @@ namespace App\Controllers;
 use Core\Controller;
 use Core\Router;
 use App\Models\Login;
+use App\Models\Users;
 
 // debugging
 use Core\H;
@@ -70,5 +71,11 @@ class LoginController extends Controller {
         $this->view->pageTitle = "Administrator Log In";
         $this->view->bodyAttr = 'class="align"';    // Maket this better.
         $this->view->render('login/admin');
+    }
+
+    public function logoutAction() {
+        if(Users::currentUser()) {
+            Users::currentUser()->logout();
+        }
     }
 }
