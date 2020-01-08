@@ -12,8 +12,8 @@ class Login extends Model {
     }
     
     public function validator() {
-        $this->runValidation(new RequiredValidator($this,['field'=>'username', 'msg'=>'Username is required']));
-        $this->runValidation(new RequiredValidator($this,['field'=>'password', 'msg'=>'Password is required']));
+        $this->runValidation(new RequiredValidator($this,['field'=>'username', 'msg'=>'No department selected.']));
+        $this->runValidation(new RequiredValidator($this,['field'=>'password', 'msg'=>'Enter password.']));
     }
 
     public function getRememberMeChecked() {

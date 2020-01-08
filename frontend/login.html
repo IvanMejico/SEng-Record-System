@@ -20,7 +20,6 @@
         .message span {
             color: red;
             font-size: .9em;
-            /* font-style: italic; */
         }
 
         .message .has-errors {
@@ -67,13 +66,19 @@
                             <div class="form-group">
                                 <span class="flaticon-education"></span>
                                 <!-- <input type="text" placeholder="username"> -->
+
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function(){
+                                        option = document.getElementById('bscpe').selected = true;
+                                    });
+                                </script>
                                 <select name="username" id="username">
                                     <option selected disabled>selected department ID</option>
-                                    <option value="bsce">BSCE</option>
-                                    <option value="bsee">BSEE</option>
-                                    <option value="bsece">BSECE</option>
-                                    <option value="bscpe">BSCpE</option>
-                                    <option value="bsme">BSME</option>
+                                    <option id="bsce" value="bsce">BSCE</option>
+                                    <option id="bsee" value="bsee">BSEE</option>
+                                    <option id="bsece" value="bsece">BSECE</option>
+                                    <option id="bscpe" value="bscpe">BSCpE</option>
+                                    <option id="bsme" value="bsme">BSME</option>
                                 </select>
                             </div>
                             <div class="form-group">

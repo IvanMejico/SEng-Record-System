@@ -35,7 +35,6 @@ class LoginController extends Controller {
             }
         }
 
-        // TODO: Display errors.
         $this->view->login = $loginModel;
         $this->view->displayErrors = $loginModel->getErrorMessages();
 

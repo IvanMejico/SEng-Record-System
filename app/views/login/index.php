@@ -26,8 +26,9 @@
         list-style: none;
     }
 
-    div.has-errors {
+    .has-errors {
         border-color: rgb(219, 78, 78);
+        /* border-radius: 5px; */
     }
 </style>
 <?php $this->end() ?>
@@ -50,12 +51,20 @@
                             <!-- <input type="text" placeholder="username"> -->
                             <select name="username" id="username">
                                 <?php // TODO: Generate these options automatically. ?>
+                                <?php
+                                    if($this->login->username) {
+                                        $html .= '<script>document.addEventListener("DOMContentLoaded", function(){
+                                                option = document.getElementById("'.$this->login->username.'").selected = true;
+                                                });</script>';
+                                        echo $html;
+                                    }
+                                ?>
                                 <option selected disabled>select department</option>
-                                <option value="bsce">BSCE</option>
-                                <option value="bsee">BSEE</option>
-                                <option value="bsece">BSECE</option>
-                                <option value="bscpe">BSCpE</option>
-                                <option value="bsme">BSME</option>
+                                <option id="bsce" value="bsce">BSCE</option>
+                                <option id="bsee" value="bsee">BSEE</option>
+                                <option id="bsece" value="bsece">BSECE</option>
+                                <option id="bscpe" value="bscpe">BSCpE</option>
+                                <option id="bsme" value="bsme">BSME</option>
                             </select>
                         </div>
                         <div class="form-group">
