@@ -76,11 +76,12 @@ class FH {
     public static function displayErrors($errors) {
         // TODO: Change this.
         $hasErrors = (!empty($errors)) ? ' has-errors' : '';
-        $html = '<div class="message"><ul class="' . $hasErrors . '">';
+        $html = '<div class="message"><ul>';
         foreach($errors as $field => $error) {
             $html .= '<li><span>'.$error.'</span></li>';
             $html .= '<script>
                         document.addEventListener("DOMContentLoaded", function() {
+                            document.getElementsByClassName("message")[0].style.display = "block";
                             document.getElementById("'. $field . '").parentElement.classList.add("has-errors")
                         });
                       </script>';

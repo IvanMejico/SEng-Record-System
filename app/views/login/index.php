@@ -9,26 +9,22 @@
 <style>
     .message {
         margin-bottom: 10px;
+        padding: 15px 20px;
         background-color: rgb(238, 194, 194);
         border-radius: 3px;
         text-align: left;
-    }
-
-    .message span {
         color: red;
         font-size: .9em;
-        /* font-style: italic; */
+        display: none;
     }
-
-    .message .has-errors {
+    .message ul {
         margin: 0;
-        padding: 15px 20px;
+        padding: 0;
         list-style: none;
     }
 
     .has-errors {
         border-color: rgb(219, 78, 78);
-        /* border-radius: 5px; */
     }
 </style>
 <?php $this->end() ?>
@@ -39,7 +35,7 @@
     <div class="txt-right">
         <div class="login-form">
             <div class="login-school-logo">
-                <img src="assets/images/senglogo.png" width="120px" height="120px">
+                <img src="<?=PROOT?>assets/images/senglogo.png" width="120px" height="120px">
             </div>
             <div>
                 <div>
