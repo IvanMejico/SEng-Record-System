@@ -74,7 +74,6 @@ class FH {
     }
 
     public static function displayErrors($errors) {
-        // TODO: Change this.
         $hasErrors = (!empty($errors)) ? ' has-errors' : '';
         $html = '<div class="message"><ul>';
         foreach($errors as $field => $error) {

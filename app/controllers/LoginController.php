@@ -77,5 +77,6 @@ class LoginController extends Controller {
         if(Users::currentUser()) {
             Users::currentUser()->logout();
         }
+        Router::redirect('login');
     }
 }

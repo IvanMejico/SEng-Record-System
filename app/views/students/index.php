@@ -80,7 +80,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr onclick="window.location='student_information.html';">
+                            <tr onclick="window.location='managestudents/info';">
                                 <td>
                                     <input type="checkbox">
                                 </td>
@@ -96,11 +96,11 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="add_student.html" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr onclick="window.location='student_information.html';">
+                            <tr onclick="window.location='managestudents/info';">
                                 <td>
                                     <input type="checkbox">
                                 </td>
@@ -116,11 +116,11 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="add_student.html" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr onclick="window.location='student_information.html';">
+                            <tr onclick="window.location='managestudents/info';">
                                 <td>
                                     <input type="checkbox">
                                 </td>
@@ -136,11 +136,11 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="add_student.html" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr onclick="window.location='student_information.html';">
+                            <tr onclick="window.location='managestudents/info';">
                                 <td>
                                     <input type="checkbox">
                                 </td>
@@ -156,11 +156,11 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="add_student.html" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr onclick="window.location='student_information.html';">
+                            <tr onclick="window.location='managestudents/info';">
                                 <td>
                                     <input type="checkbox">
                                 </td>
@@ -176,11 +176,11 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="add_student.html" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr onclick="window.location='student_information.html';">
+                            <tr onclick="window.location='managestudents/info';">
                                 <td>
                                     <input type="checkbox">
                                 </td>
@@ -196,11 +196,11 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="add_student.html" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr onclick="window.location='student_information.html';">
+                            <tr onclick="window.location='managestudents/info';">
                                 <td>
                                     <input type="checkbox">
                                 </td>
@@ -216,11 +216,11 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="add_student.html" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr onclick="window.location='student_information.html';">
+                            <tr onclick="window.location='managestudents/info';">
                                 <td>
                                     <input type="checkbox">
                                 </td>
@@ -236,11 +236,11 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="add_student.html" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr onclick="window.location='student_information.html';">
+                            <tr onclick="window.location='managestudents/info';">
                                 <td>
                                     <input type="checkbox">
                                 </td>
@@ -256,11 +256,11 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="add_student.html" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr onclick="window.location='student_information.html';">
+                            <tr onclick="window.location='managestudents/info';">
                                 <td>
                                     <input type="checkbox">
                                 </td>
@@ -276,7 +276,7 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="add_student.html" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>

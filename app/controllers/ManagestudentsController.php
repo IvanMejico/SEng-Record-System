@@ -31,4 +31,10 @@ class ManagestudentsController extends Controller {
         $this->view->pageTitle = 'Edit Student Information';
         $this->view->render('students/student_form');
     }
+
+    public function infoAction() {
+        $this->view->bodyAttr = 'class="ttr-pinned-sidebar ttr-opened-sidebar"';
+        $this->view->pageTitle = 'Student Information';
+        $this->view->render('students/info');
+    }
 }

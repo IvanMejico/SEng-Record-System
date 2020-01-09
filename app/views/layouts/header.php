@@ -21,7 +21,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?=PROOT?>login">
+                    <a href="<?=PROOT?>login/logout">
                         <i class="flaticon-logout"></i><span>log out</span>
                     </a>
                 </li>

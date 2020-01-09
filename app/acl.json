@@ -1,16 +1,25 @@
 {
     "Guest" : {
         "denied" : {},
-        "Home" : ["*"],
-        "Register" : ["login", "register"],
-        "Restricted" : ["*"]
+        "Login" : ["index", "admin"]
     },
-    "LoggedIn" : {
+    "Department" : {
         "denied" : {
-           "Register" : ["login", "register"]
+            "Login" : ["index", "admin"]
         },
-        "Register" : ["logout"],
-        "Contacts" : ["*"]
+        "Home" : ["index"],
+        "Login" : ["logout"]
+    },
+    "Admin" : {
+        "denied" : {
+            "Login" : ["index", "admin"]
+        },
+        "Home" : ["index"],
+        "Managestudents" : ["index", "add_student", "edit_student_info", "bulk_add_students", "info"],
+        "Manageprograms" : ["index", "add_program", "edit_program"],
+        "Manageschool" : ["index"],
+        "Settings" : ["index"],
+        "Login" : ["logout"]
     }
 }
   

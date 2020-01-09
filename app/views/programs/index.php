@@ -78,7 +78,7 @@
                     <div class="panel-wrapper">
                         <div class="panel-buttons">
                             <span>
-                                <a href="add_academic_program.html"><i class="flaticon-pencil"></i></a>
+                                <a href="<?=PROOT?>manageprograms/edit_program"><i class="flaticon-pencil"></i></a>
                             </span>
                         </div>
                         <div class="display-flex-reverse">

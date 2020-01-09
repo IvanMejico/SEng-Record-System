@@ -17,12 +17,14 @@ class Router {
         array_shift($url);
 
         // acl check
-        // $grantAccess = self::hasAccess($controller_name, $action_name);
-        // if(!$grantAccess) {
-        //     $controller = ACCESS_RESTRICTED.'Controller';
-        //     $controller_name = ACCESS_RESTRICTED;
-        //     $action = 'indexAction';
-        // }
+        // TODO: Adjust the page redirects to new acl.
+        $grantAccess = self::hasAccess($controller_name, $action_name);
+        if(!$grantAccess) {
+            $controller_name = Users::currentUser() != null ? 'Home' : 'Login';
+            // H::dnd($controller_name);
+            $controller = $controller_name."Controller";
+            $action = 'indexAction';
+        }
 
         // params
         $queryParams = $url;
@@ -53,15 +55,20 @@ class Router {
     public static function hasAccess($controller_name, $action_name='index') {
         $acl_file = file_get_contents(ROOT . DS . 'app' . DS . 'acl.json');
         $acl = json_decode($acl_file, true);
-        $current_user_acls = ["Guest"];
+        $current_user_acls = "Guest";
         $grantAccess = false;
 
         if(Session::exists(CURRENT_USER_SESSION_NAME)) { // Check if user is logged in
-            $current_user_acls[] = "LoggedIn";
+            if(Users::currentUser()->username == 'admin')
+                $current_user_acls = "Admin";
+            else
+                $current_user_acls = "Department";
+
             foreach(Users:: currentUser()->acls() as $a) {  // Retrieve acl data from database
                 $current_user_acls[] = $a;
             }
         }
+        // H::dnd($current_user_acls);
         
         // Checks if Guest/LoggedIn exists in the JSON file.
         // Checks if the controller name is inside
@@ -69,22 +76,18 @@ class Router {
         // Grant access if satisfied 
         // dnd($current_user_acls);
         // dnd($acl['LoggedIn']);   
-        foreach($current_user_acls as $level) {
-            if(array_key_exists($level, $acl) && array_key_exists($controller_name, $acl[$level])) {
-                if(in_array($action_name, $acl[$level][$controller_name]) || in_array("*", $acl[$level][$controller_name])) {
-                    $grantAccess = true;
-                    break;
-                }
+        
+        if(array_key_exists($current_user_acls, $acl) && array_key_exists($controller_name, $acl[$current_user_acls])) {
+            if(in_array($action_name, $acl[$current_user_acls][$controller_name]) || in_array("*", $acl[$current_user_acls][$controller_name])) {
+                $grantAccess = true;
             }
         }
+        
 
         // check for denied
-        foreach($current_user_acls as $level) {
-            $denied = $acl[$level]['denied'];
-            if(!empty($denied) && array_key_exists($controller_name, $denied) && in_array($action_name, $denied[$controller_name])) {
-                $grantAccess = false; 
-                break;
-            }
+        $denied = $acl[$current_user_acls]['denied'];
+        if(!empty($denied) && array_key_exists($controller_name, $denied) && in_array($action_name, $denied[$controller_name])) {
+            $grantAccess = false; 
         }
         
         return $grantAccess;
