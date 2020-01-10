@@ -17,7 +17,7 @@
                 <!-- Program Information Panel -->
                 <div class="ttr-section-head">
                     <h2 class="section-title"><?=$this->pageTitle?></h2>
-                    <a class="section-button" href="add_student.html">Add New Student</a>
+                    <a class="section-button" href="managestudents/add_student">Add New Student</a>
                 </div>
                 <div class="ttr-main-panel light-background tabbed table">
                     <div class="tab-container">
@@ -96,7 +96,7 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -116,7 +116,7 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -136,7 +136,7 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -156,7 +156,7 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -176,7 +176,7 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -196,7 +196,7 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -216,7 +216,7 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -236,7 +236,7 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -256,7 +256,7 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -276,7 +276,7 @@
                                 <td>1</td>
                                 <td>
                                     <div class="table-action">
-                                        <a href="managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
                                     </div>
                                 </td>
                             </tr>

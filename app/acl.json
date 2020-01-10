@@ -17,7 +17,7 @@
         "Home" : ["index"],
         "Managestudents" : ["index", "add_student", "edit_student_info", "bulk_add_students", "info"],
         "Manageprograms" : ["index", "add_program", "edit_program"],
-        "Manageschool" : ["index"],
+        "Manageschool" : ["index", "edit_school_info"],
         "Settings" : ["index"],
         "Login" : ["logout"]
     }

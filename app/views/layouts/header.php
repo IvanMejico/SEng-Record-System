@@ -16,7 +16,7 @@
         <div class="ttr-header-right">
             <ul class="ttr-account-control">
                 <li>
-                    <a href="404.html">
+                    <a href="">
                         <i class="flaticon-man-user"></i><span>my profile</span>
                     </a>
                 </li>

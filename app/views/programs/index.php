@@ -83,7 +83,7 @@
                         </div>
                         <div class="display-flex-reverse">
                             <div class="panel-logo-box">
-                                <img src="../assets/images/orgs/ICPEP.png" alt="" width="150px" height="150px">
+                                <img src="<?=PROOT?>assets/images/orgs/ICPEP.png" alt="" width="150px" height="150px">
                             </div>
                             <div>
                                 <table>

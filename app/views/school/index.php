@@ -18,7 +18,7 @@
                 <div class="ttr-main-panel dark-background">
                     <div class="panel-buttons">
                         <span>
-                            <a href="add_academic_program.html"><i class="flaticon-pencil"></i></a>
+                            <a href="<?=PROOT?>manageschool/edit_school_info"><i class="flaticon-pencil"></i></a>
                         </span>
                     </div>
                     <div class="display-flex-reverse">
@@ -55,7 +55,7 @@
                 <div class="panel-container full-width">
                     <div class="ttr-section-head">
                         <h2 class="section-title">Programs</h2>
-                        <a class="section-button" href="add_academic_program.html"><?=$this->pageTitle?></a>
+                        <a class="section-button" href="manageprograms/add_program">Add Program</a>
                     </div>
                     <div id="ttr-panel">
                         <div class="panel-heading"></div>
