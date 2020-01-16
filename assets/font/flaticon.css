@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 08/09/2019 10:37
+  	Creation date: 14/01/2020 07:17
   	*/
 
 @font-face {
@@ -48,14 +48,12 @@ margin-left: 20px;
 .flaticon-calendar:before { content: "\f10f"; }
 .flaticon-logout:before { content: "\f110"; }
 .flaticon-menu:before { content: "\f111"; }
-.flaticon-close:before { content: "\f112"; }
-.flaticon-back:before { content: "\f113"; }
-.flaticon-chevron:before { content: "\f114"; }
-.flaticon-down-arrow:before { content: "\f115"; }
-.flaticon-home-1:before { content: "\f116"; }
-.flaticon-next:before { content: "\f117"; }
-.flaticon-save:before { content: "\f118"; }
-.flaticon-edit-tools:before { content: "\f119"; }
-.flaticon-education:before { content: "\f11a"; }
-.flaticon-parthenon-1:before { content: "\f11b"; }
-.flaticon-edit:before { content: "\f11c"; }
+.flaticon-chevron:before { content: "\f112"; }
+.flaticon-down-arrow:before { content: "\f113"; }
+.flaticon-home-1:before { content: "\f114"; }
+.flaticon-save:before { content: "\f115"; }
+.flaticon-edit-tools:before { content: "\f116"; }
+.flaticon-education:before { content: "\f117"; }
+.flaticon-parthenon-1:before { content: "\f118"; }
+.flaticon-edit:before { content: "\f119"; }
+.flaticon-close:before { content: "\f11a"; }

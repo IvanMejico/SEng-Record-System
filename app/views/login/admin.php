@@ -4,26 +4,58 @@
 
 <?php $this->start('head') ?>
 <link rel="stylesheet" href="<?=PROOT?>assets/styles/admin_login.css">
-<link rel="shortcut icon" type="image/x-icon" href="<?=PROOT?>assets/images/senglogo.png" />
+<link rel="stylesheet" href="<?=PROOT?>assets/font/flaticon.css">
 <style>
     .message {
-        margin-bottom: 10px;
-        border-radius: 3px;
+        margin-bottom: 25px;
         text-align: left;
-        background-color: rgb(238, 194, 194);
-        color: red;
-        font-size: .9em;
+        color: rgb(2, 90, 148);
+        background-color: rgb(206, 224, 231);
+        border: 1px solid rgb(104, 157, 206);
         border-radius: 5px;
+        font-size: .9em;
+        padding: 20px;
+        position: relative;
         display: none;
     }
 
     .message ul {
-        margin: 0;
-        padding: 15px 20px;
         list-style: none;
+        padding: 0;
+        margin: 0;
     }
+
+    .success {
+        display: block;
+        color: rgb(13, 117, 13);
+        background-color: rgb(196, 248, 222);
+        border-color: rgb(104, 197, 104);
+    }
+
+    .warning {
+        display: block;
+        color: rgb(197, 2, 2);
+        background-color: rgb(248, 201, 201);
+        border-color: rgb(245, 121, 121);
+    }
+
     .has-errors {
-        border-bottom: 1px solid red;
+        border-bottom: 1px solid rgb(219, 78, 78) !important;
+    }
+
+    .close-button {
+        color: red;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-size: .2em;
+        cursor: pointer;
+    }
+    .close-button:hover {
+        filter: brightness(85%);
+    }
+    .close-button::before {
+        font-size: 1.2rem;
     }
 </style>
 <?php $this->end() ?>

@@ -23,7 +23,7 @@ class Users extends Model {
         parent::__construct($table);
         $this->_sessionName = CURRENT_USER_SESSION_NAME;
         $this->_cookieName = REMEMBER_ME_COOKIE_NAME;
-        $this->_softDelete = True;
+        // $this->_softDelete = True;
         if($user != '') {
             if(is_int($user)) {
                 $u = $this->_db->findFirst('users', ['conditions'=>'id = ?', 'bind'=>[$user]], 'App\Models\Users');

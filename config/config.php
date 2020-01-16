@@ -15,8 +15,8 @@ DEFINE('PROOT', '/SENG_SYSTEM/'); // set this to '/' for a live server.
 define('SITE_TITLE', 'SEng Database'); // This will be used if no site title is SITE_TITLE
 define('MENU_BRAND', 'IVAN'); // This is the Brand text in the menu
 
-define('CURRENT_USER_SESSION_NAME', 'sdfExILlsidtoRWEsqaljfejczZeqBJ'); //session name for logged in user
-define('REMEMBER_ME_COOKIE_NAME', 'SLEWdaiIDAkntyPQWjXAcJVQPmARq'); // cookie name for logged in user remember me
+define('CURRENT_USER_SESSION_NAME', 'tdfExILlsidtoRWEsqaljfejczZeqBJ'); //session name for logged in user
+define('REMEMBER_ME_COOKIE_NAME', 'sLEWdaiIDAkntyPQWjXAcJVQPmARq'); // cookie name for logged in user remember me
 define('REMEMBER_ME_COOKIE_EXPIRY', 2592000); // time in seconds for remember me cookie to live (30 days)
 
 define('ACCESS_RESTRICTED', 'Restricted'); // controller name for the restricted redirect

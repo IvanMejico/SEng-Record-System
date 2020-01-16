@@ -73,17 +73,19 @@ class FH {
         return $clean_ary;
     }
 
-    public static function displayErrors($errors) {
-        $hasErrors = (!empty($errors)) ? ' has-errors' : '';
-        $html = '<div class="message"><ul>';
+    public static function displayErrors($errors, $onParent=true) {
+        $hasErrors = (!empty($errors)) ? ' warning' : '';
+        $html = '<div class="message'.$hasErrors.'"><i class="flaticon-close close-button"></i><ul>';
         foreach($errors as $field => $error) {
             $html .= '<li><span>'.$error.'</span></li>';
             $html .= '<script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            document.getElementsByClassName("message")[0].style.display = "block";
-                            document.getElementById("'. $field . '").parentElement.classList.add("has-errors")
-                        });
-                      </script>';
+                        document.addEventListener("DOMContentLoaded", function() {';
+            if($onParent)
+                $html .= 'document.getElementById("'. $field . '").parentElement.classList.add("has-errors");';
+            else
+                $html .= 'document.getElementById("'. $field . '").classList.add("has-errors");';
+                
+            $html .= '}); </script>';
         }
         $html .= '</ul></div>';
         return $html;

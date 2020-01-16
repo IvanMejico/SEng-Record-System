@@ -3,6 +3,8 @@
 namespace Core\Validators;
 use Core\Validators\CustomValidator;
 
+use Core \H;
+
 class UniqueValidator extends CustomValidator {
 
     public function runValidation() {
@@ -12,11 +14,11 @@ class UniqueValidator extends CustomValidator {
         $conditions = ["{$field} = ?"];
         $bind = [$value];
 
-        // check updating record
-        if(!empty($this->_model->id)) {
-            $conditions[] = 'id != ?';
-            $bind[] = $this->_model->id;
-        }
+        // check if just updating.
+        // if(!empty($this->_model->id)) { // TODO: The condition should probably change. I'll deal with this later
+        //     $conditions[] = 'id != ?';
+        //     $bind[] = $this->_model->id;
+        // }
 
         // this allows you to check multiple fields for Unique
         if(is_array($this->field)) {

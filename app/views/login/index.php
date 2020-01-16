@@ -5,26 +5,57 @@
 <?php $this->start('head') ?>
 <link rel="stylesheet" href="<?=PROOT?>assets/styles/login.css">
 <link rel="stylesheet" href="<?=PROOT?>assets/font/flaticon.css">
-<link rel="shortcut icon" type="image/x-icon" href="<?=PROOT?>assets/images/senglogo.png" />
 <style>
     .message {
-        margin-bottom: 10px;
-        padding: 15px 20px;
-        background-color: rgb(238, 194, 194);
-        border-radius: 3px;
+        margin-bottom: 25px;
         text-align: left;
-        color: red;
+        color: rgb(2, 90, 148);
+        background-color: rgb(206, 224, 231);
+        border: 1px solid rgb(104, 157, 206);
+        border-radius: 5px;
         font-size: .9em;
+        padding: 20px;
+        position: relative;
         display: none;
     }
+
     .message ul {
-        margin: 0;
-        padding: 0;
         list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .success {
+        display: block;
+        color: rgb(13, 117, 13);
+        background-color: rgb(196, 248, 222);
+        border-color: rgb(104, 197, 104);
+    }
+
+    .warning {
+        display: block;
+        color: rgb(197, 2, 2);
+        background-color: rgb(248, 201, 201);
+        border-color: rgb(245, 121, 121);
     }
 
     .has-errors {
-        border-color: rgb(219, 78, 78);
+        border-color: rgb(219, 78, 78) !important;
+    }
+
+    .close-button {
+        color: red;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-size: .2em;
+        cursor: pointer;
+    }
+    .close-button:hover {
+        filter: brightness(85%);
+    }
+    .close-button::before {
+        font-size: 1.2rem;
     }
 </style>
 <?php $this->end() ?>
@@ -39,22 +70,22 @@
             </div>
             <div>
                 <div>
-                    <form class="form" action="" method="post">
+                    <form class="form" method="post">
                         <?= FH::csrfInput() ?>
                         <?= FH::displayErrors($this->displayErrors) ?>
                         <div class="form-group">
                             <span class="flaticon-education"></span>
                             <!-- <input type="text" placeholder="username"> -->
                             <select name="username" id="username">
-                                <?php // TODO: Generate these options automatically. ?>
                                 <?php
                                     if($this->login->username) {
                                         $html .= '<script>document.addEventListener("DOMContentLoaded", function(){
-                                                option = document.getElementById("'.$this->login->username.'").selected = true;
-                                                });</script>';
+                                            option = document.getElementById("'.$this->login->username.'").selected = true;
+                                        });</script>';
                                         echo $html;
                                     }
-                                ?>
+                                    ?>
+                                <?php // TODO: Generate these options automatically. ?>
                                 <option selected disabled>select department</option>
                                 <option id="bsce" value="bsce">BSCE</option>
                                 <option id="bsee" value="bsee">BSEE</option>

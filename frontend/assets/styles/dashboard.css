@@ -662,7 +662,10 @@ table {
     vertical-align: middle;
 }
 .btn:hover {
-    opacity: .9;
+    filter: brightness(85%);
+}
+.btn:active{
+    filter: brightness(95%);
 }
 .btn i:before {
     margin: 0;
@@ -671,7 +674,7 @@ table {
 }
 .btn-selectall {
     background-color: #7cb942;
-    border: 1px solid #7cb942;
+    border: 1px solid #a9b49e;
     font-size: .8em;
 }
 .btn-delete {
@@ -687,6 +690,7 @@ table {
     float: right;
     background-color: #2d7cc0;
     border: 1px solid #2d7cc0;
+    cursor: pointer;
 }
 .btn-upload {
     background-color: #fff;
@@ -795,6 +799,9 @@ table {
     padding: 10px;
     resize: none;
     outline: none;
+}
+.form-group select {
+    background-color: white;
 }
 .upload-pic {
     display: inline-block;

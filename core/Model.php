@@ -17,6 +17,7 @@ class Model {
         return $this->_db->get_columns($this->_table);
     }
 
+    // Adds a soft delete condition to the query
     protected function _softDeleteParams($params) {
         if($this->_softDelete) {
             if(array_key_exists('conditions', $params)) {
@@ -55,7 +56,8 @@ class Model {
             $this->beforeSave();
             $fields = H::getObjectProperties($this);
             // determine whether to update or insert
-            if(property_exists($this, 'id') && $this->id != '') {
+            $existingRecord = $this->findById($this->id); // Check if there's an existing record. If there is, just update the record.
+            if($existingRecord) {
                 $save =  $this->update($this->id, $fields);
                 $this->afterSave();
                 return $save;

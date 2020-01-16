@@ -153,7 +153,7 @@ class DB {
         }
         $fieldString = trim($fieldString);
         $fieldString = trim($fieldString, ',');
-        $sql = "UPDATE {$table} SET {$fieldString} WHERE id = {$id}";
+        $sql = "UPDATE {$table} SET {$fieldString} WHERE id = '{$id}'"; // Enclosed id with single quotes because sql error happens when value is not numerical. Numerical values can be enclosed or not enclosed but string values are sort of treated as column or variable names when not enclosed.
         if(!$this->query($sql, $values)->error()) {
             return true;
         } 
