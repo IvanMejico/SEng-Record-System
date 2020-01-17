@@ -9,8 +9,21 @@ class FH {
         $inputString = self::stringifyAttrs($inputAttrs);
         $html = '<div'.$divString.'>';
         $html .= '<label for="'.$name.'">'.$label.'</label>';
-        $html .= '<input type="'.$type.'" id="'.$name.'" name="'.$name.'" value="'.$value .'"'.$inputString.'/>';
+        $html .= '<div><input type="'.$type.'" id="'.$name.'" name="'.$name.'" value="'.$value .'" '.$inputString.'/></div>';
         $html .= '</div>';
+        return $html;
+    }
+
+    public static function selectBlock($label, $name, $options=[], $selectAttrs=[], $divAttrs=[]) {
+        $divString = self::stringifyAttrs($divAttrs);
+        $selectString = self::stringifyAttrs($selectAttrs);
+        $html = '<div'.$divString.'>';
+        $html .= '<label for="'.$name.'">'.$label.'</label>';
+        $html .= '<div><select id="'.$name.'" name="'.$name.'" '.$selectString.'/>';
+        foreach($options as $value => $text) {
+            $html .= '<option value="'.$value.'" id="'.$value.'">'.$text.'</option>';
+        }
+        $html .='</select></div></div>';
         return $html;
     }
     

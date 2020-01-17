@@ -79,7 +79,7 @@
                             <select name="username" id="username">
                                 <?php
                                     if($this->login->username) {
-                                        $html .= '<script>document.addEventListener("DOMContentLoaded", function(){
+                                        $html = '<script>document.addEventListener("DOMContentLoaded", function(){
                                             option = document.getElementById("'.$this->login->username.'").selected = true;
                                         });</script>';
                                         echo $html;

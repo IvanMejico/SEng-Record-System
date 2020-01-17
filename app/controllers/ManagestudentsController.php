@@ -5,8 +5,6 @@ namespace App\Controllers;
 use App\Models\Students;
 use Core\Controller;
 use Core\Router;
-
-// For debugging purposes only
 use Core\H;
 
 class ManagestudentsController extends Controller {
@@ -56,12 +54,14 @@ class ManagestudentsController extends Controller {
             
             $studentModel->assign($this->request->get());
             if($studentModel->save()) {
-                move_uploaded_file($fileSource, $fileDestination);
+                move_uploaded_file($fileSource, $fileDestination); // TODO: Retain files after submission.
+                H::resetObjectProperties($studentModel);
                 $this->view->_message = $studentModel->getSuccessMessage();
             }
         }
 
         $this->view->displayErrors = $studentModel->getErrorMessages();
+        $this->view->newStudent = $studentModel;
 
         $this->view->bodyAttr = 'class="ttr-pinned-sidebar ttr-opened-sidebar"';
         $this->view->pageTitle = 'Add Student';

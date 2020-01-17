@@ -87,69 +87,120 @@
                                 <?= $this->_message ?>
                                 <form id="studentForm" action="/SENG_SYSTEM/managestudents/add_student" method="POST" enctype="multipart/form-data">
                                     <div class="form-content">
-                                        <div class="form-group">
-                                            <label for="">ID No.</label>
-                                            <div>
-                                                <input class="form-field" type="text" name="id" id="id">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">First Name</label>
-                                            <div>
-                                                <input class="form-field" type="text" name="firstname" id="firstname">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">Middle Name</label>
-                                            <div>
-                                                <input class="form-field" type="text" name="middlename" id="middlename">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">Last Name</label>
-                                            <div>
-                                                <input class="form-field" type="text" name="lastname" id="lastname">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">Gender</label>
-                                            <div>
-                                                <select name="gender" class="form-field" id="gender">
-                                                    <option value="male">Male</option>
-                                                    <option value="female">Female</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">Course</label>
-                                            <div>
-                                                <select name="course" class="form-field" id="course">
-                                                    <option value="bsce">BS in Civil Engineering</option>
-                                                    <option value="bsee">BS in Electrical Engineering</option>
-                                                    <option value="bsece">BS in Electronics and Communications Engineering</option>
-                                                    <option value="bscpe">BS in Computer Engineering</option>
-                                                    <option value="bsme">BS in Mechanical Engineering</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">Year Level</label>
-                                            <div>
-                                                <select name="yearlevel" class="form-field" id="yearlevel">
-                                                    <option value="first year">First Year</option>
-                                                    <option value="second year">Second Year</option>
-                                                    <option value="third year">Third Year</option>
-                                                    <option value="fourth year">Fourth Year</option>
-                                                    <option value="fifth year">Fifth Year</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">Section</label>
-                                            <div>
-                                                <input class="form-field" type="text" name="section" id="section">
-                                            </div>
-                                        </div>
+                                    <?= FH::inputBlock(
+                                        'text',
+                                        'ID No.',
+                                        'id',
+                                        $this->newStudent->id,
+                                        ['class'=>'form-field'],
+                                        ['class'=>'form-group']
+                                    ); 
+                                    ?>
+                                    
+                                    <?= FH::inputBlock(
+                                        'text',
+                                        'First Name',
+                                        'firstname',
+                                        $this->newStudent->firstname,
+                                        ['class'=>'form-field'],
+                                        ['class'=>'form-group']
+                                    );
+                                    ?>
+
+                                    <?= FH::inputBlock(
+                                        'text',
+                                        'Middle Name',
+                                        'middlename',
+                                        $this->newStudent->middlename,
+                                        ['class'=>'form-field'],
+                                        ['class'=>'form-group']
+                                    );
+                                    ?>
+
+                                    <?= FH::inputBlock(
+                                        'text',
+                                        'Last Name',
+                                        'lastname',
+                                        $this->newStudent->lastname,
+                                        ['class'=>'form-field'],
+                                        ['class'=>'form-group']
+                                    );
+                                    ?>
+
+                                    <?= FH::selectBlock(
+                                        'Gender',
+                                        'gender',
+                                        ['male'=>'Male', 'female'=>'Female'],
+                                        ['class'=>'form-field'],
+                                        ['class'=>'form-group']
+                                    );
+                                    ?>
+                                    <?php
+                                    if(isset($this->newStudent->gender)) {
+                                        $html = '<script>document.addEventListener("DOMContentLoaded", function(){
+                                            option = document.getElementById("'.$this->newStudent->gender.'").selected = true;
+                                        });</script>';
+                                        echo $html;
+                                    }
+                                    ?>
+
+                                    <?= FH::selectBlock(
+                                        'Course',
+                                        'course',
+                                        //TODO: Generate this dynamically later
+                                        [
+                                            'bsce'=>'BS in Civil Engineering',
+                                            'bsee'=>'BS in Electrical Engineering',
+                                            'bsece'=>'BS in Electronics and Communications Engineering',
+                                            'bscpe'=>'BS in Computer Engineering',
+                                            'bsme'=>'BS in Mechanical Engineering'
+                                        ], 
+                                        ['class'=>'form-field'],
+                                        ['class'=>'form-group']
+                                    );
+                                    ?>
+                                    <?php
+                                    if(isset($this->newStudent->course)) {
+                                        $html = '<script>document.addEventListener("DOMContentLoaded", function(){
+                                            option = document.getElementById("'.$this->newStudent->course.'").selected = true;
+                                        });</script>';
+                                        echo $html;
+                                    }
+                                    ?>
+
+                                    <?= FH::selectBlock(
+                                        'Year Level',
+                                        'yearlevel',
+                                        [
+                                            'first-year'=>'First Year',
+                                            'second-year'=>'Second year',
+                                            'third-year'=>'Third Year',
+                                            'fourth-year'=>'Fourth Year',
+                                            'fifth-year'=>'Fifth Year'
+                                        ],
+                                        ['class'=>'form-field'],
+                                        ['class'=>'form-group']
+                                    );
+                                    ?>
+                                    <?php
+                                    if(isset($this->newStudent->yearlevel)) {
+                                        $html = '<script>document.addEventListener("DOMContentLoaded", function(){
+                                            option = document.getElementById("'.$this->newStudent->yearlevel.'").selected = true;
+                                        });</script>';
+                                        echo $html;
+                                    }
+                                    ?>
+
+                                    <?= FH::inputBlock(
+                                        'text',
+                                        'Section',
+                                        'section',
+                                        $this->newStudent->section,
+                                        ['class'=>'form-field'],
+                                        ['class'=>'form-group']
+                                    );
+
+                                    ?>
                                         <div class="form-group">
                                             <label for="">Photo</label>
                                             <div>

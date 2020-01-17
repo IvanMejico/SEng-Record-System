@@ -21,4 +21,10 @@ class H {
     public static function getObjectProperties($obj) {
         return get_object_vars($obj);
     }
+
+    public static function resetObjectProperties($obj) {
+        foreach($obj as $key => $value) {
+            $obj->$key = NULL;
+        }
+    }
 }
