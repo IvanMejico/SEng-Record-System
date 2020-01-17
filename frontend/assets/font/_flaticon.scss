@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 14/01/2020 07:17
+    Creation date: 17/01/2020 00:45
     */
 
     @font-face {
@@ -64,6 +64,8 @@
 .flaticon-parthenon-1:before { content: "\f118"; }
 .flaticon-edit:before { content: "\f119"; }
 .flaticon-close:before { content: "\f11a"; }
+.flaticon-close-1:before { content: "\f11b"; }
+.flaticon-chevron-1:before { content: "\f11c"; }
     
     $font-Flaticon-user: "\f100";
     $font-Flaticon-home: "\f101";
@@ -92,3 +94,5 @@
     $font-Flaticon-parthenon-1: "\f118";
     $font-Flaticon-edit: "\f119";
     $font-Flaticon-close: "\f11a";
+    $font-Flaticon-close-1: "\f11b";
+    $font-Flaticon-chevron-1: "\f11c";

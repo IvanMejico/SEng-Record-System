@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 14/01/2020 07:17
+  	Creation date: 17/01/2020 00:45
   	*/
 
 @font-face {
@@ -57,3 +57,5 @@ margin-left: 20px;
 .flaticon-parthenon-1:before { content: "\f118"; }
 .flaticon-edit:before { content: "\f119"; }
 .flaticon-close:before { content: "\f11a"; }
+.flaticon-close-1:before { content: "\f11b"; }
+.flaticon-chevron-1:before { content: "\f11c"; }
