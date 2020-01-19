@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SEng Database</title>
+    <link rel="stylesheet" href="assets/font/flaticon.css">
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/senglogo.png" />
+    <!-- temporary styles -->
+    <style>
+        .loading {
+            display: block;
+            margin: 0;
+            padding: 0;
+            height: 12px;
+            width: 100%;
+            background-color: #c7caca;
+            border-radius: 50px;
+        }
+
+        thead tr.table-head {
+            background: #d5d8d8;
+        }
+        tbody tr td {
+            position: relative;
+        }
+
+        .img.loading {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+        }
+        .checkbox.loading {
+            border-radius: 0;
+            width: 13px;
+            height: 13px;
+            position: absolute;
+            right: 4px;
+            top: 11px;
+        }
+
+        .ttr-table tbody tr {
+            background: #dcdfdf !important;
+        }
+    </style>
+</head>
+<body class="ttr-pinned-sidebar ttr-opened-sidebar">
+    <header class="ttr-header">
+        <div class="ttr-header-wrapper">
+            <div class="ttr-toggle-sidebar">
+                <i class="flaticon-menu ttr-close-icon"></i>
+                <i class="flaticon-close-1 ttr-open-icon"></i>
+            </div>
+            <div class="ttr-logo-box">
+                 <a href="home.html">
+                     <img src="assets/images/senglogo.png" alt="seng logo" width="45px" height="45px">
+                     <div class="logo-text">
+                         <span>MSC School of Engineering</span>
+                         <span>School Database</span>
+                     </div>
+                 </a>
+            </div>
+            <div class="ttr-header-right">
+                <ul class="ttr-account-control">
+                    <li>
+                        <a href="404.html">
+                            <i class="flaticon-man-user"></i><span>my profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            <i class="flaticon-logout"></i><span>log out</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="ttr-sidebar pinned-sidebar">
+        <div class="ttr-sidebar-wrapper">
+            <nav class="ttr-sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="home.html">
+                            <span class="ttr-icon">
+                                <i class="flaticon-home"></i>
+                            </span>
+                            <span class="ttr-label">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        
+                        <a href="#">
+                            <span class="ttr-icon">
+                                <i class="flaticon-user"></i>
+                            </span>
+                            <span class="ttr-label">Manage Students</span>
+                            <span class="ttr-arrow-icon">
+                                <i class="flaticon-down-arrow"></i>
+                            </span>
+                        </a>
+                        <ul>
+                            <li><a href="add_student.html">Add Student</a></li>
+                            <li><a href="bulk_add_students.html">Bulk Add Students</a></li>
+                            <li><a href="student_list.html">Student List</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="ttr-icon">
+                                <i class="flaticon-book"></i>
+                            </span>
+                            <span class="ttr-label">Manage Programs</span>
+                            <span class="ttr-arrow-icon">
+                                <i class="flaticon-down-arrow"></i>
+                            </span>
+                        </a>
+                        <ul>
+                            <li><a href="add_academic_program.html">Add Program</a></li>
+                            <li><a href="program_information.html">Program Information</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="ttr-icon">
+                                <i class="flaticon-parthenon"></i>
+                            </span>
+                            <span class="ttr-label">Manage School</span>
+                            <span class="ttr-arrow-icon">
+                                <i class="flaticon-down-arrow"></i>
+                            </span>
+                        </a>
+                        <ul>
+                            <li><a href="school_information.html">School Information</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="ttr-icon">
+                                <i class="flaticon-settings"></i>
+                            </span>
+                            <span class="ttr-label">Settings</span>
+                            <span class="ttr-arrow-icon">
+                                <i class="flaticon-down-arrow"></i>
+                            </span>
+                        </a>
+                        <ul>
+                            <li><a href="change_admin_password.html">Update Password</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main class="ttr-main">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <div class="db-breadcrumb">
+                <h4 class="breadcrumb-title">Dashboard</h4>
+                <ul class="db-breadcrumb-list">
+                    <li>
+                        <a href=""><i class="flaticon-man-user"></i>Manage Students</a>
+                    </li>
+                    <li>
+                        <a href="">Student List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <!-- Program Information Panel -->
+                <div class="ttr-section-head">
+                    <h2 class="section-title">Student List</h2>
+                    <a class="section-button" href="add_student.html">Add New Student</a>
+                </div>
+                <div class="ttr-main-panel light-background tabbed table">
+                    <div class="tab-container">
+                        <ul class="tab-control">
+                            <li><a href="">BSCE</a></li>
+                            <li><a href="">BSEE</a></li>
+                            <li><a href="">BSECE</a></li>
+                            <li><a  class="active" href="">BSCPE</a></li>
+                            <li><a href="">BSME</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="panel-control">
+                        <div class="control-group">
+                            <span>Show</span>
+                            <select name="" id="">
+                                <option value="">10</option>
+                                <option value="">20</option>
+                                <option value="">30</option>
+                                <option value="">40</option>
+                            </select>
+                            <span>entries</span>
+
+                        </div>
+                        <div class="control-group">
+                            <a href="" class="btn btn-selectall">
+                                <i class="flaticon-task-complete"></i> Select All
+                            </a>
+                            <a href="" class="btn btn-delete">
+                                <i class="flaticon-minus-sign-inside-a-black-circle"></i> Delete
+                            </a>
+                        </div>
+
+                        <div class="control-group">
+                            <input type="text" placeholder="search">
+                            <select name="" id="">
+                                <option value="">Year Level</option>
+                                <option value="">First Year</option>
+                                <option value="">Second Year</option>
+                                <option value="">Third Year</option>
+                                <option value="">Fourth Year</option>
+                                <option value="">Fifth Year</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <table class="ttr-table stud-list">
+                        <thead>
+                            <tr class="table-head">
+                                <th></th>
+                                <th></th>
+                                <th><span class="loading"></span></th> <!-- ID No. -->
+                                <th><span class="loading"></span></th> <!-- First Name -->
+                                <th><span class="loading"></span></th> <!-- Middle Name -->
+                                <th><span class="loading"></span></th> <!-- Last Name -->
+                                <th><span class="loading"></span></th> <!-- Gender -->
+                                <th><span class="loading"></span></th> <!-- Year Level -->
+                                <th><span class="loading"></span></th> <!-- Section -->
+                                <th><span class="loading"></span></th> <!--  -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="loading checkbox"></span></td>
+                                <td><span class="loading img"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="loading checkbox"></span></td>
+                                <td><span class="loading img"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="loading checkbox"></span></td>
+                                <td><span class="loading img"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="loading checkbox"></span></td>
+                                <td><span class="loading img"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="loading checkbox"></span></td>
+                                <td><span class="loading img"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="loading checkbox"></span></td>
+                                <td><span class="loading img"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="loading checkbox"></span></td>
+                                <td><span class="loading img"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="loading checkbox"></span></td>
+                                <td><span class="loading img"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="loading checkbox"></span></td>
+                                <td><span class="loading img"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="loading checkbox"></span></td>
+                                <td><span class="loading img"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                                <td><span class="loading"></span></td>
+                            </tr>
+                    
+                            <tr style="visibility: hidden" onclick="window.location='student_information.html';">
+                                <td>
+                                    <input type="checkbox">
+                                </td>
+                                <td>
+                                    <img src="assets/images/user.svg" alt="" width="25px" height="25px">
+                                </td>
+                                <td>12B1192</td>
+                                <td>Mark Anthony Ivan</td>
+                                <td>Sotto</td>
+                                <td>Mejico</td>
+                                <td>Male</td>
+                                <td>Fifth Year</td>
+                                <td>1</td>
+                                <td>
+                                    <div class="table-action">
+                                        <a href="add_student.html" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <!-- <script src="assets/js/admin.js"></script> -->
+    <script src="assets/js/newjs.js"></script>
+</body>
+</html>
