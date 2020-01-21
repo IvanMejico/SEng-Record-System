@@ -33,13 +33,22 @@
                 </div>
                 <div class="ttr-main-panel light-background tabbed table">
                     <div class="tab-container">
-                        <ul class="tab-control">
-                            <li><a>BSCE</a></li>
-                            <li><a>BSEE</a></li>
-                            <li><a>BSECE</a></li>
-                            <li><a>BSCPE</a></li>
-                            <li><a>BSME</a></li>
-                        </ul>
+                        <div class="tab-control">
+                            <input type="radio" name="tab" id="bsce" value="bsce" checked>
+                            <label for="bsce"><span>BSCE</span></label>
+
+                            <input type="radio" name="tab" id="bsee" value="bsee">
+                            <label for="bsee"><span>BSEE</span></label>
+
+                            <input type="radio" name="tab" id="bsece" value="bsece">
+                            <label for="bsece"><span>BSECE</span></label>
+
+                            <input type="radio" name="tab" id="bscpe" value="bscpe">
+                            <label for="bscpe"><span>BSCPE</span></label>
+
+                            <input type="radio" name="tab" id="bsme" value="bsme">
+                            <label for="bsme"><span>BSME</span></label>
+                        </div>
                     </div>
 
                     <div class="panel-control">
