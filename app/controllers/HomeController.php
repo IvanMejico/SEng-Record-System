@@ -20,8 +20,8 @@ class HomeController extends Controller {
         $this->view->render('login');
     }
 
-    // public function testAjaxAction() {
-    //     $resp = ['success'=>true, 'data'=>['id'=>23,'name'=>'Ivan', 'favorite_food'=>'beef wellington']];
-    //     $this->jsonResponse($resp);
-    // }
+    public function testAjaxAction() {
+        $resp = ['success'=>true, 'data'=>['id'=>23,'name'=>'Ivan', 'favorite_food'=>'beef wellington']];
+        $this->jsonResponse($resp);
+    }
 }

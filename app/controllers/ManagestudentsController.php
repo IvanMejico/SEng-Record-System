@@ -85,4 +85,33 @@ class ManagestudentsController extends Controller {
         $this->view->pageTitle = 'Student Information';
         $this->view->render('students/info');
     }
+
+    public function getDataAction() {
+        /**
+         * Get the properties of every student, shift the last
+         * element of every item to the first, append eah to a 
+         * final array to be encoded in json data and echoed 
+         * out be parsed by the js script
+         */
+        $students = new Students();
+        $list = $students->find();
+        foreach($list as $item) {
+            $item_properties = H::getObjectProperties($item);
+            unset($item_properties['course']);
+
+            // replace the '-' character with ' ' character and capitalize each word
+            $ylevel = $item_properties['yearlevel'];
+            $ylevel = explode('-', $ylevel);
+            $ylevel = $ylevel[0].' '.$ylevel[1];
+            $item_properties['yearlevel'] = ucwords(($ylevel));
+            
+            $lastvalue = end($item_properties);
+            $lastkey = key($item_properties);
+            $temp = array($lastkey=>$lastvalue);
+            array_pop($item_properties);
+            $item_properties = array_merge($temp, $item_properties);
+            $response[] = $item_properties;
+        }
+        echo json_encode($response);
+    }
 }

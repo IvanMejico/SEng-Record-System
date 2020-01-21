@@ -1,3 +1,15 @@
+<?php $this->start('head') ?>
+    <script src="<?=PROOT?>assets/ajax/studentlist.js"></script>
+    <script src="<?=PROOT?>assets/ajax/helpers/student_table.js"></script>
+    <style>
+        .profile-picture {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+        }
+    </style>
+<?php $this->end() ?>
+
 <?php $this->start('body') ?>
     <main class="ttr-main">
         <div class="container">
@@ -64,7 +76,7 @@
                         </div>
                     </div>
 
-                    <table class="ttr-table stud-list">
+                    <table class="ttr-table stud-list" id="students"> <!-- Temporarily set id to "students" -->
                         <thead>
                             <tr>
                                 <th></th>
@@ -85,187 +97,7 @@
                                     <input type="checkbox">
                                 </td>
                                 <td>
-                                    <img src="<?=PROOT?>assets/images/user.svg" alt="" width="25px" height="25px">
-                                </td>
-                                <td>12B1192</td>
-                                <td>Mark Anthony Ivan</td>
-                                <td>Sotto</td>
-                                <td>Mejico</td>
-                                <td>Male</td>
-                                <td>Fifth Year</td>
-                                <td>1</td>
-                                <td>
-                                    <div class="table-action">
-                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr onclick="window.location='managestudents/info';">
-                                <td>
-                                    <input type="checkbox">
-                                </td>
-                                <td>
-                                    <img src="<?=PROOT?>assets/images/user.svg" alt="" width="25px" height="25px">
-                                </td>
-                                <td>12B1192</td>
-                                <td>Mark Anthony Ivan</td>
-                                <td>Sotto</td>
-                                <td>Mejico</td>
-                                <td>Male</td>
-                                <td>Fifth Year</td>
-                                <td>1</td>
-                                <td>
-                                    <div class="table-action">
-                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr onclick="window.location='managestudents/info';">
-                                <td>
-                                    <input type="checkbox">
-                                </td>
-                                <td>
-                                    <img src="<?=PROOT?>assets/images/user.svg" alt="" width="25px" height="25px">
-                                </td>
-                                <td>12B1192</td>
-                                <td>Mark Anthony Ivan</td>
-                                <td>Sotto</td>
-                                <td>Mejico</td>
-                                <td>Male</td>
-                                <td>Fifth Year</td>
-                                <td>1</td>
-                                <td>
-                                    <div class="table-action">
-                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr onclick="window.location='managestudents/info';">
-                                <td>
-                                    <input type="checkbox">
-                                </td>
-                                <td>
-                                    <img src="<?=PROOT?>assets/images/user.svg" alt="" width="25px" height="25px">
-                                </td>
-                                <td>12B1192</td>
-                                <td>Mark Anthony Ivan</td>
-                                <td>Sotto</td>
-                                <td>Mejico</td>
-                                <td>Male</td>
-                                <td>Fifth Year</td>
-                                <td>1</td>
-                                <td>
-                                    <div class="table-action">
-                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr onclick="window.location='managestudents/info';">
-                                <td>
-                                    <input type="checkbox">
-                                </td>
-                                <td>
-                                    <img src="<?=PROOT?>assets/images/user.svg" alt="" width="25px" height="25px">
-                                </td>
-                                <td>12B1192</td>
-                                <td>Mark Anthony Ivan</td>
-                                <td>Sotto</td>
-                                <td>Mejico</td>
-                                <td>Male</td>
-                                <td>Fifth Year</td>
-                                <td>1</td>
-                                <td>
-                                    <div class="table-action">
-                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr onclick="window.location='managestudents/info';">
-                                <td>
-                                    <input type="checkbox">
-                                </td>
-                                <td>
-                                    <img src="<?=PROOT?>assets/images/user.svg" alt="" width="25px" height="25px">
-                                </td>
-                                <td>12B1192</td>
-                                <td>Mark Anthony Ivan</td>
-                                <td>Sotto</td>
-                                <td>Mejico</td>
-                                <td>Male</td>
-                                <td>Fifth Year</td>
-                                <td>1</td>
-                                <td>
-                                    <div class="table-action">
-                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr onclick="window.location='managestudents/info';">
-                                <td>
-                                    <input type="checkbox">
-                                </td>
-                                <td>
-                                    <img src="<?=PROOT?>assets/images/user.svg" alt="" width="25px" height="25px">
-                                </td>
-                                <td>12B1192</td>
-                                <td>Mark Anthony Ivan</td>
-                                <td>Sotto</td>
-                                <td>Mejico</td>
-                                <td>Male</td>
-                                <td>Fifth Year</td>
-                                <td>1</td>
-                                <td>
-                                    <div class="table-action">
-                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr onclick="window.location='managestudents/info';">
-                                <td>
-                                    <input type="checkbox">
-                                </td>
-                                <td>
-                                    <img src="<?=PROOT?>assets/images/user.svg" alt="" width="25px" height="25px">
-                                </td>
-                                <td>12B1192</td>
-                                <td>Mark Anthony Ivan</td>
-                                <td>Sotto</td>
-                                <td>Mejico</td>
-                                <td>Male</td>
-                                <td>Fifth Year</td>
-                                <td>1</td>
-                                <td>
-                                    <div class="table-action">
-                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr onclick="window.location='managestudents/info';">
-                                <td>
-                                    <input type="checkbox">
-                                </td>
-                                <td>
-                                    <img src="<?=PROOT?>assets/images/user.svg" alt="" width="25px" height="25px">
-                                </td>
-                                <td>12B1192</td>
-                                <td>Mark Anthony Ivan</td>
-                                <td>Sotto</td>
-                                <td>Mejico</td>
-                                <td>Male</td>
-                                <td>Fifth Year</td>
-                                <td>1</td>
-                                <td>
-                                    <div class="table-action">
-                                        <a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr onclick="window.location='managestudents/info';">
-                                <td>
-                                    <input type="checkbox">
-                                </td>
-                                <td>
-                                    <img src="<?=PROOT?>assets/images/user.svg" alt="" width="25px" height="25px">
+                                    <img class="profile-picture" src="<?=PROOT?>assets/images/user.svg" alt="" width="25px" height="25px">
                                 </td>
                                 <td>12B1192</td>
                                 <td>Mark Anthony Ivan</td>
