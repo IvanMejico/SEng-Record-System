@@ -411,26 +411,6 @@ MAIN CONTENT STYLES
     margin-bottom: 5px;
 }
 
-.panel-heading .tab-control {
-    color: #fff;
-    height: 35px;
-    line-height: 1.7em;
-}
-/* .panel-heading .tab-control li {
-    height: 35px;
-}
-.panel-heading .tab-control li a {
-    color: #fff;
-    line-height: 2em;
-    cursor: pointer;
-}
-.panel-heading .tab-control li a:hover {
-    background: #082f3b;
-}
-.panel-heading .tab-control li a.active {
-    border-bottom: 3px solid #05a376;
-} */
-
 /* PANEL ATTRIBUTES */
 .tabbed {
     padding-top: 35px;
@@ -854,6 +834,15 @@ table {
 
 .tab-control input[type="radio"]:checked+label {
     border-bottom: 2px solid #05a376;
+}
+
+.panel-heading .tab-control label span {
+    color: #f1f2f7;
+    line-height: 2em;
+}
+
+.panel-heading .tab-control label span:hover {
+    background: #333549;
 }
 
 .full-width {

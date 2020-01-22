@@ -67,13 +67,22 @@
                 <!-- Program Information Panel -->
                 <div class="ttr-main-panel dark-background tabbed">
                     <div class="tab-container">
-                        <ul class="tab-control">
-                            <li><a href="">BSCE</a></li>
-                            <li><a href="">BSEE</a></li>
-                            <li><a href="">BSECE</a></li>
-                            <li><a class="active">BSCPE</a></li>
-                            <li><a href="">BSME</a></li>
-                        </ul>
+                        <div class="tab-control" id="tabs">
+                            <input type="radio" name="course" id="bsce" value="bsce" checked>
+                            <label for="bsce"><span>BSCE</span></label>
+
+                            <input type="radio" name="course" id="bsee" value="bsee">
+                            <label for="bsee"><span>BSEE</span></label>
+
+                            <input type="radio" name="course" id="bsece" value="bsece">
+                            <label for="bsece"><span>BSECE</span></label>
+
+                            <input type="radio" name="course" id="bscpe" value="bscpe">
+                            <label for="bscpe"><span>BSCPE</span></label>
+
+                            <input type="radio" name="course" id="bsme" value="bsme">
+                            <label for="bsme"><span>BSME</span></label>
+                        </div>
                     </div>
                     <div class="panel-wrapper">
                         <div class="panel-buttons">
@@ -118,13 +127,22 @@
                     </div>
                     <div id="ttr-panel">
                         <div class="panel-heading">
-                            <ul class="tab-control">
-                                <li><a id="tabFirstYear" class="active tabBtn" data-tabname="firstyear">First Year</a></li>
-                                <li><a id="tabSecondYear" class="tabBtn" data-tabname="secondyear">Second Year</a></li>
-                                <li><a id="tabThirdYear" class="tabBtn" data-tabname="thirdyear">Third Year</a></li>
-                                <li><a id="tabFourthYear" class="tabBtn" data-tabname="fourthyear">Fourth Year</a></li>
-                                <li><a id="tabFifthYear" class="tabBtn" data-tabname="fifthyear">Fifth Year</a></li>
-                            </ul>
+                            <div class="tab-control">
+                                <input type="radio" name="yearlevel" id="first-year" value="first-year" checked>
+                                <label for="first-year"><span>First Year</span></label>
+
+                                <input type="radio" name="yearlevel" id="second-year" value="second-year">
+                                <label for="second-year"><span>Second Year</span></label>
+
+                                <input type="radio" name="yearlevel" id="third-year" value="third-year">
+                                <label for="third-year"><span>Third Year</span></label>
+
+                                <input type="radio" name="yearlevel" id="fourth-year" value="fourth-year">
+                                <label for="fourth-year"><span>Fourth Year</span></label>
+
+                                <input type="radio" name="yearlevel" id="fifth-year" value="fifth-year">
+                                <label for="fifth-year"><span>Fifth Year</span></label>
+                            </div>
                         </div>
                         <div class="panel-content" id="firstyear">
                             <h4>First Semester</h4>

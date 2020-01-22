@@ -304,12 +304,12 @@ MAIN CONTENT STYLES
     background: #e5e7e7;
     padding: 20px 40px;
 }
-.ttr-main-panel .tab-control li a:hover {
+/* .ttr-main-panel .tab-control li a:hover {
     background-color: #aab3b0;
 }
 .ttr-main-panel2 .tab-control li a:hover {
     background-color: #ccd4d2;
-}
+} */
 .ttr-main-panel .panel-logo-box {
     margin: 0 20px;  
 }
@@ -410,26 +410,6 @@ MAIN CONTENT STYLES
 .panel-content h4 {
     margin-bottom: 5px;
 }
-
-.panel-heading .tab-control {
-    color: #fff;
-    height: 35px;
-    line-height: 1.7em;
-}
-/* .panel-heading .tab-control li {
-    height: 35px;
-}
-.panel-heading .tab-control li a {
-    color: #fff;
-    line-height: 2em;
-    cursor: pointer;
-}
-.panel-heading .tab-control li a:hover {
-    background: #082f3b;
-}
-.panel-heading .tab-control li a.active {
-    border-bottom: 3px solid #05a376;
-} */
 
 /* PANEL ATTRIBUTES */
 .tabbed {
@@ -854,6 +834,15 @@ table {
 
 .tab-control input[type="radio"]:checked+label {
     border-bottom: 2px solid #05a376;
+}
+
+.panel-heading .tab-control label span {
+    color: #f1f2f7;
+    line-height: 2em;
+}
+
+.panel-heading .tab-control label span:hover {
+    background: #333549;
 }
 
 .full-width {

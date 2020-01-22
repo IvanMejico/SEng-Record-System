@@ -68,13 +68,22 @@
                     </div>
                     <div id="ttr-panel">
                         <div class="panel-heading">
-                            <ul class="tab-control y-level">
-                                <li><a href="">First Year</a></li>
-                                <li><a href="">Second Year</a></li>
-                                <li><a href="">Third Year</a></li>
-                                <li><a href="">Fourth Year</a></li>
-                                <li><a class="active" href="">Fifth Year</a></li>
-                            </ul>
+                            <div class="tab-control">
+                                <input type="radio" name="yearlevel" id="first-year" value="first-year" checked>
+                                <label for="first-year"><span>First Year</span></label>
+
+                                <input type="radio" name="yearlevel" id="second-year" value="second-year">
+                                <label for="second-year"><span>Second Year</span></label>
+
+                                <input type="radio" name="yearlevel" id="third-year" value="third-year">
+                                <label for="third-year"><span>Third Year</span></label>
+
+                                <input type="radio" name="yearlevel" id="fourth-year" value="fourth-year">
+                                <label for="fourth-year"><span>Fourth Year</span></label>
+
+                                <input type="radio" name="yearlevel" id="fifth-year" value="fifth-year">
+                                <label for="fifth-year"><span>Fifth Year</span></label>
+                            </div>
                         </div>
                         <div class="panel-content">
                             <h4>First Semester</h4>
