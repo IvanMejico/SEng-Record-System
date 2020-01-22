@@ -55,8 +55,17 @@ window.onload = function() {
     /**
      * Function Execution
      */
+    
     // This code every time the page gets accessed or refreshed
-    getStudentsByCourse('bsce'); // Defaulted to bsce because there's no state/change detection yet
+    tabs = this.document.getElementsByName('course');
+    tabs.forEach(function(item) {  
+        // Check which tab is checked
+        if(item.checked) {
+            getStudentsByCourse(item.value);
+            return;
+        }
+    });
+    
 
     // Assign event handlers to tabs
     tabs = this.document.getElementsByName('course');

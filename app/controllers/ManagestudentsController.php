@@ -81,6 +81,9 @@ class ManagestudentsController extends Controller {
     }
 
     public function infoAction($studentId) {
+        $params = ($studentId) ? ['conditions' => 'id = "'.$studentId.'"'] : [];
+        $students = new Students();
+        $this->view->student = $students->findFirst($params);
         $this->view->bodyAttr = 'class="ttr-pinned-sidebar ttr-opened-sidebar"';
         $this->view->pageTitle = 'Student Information';
         $this->view->render('students/info');

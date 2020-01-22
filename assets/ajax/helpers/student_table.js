@@ -17,7 +17,12 @@ function renderTable (object) {
             if(key == "picture") {
                 td = document.createElement('td');
                 img = document.createElement('img');
-                img.src = "/SENG_SYSTEM/public/uploads/" + item[key];
+                if(item[key] !== '') {
+                    img.src = "/SENG_SYSTEM/public/uploads/" + item[key];
+                } else {
+                    img.src = "/SENG_SYSTEM/assets/images/user.svg";
+                }
+                
                 img.classList.add('profile-picture');
                 td.appendChild(img);
             } else {

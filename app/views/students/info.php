@@ -1,3 +1,11 @@
+<?php $this->start('head') ?>
+<style>
+    .student-pic {
+        border-radius: 50%;
+    }
+</style>
+<?php $this->end() ?>
+
 <?php $this->start('body') ?>
     <main class="ttr-main">
         <div class="container">
@@ -19,39 +27,69 @@
                     <div class="panel-wrapper">
                         <div class="panel-buttons">
                             <span>
-                                <a href="<?=PROOT?>managestudents/edit_student_info"><i class="flaticon-pencil"></i></a>
+                                <a href="<?=PROOT?>managestudents/edit_student_info/<?=$this->student->id?>"><i class="flaticon-pencil"></i></a>
                                 <a href="<?=PROOT?>managestudents"><i class="flaticon-list"></i></a>
                             </span>
                         </div>
                         <div class="display-flex-normal">
                             <div class="panel-logo-box">
-                                <img src="<?=PROOT?>assets/images/user.svg" alt="" width="100px" height="100px">
+                                <?php
+                                    if($this->student->picture != '') {
+                                        $path = PROOT.'public/uploads/'.$this->student->picture;
+                                    } else {
+                                        $path = PROOT.'assets/images/user.svg';
+                                    }
+                                ?>
+                                <img class="student-pic" src="<?=$path?>" alt="" width="100px" height="100px">
                             </div>
                             <div>
                                 <table>
                                     <tr>
                                         <td><strong>ID Number:</strong></td>
-                                        <td>12B1192</td>
+                                        <td><?=$this->student->id?></td>
                                     </tr>
                                     <tr>
                                         <td><strong>First Name:</strong></td>
-                                        <td>Mark Anthony Ivan</td>
+                                        <td><?=$this->student->firstname?></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Middle Name:</strong></td>
-                                        <td>Sotto</td>
+                                        <td><?=$this->student->middlename?></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Last Name</strong></td>
-                                        <td>Mejico</td>
+                                        <td><?=$this->student->lastname?></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Gender</strong></td>
-                                        <td>Male</td>
+                                        <td><?=ucfirst($this->student->gender)?></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Course</strong></td>
-                                        <td>BS Computer Engineering</td>
+                                        <?php
+                                            // Temporary code until there's a table for academic programs to be queried
+                                            switch($this->student->course) {
+                                                case 'bsce':
+                                                    $course = 'BS in Civil Engineering';
+                                                    break;
+                                                case 'bsee':
+                                                    $course = 'BS in Electrical Engineering';
+                                                    break;
+                                                case 'bsece':
+                                                    $course = 'BS in Electronics and Communications Engineering';
+                                                    break;
+                                                case 'bscpe':
+                                                    $course = 'BS in Computer Engineering';
+                                                    break;
+                                                case 'bsme':
+                                                    $course = 'BS in Mechanical Engineering';
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
+                                        ?>
+
+                                        <td><?=$course?></td>
                                     </tr>
                                 </table>
                             </div>
