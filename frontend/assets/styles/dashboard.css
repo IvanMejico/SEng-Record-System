@@ -514,10 +514,10 @@ table {
     color: #eaeaea;
     height: 35px;
 }
-.ttr-table.stud-list tr:first-child {
+.ttr-table.stud-list thead tr {
     cursor: default;
 }
-.ttr-table.stud-list tr {
+.ttr-table.stud-list tbody tr {
     cursor: pointer;
 }
 .stud-list tr td {

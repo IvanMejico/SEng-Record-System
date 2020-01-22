@@ -74,27 +74,35 @@ class ManagestudentsController extends Controller {
         $this->view->render('students/bulk_add_students');
     }
 
-    public function edit_student_infoAction() {
+    public function edit_student_infoAction($studentId) {
         $this->view->bodyAttr = 'class="ttr-pinned-sidebar ttr-opened-sidebar"';
         $this->view->pageTitle = 'Edit Student Information';
         $this->view->render('students/student_form');
     }
 
-    public function infoAction() {
+    public function infoAction($studentId) {
         $this->view->bodyAttr = 'class="ttr-pinned-sidebar ttr-opened-sidebar"';
         $this->view->pageTitle = 'Student Information';
         $this->view->render('students/info');
     }
 
-    public function getDataAction() {
+    public function getDataAction($schoolId) {
         /**
          * Get the properties of every student, shift the last
          * element of every item to the first, append eah to a 
          * final array to be encoded in json data and echoed 
          * out be parsed by the js script
          */
+        $params = [];
+        $response=[];
+        if($schoolId) {
+            $params = ['conditions' => 'course = "'.$schoolId.'"'];
+        }
+
         $students = new Students();
-        $list = $students->find();
+        
+
+        $list = $students->find($params);
         foreach($list as $item) {
             $item_properties = H::getObjectProperties($item);
             unset($item_properties['course']);

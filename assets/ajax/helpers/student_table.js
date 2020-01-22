@@ -1,6 +1,7 @@
 function renderTable (object) {
+    var table = document.querySelector("#students tbody");
+    table.innerHTML = '';
     object.forEach(function(item) {
-        var table = document.querySelector("#students tbody")
         row = document.createElement('tr');
 
         // checkbox
@@ -28,8 +29,14 @@ function renderTable (object) {
         }
         td = document.createElement('td');
         td.innerHTML = '<div class="table-action"><a href="<?=PROOT?>managestudents/edit_student_info" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a href="" class="table-delete"><i class="flaticon-garbage"></i></a></div>';
-
+        
+        // Assign click event on every row
+        
+            
         row.appendChild(td);
+        row.addEventListener('click', function() {
+            window.location='/SENG_SYSTEM/managestudents/info/'+item.id;
+        });
 
         table.appendChild(row);
     });
