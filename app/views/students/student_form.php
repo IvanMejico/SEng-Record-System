@@ -91,7 +91,7 @@
                                         'text',
                                         'ID No.',
                                         'id',
-                                        $this->newStudent->id,
+                                        $this->student->id,
                                         ['class'=>'form-field'],
                                         ['class'=>'form-group']
                                     ); 
@@ -101,7 +101,7 @@
                                         'text',
                                         'First Name',
                                         'firstname',
-                                        $this->newStudent->firstname,
+                                        $this->student->firstname,
                                         ['class'=>'form-field'],
                                         ['class'=>'form-group']
                                     );
@@ -111,7 +111,7 @@
                                         'text',
                                         'Middle Name',
                                         'middlename',
-                                        $this->newStudent->middlename,
+                                        $this->student->middlename,
                                         ['class'=>'form-field'],
                                         ['class'=>'form-group']
                                     );
@@ -121,7 +121,7 @@
                                         'text',
                                         'Last Name',
                                         'lastname',
-                                        $this->newStudent->lastname,
+                                        $this->student->lastname,
                                         ['class'=>'form-field'],
                                         ['class'=>'form-group']
                                     );
@@ -136,9 +136,9 @@
                                     );
                                     ?>
                                     <?php
-                                    if(isset($this->newStudent->gender)) {
+                                    if(isset($this->student->gender)) {
                                         $html = '<script>document.addEventListener("DOMContentLoaded", function(){
-                                            option = document.getElementById("'.$this->newStudent->gender.'").selected = true;
+                                            option = document.getElementById("'.$this->student->gender.'").selected = true;
                                         });</script>';
                                         echo $html;
                                     }
@@ -160,9 +160,9 @@
                                     );
                                     ?>
                                     <?php
-                                    if(isset($this->newStudent->course)) {
+                                    if(isset($this->student->course)) {
                                         $html = '<script>document.addEventListener("DOMContentLoaded", function(){
-                                            option = document.getElementById("'.$this->newStudent->course.'").selected = true;
+                                            option = document.getElementById("'.$this->student->course.'").selected = true;
                                         });</script>';
                                         echo $html;
                                     }
@@ -183,9 +183,9 @@
                                     );
                                     ?>
                                     <?php
-                                    if(isset($this->newStudent->yearlevel)) {
+                                    if(isset($this->student->yearlevel)) {
                                         $html = '<script>document.addEventListener("DOMContentLoaded", function(){
-                                            option = document.getElementById("'.$this->newStudent->yearlevel.'").selected = true;
+                                            option = document.getElementById("'.$this->student->yearlevel.'").selected = true;
                                         });</script>';
                                         echo $html;
                                     }
@@ -195,7 +195,7 @@
                                         'text',
                                         'Section',
                                         'section',
-                                        $this->newStudent->section,
+                                        $this->student->section,
                                         ['class'=>'form-field'],
                                         ['class'=>'form-group']
                                     );
@@ -209,6 +209,15 @@
                                                 <div>
                                                     <a class="btn btn-upload" style="cursor: pointer" onclick="triggerClick()">Upload Photo</a>
                                                 </div>
+                                                <?php
+                                                    if($this->student->picture) {
+                                                        echo '<script>(function(){'
+                                                                .'img = document.getElementById("profile-upload");
+                                                                thumbnail = document.getElementById("profile-display");
+                                                                img.setAttribute("src",'.'"/SENG_SYSTEM/public/uploads/'.$this->student->picture.'");
+                                                                thumbnail.setAttribute("src",img.src);})();</script>';
+                                                    }
+                                                 ?>
                                             </div>
                                         </div>
                                         <div class="form-group">

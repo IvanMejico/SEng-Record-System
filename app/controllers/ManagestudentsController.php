@@ -21,6 +21,7 @@ class ManagestudentsController extends Controller {
     public function add_studentAction() {
         $studentModel = new Students();
         $this->view->_message = '';
+        $this->view->displayErrors = [];
         
         if($this->request->isPost()) {
             $fileSource = '';
@@ -58,10 +59,10 @@ class ManagestudentsController extends Controller {
                 H::resetObjectProperties($studentModel);
                 $this->view->_message = $studentModel->getSuccessMessage();
             }
+            $this->view->displayErrors = $studentModel->getErrorMessages();
         }
 
-        $this->view->displayErrors = $studentModel->getErrorMessages();
-        $this->view->newStudent = $studentModel;
+        $this->view->student = $studentModel;
 
         $this->view->bodyAttr = 'class="ttr-pinned-sidebar ttr-opened-sidebar"';
         $this->view->pageTitle = 'Add Student';
@@ -75,6 +76,13 @@ class ManagestudentsController extends Controller {
     }
 
     public function edit_student_infoAction($studentId) {
+        $studentModel = new Students();
+        $this->view->_message = '';
+        $this->view->displayErrors = [];
+        
+        $student = $studentModel->findById($studentId);
+        $this->view->student = $student;
+
         $this->view->bodyAttr = 'class="ttr-pinned-sidebar ttr-opened-sidebar"';
         $this->view->pageTitle = 'Edit Student Information';
         $this->view->render('students/student_form');
@@ -82,8 +90,8 @@ class ManagestudentsController extends Controller {
 
     public function infoAction($studentId) {
         $params = ($studentId) ? ['conditions' => 'id = "'.$studentId.'"'] : [];
-        $students = new Students();
-        $this->view->student = $students->findFirst($params);
+        $studentModel = new Students();
+        $this->view->student = $studentModel->findFirst($params);
         $this->view->bodyAttr = 'class="ttr-pinned-sidebar ttr-opened-sidebar"';
         $this->view->pageTitle = 'Student Information';
         $this->view->render('students/info');
