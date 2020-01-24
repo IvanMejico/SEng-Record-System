@@ -4,7 +4,7 @@ namespace Core;
 // use H; // for debugging purposes only
 
 class Model {
-    protected $_db, $_table, $_modelName, $_softDelete = false, $_validates=true, $_validationErrors=[];
+    protected $_db, $_table, $_modelName, $_updating = false, $_softDelete = false, $_validates=true, $_validationErrors=[];
     public $id;
 
     public function __construct($table) {
@@ -151,5 +151,12 @@ class Model {
 
     public function isNew() {
         return (property_exists($this, 'id') && !empty($this->id)) ? false : true;
+    }
+
+    public function setUpdate($status) {
+        $this->_updating = $status;
+    }
+    public function isUpdating() {
+        return $this->_updating;
     }
 }

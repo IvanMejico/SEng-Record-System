@@ -17,11 +17,9 @@ class Router {
         array_shift($url);
 
         // acl check
-        // TODO: Adjust the page redirects to new acl.
         $grantAccess = self::hasAccess($controller_name, $action_name);
         if(!$grantAccess) {
             $controller_name = Users::currentUser() != null ? 'Home' : 'Login';
-            // H::dnd($controller_name);
             $controller = $controller_name."Controller";
             $action = 'indexAction';
         }

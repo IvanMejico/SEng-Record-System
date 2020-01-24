@@ -85,7 +85,7 @@
                             <div class="panel-content">
                                 <?= FH::displayErrors($this->displayErrors, false) ?>
                                 <?= $this->_message ?>
-                                <form id="studentForm" action="/SENG_SYSTEM/managestudents/add_student" method="POST" enctype="multipart/form-data">
+                                <form id="studentForm" method="POST" enctype="multipart/form-data">
                                     <div class="form-content">
                                     <?= FH::inputBlock(
                                         'text',
@@ -204,6 +204,7 @@
                                         <div class="form-group">
                                             <label for="">Photo</label>
                                             <div>
+                                                <input type="hidden" name="file-name" value="<?=$this->student->picture?>">
                                                 <input type="file" id="profile-upload" name="profile-upload" style="display:none" onchange="displayImage(this)">
                                                 <img class="upload-pic" id="profile-display" width="120px" style="cursor: pointer" height="110px" onclick="triggerClick()">
                                                 <div>

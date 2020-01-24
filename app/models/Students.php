@@ -11,7 +11,6 @@ class Students extends Model {
     public function __construct() {
         $table = 'students';
         parent::__construct($table);
-        // $this->_softDelete = true;
     }
 
     public function validator() {
