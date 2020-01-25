@@ -14,7 +14,7 @@ class LoginController extends Controller {
     public function __construct($controller, $action) {
         parent::__construct($controller, $action);
         $this->view->setLayout('login');
-        $this->load_model('Users');      // No models and database yet
+        $this->load_model('Users');
     }
 
     public function indexAction() {

@@ -206,7 +206,7 @@
                                             <div>
                                                 <input type="hidden" name="file-name" value="<?=$this->student->picture?>">
                                                 <input type="file" id="profile-upload" name="profile-upload" style="display:none" onchange="displayImage(this)">
-                                                <img class="upload-pic" id="profile-display" width="120px" style="cursor: pointer" height="110px" onclick="triggerClick()">
+                                                <img class="upload-pic" id="profile-display" width="120px" height="110px" style="cursor: pointer" onclick="triggerClick()">
                                                 <div>
                                                     <a class="btn btn-upload" style="cursor: pointer" onclick="triggerClick()">Upload Photo</a>
                                                 </div>

@@ -10,6 +10,7 @@ use Core\H;
 class ManagestudentsController extends Controller {
     public function __construct($controller, $action) {
         parent::__construct($controller, $action);
+        $this->load_model('Students');
     }
 
     public function indexAction() {
@@ -19,7 +20,6 @@ class ManagestudentsController extends Controller {
     }
 
     public function add_studentAction() {
-        $studentModel = new Students();
         $this->view->_message = '';
         $this->view->displayErrors = [];
         
@@ -50,21 +50,21 @@ class ManagestudentsController extends Controller {
                 }
 
                 $fileSource = $tmpName;
-                $studentModel->picture = $fileNameNew;
+                $this->StudentsModel->picture = $fileNameNew;
             }
             
-            $studentModel->assign($this->request->get());
-            if($studentModel->save()) {
+            $this->StudentsModel->assign($this->request->get());
+            if($this->StudentsModel->save()) {
                 move_uploaded_file($fileSource, $fileDestination); // TODO: Retain files after submission.
-                H::resetObjectProperties($studentModel);
-                $this->view->_message = $studentModel->getSuccessMessage();
+                H::resetObjectProperties($this->StudentsModel);
+                $this->view->_message = $this->StudentsModel->getSuccessMessage();
             } else {
-                $studentModel->picture = '';
+                $this->StudentsModel->picture = '';
+                $this->view->displayErrors = $this->StudentsModel->getErrorMessages();
             }
-            $this->view->displayErrors = $studentModel->getErrorMessages();
         }
 
-        $this->view->student = $studentModel;
+        $this->view->student = $this->StudentsModel;
 
         $this->view->bodyAttr = 'class="ttr-pinned-sidebar ttr-opened-sidebar"';
         $this->view->pageTitle = 'Add Student';
@@ -81,7 +81,6 @@ class ManagestudentsController extends Controller {
         // Check if there's no parameter given. If there's none, redirect to the "Student List" page
         if(!$studentId) Router::redirect('managestudents');
 
-        $studentModel = new Students();
         $this->view->_message = '';
         $this->view->displayErrors = [];
         
@@ -89,10 +88,10 @@ class ManagestudentsController extends Controller {
             /**
              * If $_FILE is empty then check if hidden tag is empty
              * if hidden tag is empty, then the file '$picture' attribute will be empty
-             * if hidden tag is contains value, then the value of the $studentModel->picture 
+             * if hidden tag is contains value, then the value of the $this->StudentsModel->picture 
              *  will be that of the value of the hidden tag. And no new photo will be uploaded.
              * 
-             * If however $_FILE is not empty, thenn new photo will be saved in the database, 
+             * If however $_FILE is not empty, then new photo will be saved in the database, 
              *  old picture file will be deleted and new photo will be saved in the uploads folder.
              */
 
@@ -100,7 +99,7 @@ class ManagestudentsController extends Controller {
             $fileDestination = '';
 
             if(file_exists($_FILES['profile-upload']['tmp_name']) || is_uploaded_file($_FILES['profile-upload']['tmp_name'])) {
-                // TODO: Now check if there is an existing picture saved in the database. If there is, delete that file from the upload folder.
+                // Check if there is an existing picture saved in the database. If there is, delete that file from the upload folder.
                 if($this->request->get('file-name')) {
                     unlink('public/uploads/'.$this->request->get('file-name'));
                 }
@@ -127,21 +126,22 @@ class ManagestudentsController extends Controller {
                 }
 
                 $fileSource = $tmpName;
-                $studentModel->picture = $fileNameNew;
+                $this->StudentsModel->picture = $fileNameNew;
             } else if ($this->request->get('file-name')) {
-                $studentModel->picture = $this->request->get('file-name');
+                $this->StudentsModel->picture = $this->request->get('file-name');
             }
 
-            $studentModel->assign($this->request->get());        
-            $studentModel->setUpdate(true);
-            if($studentModel->save()) {
+            $this->StudentsModel->assign($this->request->get());        
+            $this->StudentsModel->setUpdate(true);
+            if($this->StudentsModel->save()) {
                 move_uploaded_file($fileSource, $fileDestination); // TODO: Retain files after submission.
-                Router::redirect('managestudents/info/'.$studentModel->id);
+                Router::redirect('managestudents/info/'.$this->StudentsModel->id);
+            } else {
+                $this->view->displayErrors = $this->StudentsModel->getErrorMessages();
             }
-            $this->view->student = $studentModel;
-            $this->_message = $studentModel->getErrorMessages();
+            $this->view->student = $this->StudentsModel;
         } else {
-            $student = $studentModel->findById($studentId);
+            $student = $this->StudentsModel->findById($studentId);
             $this->view->student = $student;
         }
         
@@ -152,8 +152,8 @@ class ManagestudentsController extends Controller {
 
     public function infoAction($studentId) {
         $params = ($studentId) ? ['conditions' => 'id = "'.$studentId.'"'] : [];
-        $studentModel = new Students();
-        $this->view->student = $studentModel->findFirst($params);
+        $this->StudentsModel = new Students();
+        $this->view->student = $this->StudentsModel->findFirst($params);
         $this->view->bodyAttr = 'class="ttr-pinned-sidebar ttr-opened-sidebar"';
         $this->view->pageTitle = 'Student Information';
         $this->view->render('students/info');
@@ -172,10 +172,7 @@ class ManagestudentsController extends Controller {
             $params = ['conditions' => 'course = "'.$schoolId.'"'];
         }
 
-        $students = new Students();
-        
-
-        $list = $students->find($params);
+        $list = $this->StudentsModel->find($params);
         foreach($list as $item) {
             $item_properties = H::getObjectProperties($item);
             unset($item_properties['course']);

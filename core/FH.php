@@ -26,6 +26,16 @@ class FH {
         $html .='</select></div></div>';
         return $html;
     }
+
+    public static function textAreaBlock($label, $name, $value='', $inputAttrs=[], $divAttrs=[]) {
+        $divString = self::stringifyAttrs($divAttrs);
+        $inputString = self::stringifyAttrs($inputAttrs);
+        $html = '<div'.$divString.'>';
+        $html .= '<label for="'.$name.'">'.$label.'</label>';
+        $html .= '<div><textarea id="'.$name.'" name="'.$name.'" '.$inputString.'>'.$value.'</textarea></div>';
+        $html .= '</div>';
+        return $html;
+    }
     
     public static function submitTag($buttonText, $inputAttrs=[]) {
         $inputString = self::stringifyAttrs($inputAttrs);
