@@ -107,4 +107,33 @@
             </div>
         </div>
     </main>
+    <script>
+        //TODO: This code could be changed to helper functions
+
+        function assignChangeEventToTabs(tabs) {
+            var prev = null;
+            for (var i=0; i<tabs.length; i++) {
+                tabs[i].addEventListener('change', function() {
+                    if (this !== prev) {
+                        prev = this;
+                    }
+                    getStudentsByCourse(this.value);
+                });
+            }
+        }
+        
+        // This code every time the page gets accessed or refreshed
+        tabs = this.document.getElementsByName('course');
+        tabs.forEach(function(item) {  
+            // Check which tab is checked
+            if(item.checked) {
+                getStudentsByCourse(item.value);
+                return;
+            }
+        });
+        
+        // Assign event handlers to tabs
+        tabs = this.document.getElementsByName('course');
+        assignChangeEventToTabs(tabs);
+    </script>
 <?php $this->end() ?>

@@ -43,9 +43,11 @@
             color: rgb(72, 73, 72);
         }
 
-        #secondyear, #thirdyear, #fourthyear,#fifthyear {
-            display: none;
-        }
+        #secondyear, #thirdyear, #fourthyear, #fifthyear { display: none; }
+
+        .school-info { width: 100%; }
+
+
     </style>
 <?php $this->end() ?>
 
@@ -68,49 +70,49 @@
                 <div class="ttr-main-panel dark-background tabbed">
                     <div class="tab-container">
                         <div class="tab-control" id="tabs">
-                            <input type="radio" name="course" id="bsce" value="bsce" checked>
+                            <input type="radio" name="program" id="bsce" value="bsce" checked>
                             <label for="bsce"><span>BSCE</span></label>
 
-                            <input type="radio" name="course" id="bsee" value="bsee">
+                            <input type="radio" name="program" id="bsee" value="bsee">
                             <label for="bsee"><span>BSEE</span></label>
 
-                            <input type="radio" name="course" id="bsece" value="bsece">
+                            <input type="radio" name="program" id="bsece" value="bsece">
                             <label for="bsece"><span>BSECE</span></label>
 
-                            <input type="radio" name="course" id="bscpe" value="bscpe">
+                            <input type="radio" name="program" id="bscpe" value="bscpe">
                             <label for="bscpe"><span>BSCPE</span></label>
 
-                            <input type="radio" name="course" id="bsme" value="bsme">
+                            <input type="radio" name="program" id="bsme" value="bsme">
                             <label for="bsme"><span>BSME</span></label>
                         </div>
                     </div>
                     <div class="panel-wrapper">
                         <div class="panel-buttons">
                             <span>
-                                <a href="<?=PROOT?>manageprograms/edit_program"><i class="flaticon-pencil"></i></a>
+                                <a id="btn-edit-program"><i class="flaticon-pencil"></i></a>
                             </span>
                         </div>
                         <div class="display-flex-reverse">
                             <div class="panel-logo-box">
-                                <img src="<?=PROOT?>assets/images/orgs/ICPEP.png" alt="" width="150px" height="150px">
+                                <img id="school-logo" src="" alt="" width="150px" height="150px">
                             </div>
-                            <div>
+                            <div class="school-info">
                                 <table>
                                     <tr>
                                         <td><strong>Name:</strong></td>
-                                        <td><em><b>Bachelor of Science in Computer Engineering</em></b></td>
+                                        <td id="schoolname-text"></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Mission:</strong></td>
-                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem autem nihil aliquid eligendi. Optio, pariatur velit possimus repellendus veritatis doloremque neque voluptas consectetur, dolorem expedita minus! Consectetur quis dolorem harum architecto labore eius animi illum incidunt saepe? Omnis, excepturi consequatur eaque placeat harum eos, ea ex nihil quam corrupti doloremque.</td>
+                                        <td id="mission-text"></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Vision:</strong></td>
-                                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis hic mollitia quibusdam soluta placeat impedit qui atque a nulla exercitationem voluptatem, ex optio doloremque? Obcaecati beatae quasi expedita veniam a.</td>
+                                        <td id="vision-text"></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Goal:</strong></td>
-                                        <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat quidem, autem dignissimos ipsa blanditiis laudantium eius illo. Voluptatibus distinctio maiores libero, recusandae placeat officiis magni, optio molestiae, impedit facilis consequatur blanditiis ducimus sunt amet rerum iste earum ratione voluptas? Obcaecati.</td>
+                                        <td id="goal-text"></td>
                                     </tr>
                                 </table>
                             </div>
@@ -686,6 +688,66 @@
             </div>
         </div>
     </main>
+    <script>
+
+    </script>
     <script src="<?=PROOT?>assets/js/editable.js"></script>
     <script src="<?=PROOT?>assets/js/main.js"></script>
+    <script src="<?=PROOT?>assets/ajax/helpers/programs_table.js"></script>
+    <script src="<?=PROOT?>assets/ajax/programdata.js"></script>
+
+    <script>
+        /**
+         * For rendering the "Program Information" table.
+         */
+        function assignChangeEventToTabs(tabs) {
+            var prev = null;
+            for (var i=0; i<tabs.length; i++) {
+                tabs[i].addEventListener('change', function() {
+                    if (this !== prev) {
+                        prev = this;
+                    }
+                    getProgramById(this.value);
+                });
+            }
+        }
+
+        tabs = this.document.getElementsByName('program');
+        
+        tabs.forEach(function(item) {  
+            // Check which tab is checked
+            if(item.checked) {
+                getProgramById(item.value);
+                return;
+            }
+        });
+
+        // Assign event handlers to tabs
+        assignChangeEventToTabs(tabs);
+
+
+        /**
+         * For rendering the "Subjects" table
+         */
+        var editButton = document.getElementsByClassName('table-edit');
+        var deleteButton = document.getElementsByClassName('table-delete');
+        var addButton = document.getElementsByClassName('table-add');
+
+        // Add event listener to every edit button on the table
+        Array.prototype.forEach.call(editButton, function(b) {
+            b.addEventListener('click', inlineEdit);
+        });
+
+        // Add event istener to every delete button on the table
+        Array.prototype.forEach.call(deleteButton, function(b) {
+            b.addEventListener('click', inlineDelete);
+        });
+
+        // Add event listener to every add button on the table
+        Array.prototype.forEach.call(addButton, function(b) {
+            b.addEventListener('click', addRow);
+        });
+
+        
+    </script>
 <?php $this->end() ?>

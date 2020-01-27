@@ -159,7 +159,8 @@ class ManagestudentsController extends Controller {
         $this->view->render('students/info');
     }
 
-    public function getDataAction($schoolId) {
+    // Fetch student data by school id
+    public function getDataAction($programId) {
         /**
          * Get the properties of every student, shift the last
          * element of every item to the first, append eah to a 
@@ -168,8 +169,8 @@ class ManagestudentsController extends Controller {
          */
         $params = [];
         $response=[];
-        if($schoolId) {
-            $params = ['conditions' => 'course = "'.$schoolId.'"'];
+        if($programId) {
+            $params = ['conditions' => 'course = "'.$programId.'"'];
         }
 
         $list = $this->StudentsModel->find($params);

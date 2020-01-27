@@ -361,25 +361,3 @@ function addRow() {
     table = getParentTable(this);
     table.children[1].appendChild(row);
 }
-
-
-window.onload = function() {
-    var editButton = document.getElementsByClassName('table-edit');
-    var deleteButton = document.getElementsByClassName('table-delete');
-    var addButton = document.getElementsByClassName('table-add');
-
-    // Add event listener to every edit button on the table
-    Array.prototype.forEach.call(editButton, function(b) {
-        b.addEventListener('click', inlineEdit);
-    });
-
-    // Add event istener to every delete button on the table
-    Array.prototype.forEach.call(deleteButton, function(b) {
-        b.addEventListener('click', inlineDelete);
-    });
-
-    // Add event listener to every add button on the table
-    Array.prototype.forEach.call(addButton, function(b) {
-        b.addEventListener('click', addRow);
-    });
-}

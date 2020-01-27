@@ -134,4 +134,22 @@ class ManageprogramsController extends Controller {
         $this->view->pageTitle = 'Edit Academic Program';
         $this->view->render('programs/program_form');
     }
+
+    // Fetch program data via programId
+    public function getDataAction($programId) {
+        $response=[];
+        $params=[];
+
+        if($programId) {
+            $params = ['conditions' => 'id = "'.$programId.'"'];
+        }
+
+        $list = $this->ProgramsModel->find($params);
+
+        foreach($list as $item) {
+            $item_properties = H::getObjectProperties($item);
+            $response[] = $item_properties;
+        }
+        echo json_encode($response);
+    }
 }
