@@ -18,30 +18,30 @@
                 <div class="ttr-main-panel dark-background">
                     <div class="panel-buttons">
                         <span>
-                            <a href="<?=PROOT?>manageschool/edit_school_info"><i class="flaticon-pencil"></i></a>
+                            <a href="<?=PROOT?>manageschool/edit_school_info/<?=$this->school->id?>"><i class="flaticon-pencil"></i></a>
                         </span>
                     </div>
                     <div class="display-flex-reverse">
                         <div class="panel-logo-box">
-                            <img src="assets/images/senglogo.png" alt="" width="150px" height="150px">
+                            <img src="<?=PROOT?>public/uploads/logo/<?=$this->school->logo?>" alt="" width="150px" height="150px">
                         </div>
                         <div class="panel-main">
                             <table>
                                 <tr>
                                     <td><strong>Name:</strong></td>
-                                    <td><em><b>Marinduque State College, School of Engineering</b></em></td>
+                                    <td><em><b><?=$this->school->name?></b></em></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Mission:</strong></td>
-                                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem autem nihil aliquid eligendi. Optio, pariatur velit possimus repellendus veritatis doloremque neque voluptas consectetur, dolorem expedita minus! Consectetur quis dolorem harum architecto labore eius animi illum incidunt saepe? Omnis, excepturi consequatur eaque placeat harum eos, ea ex nihil quam corrupti doloremque.</td>
+                                    <td><?=$this->school->mission?></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Vision:</strong></td>
-                                    <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis hic mollitia quibusdam soluta placeat impedit qui atque a nulla exercitationem voluptatem, ex optio doloremque? Obcaecati beatae quasi expedita veniam a.</td>
+                                    <td><?=$this->school->vision?></td>
                                 </tr>
                                 <tr>
                                     <td><strong>Goal:</strong></td>
-                                    <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat quidem, autem dignissimos ipsa blanditiis laudantium eius illo. Voluptatibus distinctio maiores libero, recusandae placeat officiis magni, optio molestiae, impedit facilis consequatur blanditiis ducimus sunt amet rerum iste earum ratione voluptas? Obcaecati.</td>
+                                    <td><?=$this->school->goal?></td>
                                 </tr>
                             </table>
                         </div>
@@ -64,7 +64,7 @@
                                 <thead>
                                     <tr>
                                         <th>Logo</th>
-                                        <th>Shorthand</th>
+                                        <th>ID</th>
                                         <th>Name</th>
                                         <th></th>
                                     </tr>
@@ -72,7 +72,7 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <img src="assets/images/orgs/PICE.png" alt="pice" width="30px" height="30px">
+                                            <img src="<?=PROOT?>assets/images/orgs/PICE.png" alt="pice" width="30px" height="30px">
                                         </td>
                                         <td>BSCE</td>
                                         <td>BS Civil Engineering</td>
@@ -84,7 +84,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <img src="assets/images/orgs/IiEE.png" alt="pice" width="30px" height="30px">
+                                            <img src="<?=PROOT?>assets/images/orgs/IiEE.png" alt="pice" width="30px" height="30px">
                                         </td>
                                         <td>BSEE</td>
                                         <td>BS Electrical Engineering</td>
@@ -96,7 +96,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <img src="assets/images/orgs/IECEP.png" alt="pice" width="30px" height="30px">
+                                            <img src="<?=PROOT?>assets/images/orgs/IECEP.png" alt="pice" width="30px" height="30px">
                                         </td>
                                         <td>BSECE</td>
                                         <td>BS Electronics and Communications Engineering</td>
@@ -108,7 +108,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <img src="assets/images/orgs/ICPEP.png" alt="pice" width="30px" height="30px">
+                                            <img src="<?=PROOT?>assets/images/orgs/ICPEP.png" alt="pice" width="30px" height="30px">
                                         </td>
                                         <td>BSCpE</td>
                                         <td>BS Computer Engineering</td>
@@ -120,7 +120,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <img src="assets/images/orgs/PSME.png" alt="pice" width="30px" height="30px">
+                                            <img src="<?=PROOT?>assets/images/orgs/PSME.png" alt="pice" width="30px" height="30px">
                                         </td>
                                         <td>BSCE</td>
                                         <td>BS Mechanical Engineering</td>

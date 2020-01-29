@@ -87,7 +87,6 @@
                                 <?= $this->_message ?>
                                 <form id="programForm" method="POST" enctype="multipart/form-data">
                                     <div class="form-content">
-
                                         <?= FH::inputBlock(
                                             'text',
                                             'Program ID',
