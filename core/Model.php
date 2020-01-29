@@ -53,7 +53,7 @@ class Model {
     public function save() {
         $this->validator();
         if($this->_validates) {
-            $this->beforeSave();
+            // $this->beforeSave();
             $fields = H::getObjectProperties($this);
             // determine whether to update or insert
             $existingRecord = $this->findById($this->id); // Check if there's an existing record. If there is, just update the record.
@@ -63,7 +63,7 @@ class Model {
                 return $save;
             } else {
                 $save = $this->insert($fields);
-                $this->afterSave();
+                // $this->afterSave();
                 return $save;
             }  
         }

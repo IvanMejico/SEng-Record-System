@@ -16,7 +16,7 @@ use Core\Validators\UniqueValidator;
 class Users extends Model {
     private $_isLoggedIn, $_sessionName, $_cookieName, $_confirm;
     public static $currentLoggedInUser = null;
-    public $id, $username, $email, $password, $fname, $lname, $acl, $deleted = 0;
+    public $id, $username, $password, $acl, $deleted = 0;
 
     public function __construct($user='') {
         $table = 'users';
@@ -55,10 +55,14 @@ class Users extends Model {
     }
 
 
-    public function beforeSave() {
-        if($this->isNew()) {
-            $this->password = password_hash($this->password, PASSWORD_DEFAULT);
-        }
+    // public function beforeSave() {
+    //     if($this->isNew()) {
+    //         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+    //     }
+    // }
+
+    public function encrypt($raw) {
+        return password_hash($raw, PASSWORD_DEFAULT);
     }
 
     public function findByUsername($username) {
