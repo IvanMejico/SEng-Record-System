@@ -152,4 +152,17 @@ class ManageprogramsController extends Controller {
         }
         echo json_encode($response);
     }
+
+    public function deleteDataAction($programId) {
+        if($programId) {
+            // TODO: delete the corresponding photos/logos for the record
+            $program = $this->ProgramsModel->findById($programId);
+            if($program) {
+                $this->ProgramsModel->delete($program->id);
+                if(!unlink('public/uploads/logo/'.$program->logo)) {
+                    die('logo was not deleted');
+                }
+            }
+        }
+    }
 }

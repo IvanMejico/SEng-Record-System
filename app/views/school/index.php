@@ -85,24 +85,15 @@
                                     // Organization Logo
                                     $html = '<tr id="' . $program->id . '" onclick="">';
                                     $html .= '<td><img src="'. PROOT .'public/uploads/logo/'. $program->logo .'" alt="'. $program->id .'" width="30px" height="30px"/></td>';
-                                    
                                     // Program ID
                                     $html .= '<td>'. strtoupper($program->id) .'</td>';
-
                                     // Program Name
                                     $html .= '<td>'. $program->name .'</td>';
-
                                     // Row Buttons
                                     $html .= '<td><div class="table-action"><a href="'.PROOT.'manageprograms/edit_program/'.$program->id.'" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a></div></td>';
-
                                     $html .= '</tr>';
-
-
                                     
-
                                     echo $html;
-
-
                                 }
                                 ?>  
                                 </tbody>
@@ -114,4 +105,34 @@
 
         </div>
     </main>
+    <script>
+        rows = document.querySelectorAll('.ttr-table tbody tr');
+        
+        deleteButtons = document.getElementsByClassName('table-delete');
+        for (key in deleteButtons) {
+            deleteButtons[key].onclick = function() {
+                tableRow = this.parentNode.parentNode.parentNode;
+                programId = tableRow.id;
+                response = confirm("Are you sure you want to delete "+tableRow.id.toUpperCase()+"?");
+                if(response == true) {
+                    // Delete the data on the databse
+                    deleteData(programId);
+                    // Delete the table row from the table DOM
+                    deleteTableRow(tableRow);
+                }
+            };
+        }
+
+        function deleteTableRow(row){
+            parent = row.parentNode;
+            parent.removeChild(row);
+        }
+        function deleteData(programId){
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET','manageprograms/deletedata/'+programId);
+            xhr.onload = function() {
+            };
+            xhr.send();
+        }
+    </script>
 <?php $this->end() ?>
