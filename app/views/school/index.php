@@ -1,3 +1,11 @@
+<?php $this->start('head') ?>
+<style>
+    .ttr-table tbody tr {
+        cursor: default;
+    }
+</style>
+<?php $this->end() ?>
+
 <?php $this->start('body') ?>
     <main class="ttr-main">
         <div class="container">
@@ -70,66 +78,33 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <img src="<?=PROOT?>assets/images/orgs/PICE.png" alt="pice" width="30px" height="30px">
-                                        </td>
-                                        <td>BSCE</td>
-                                        <td>BS Civil Engineering</td>
-                                        <td>
-                                            <div class="table-action">
-                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="<?=PROOT?>assets/images/orgs/IiEE.png" alt="pice" width="30px" height="30px">
-                                        </td>
-                                        <td>BSEE</td>
-                                        <td>BS Electrical Engineering</td>
-                                        <td>
-                                            <div class="table-action">
-                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="<?=PROOT?>assets/images/orgs/IECEP.png" alt="pice" width="30px" height="30px">
-                                        </td>
-                                        <td>BSECE</td>
-                                        <td>BS Electronics and Communications Engineering</td>
-                                        <td>
-                                            <div class="table-action">
-                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="<?=PROOT?>assets/images/orgs/ICPEP.png" alt="pice" width="30px" height="30px">
-                                        </td>
-                                        <td>BSCpE</td>
-                                        <td>BS Computer Engineering</td>
-                                        <td>
-                                            <div class="table-action">
-                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img src="<?=PROOT?>assets/images/orgs/PSME.png" alt="pice" width="30px" height="30px">
-                                        </td>
-                                        <td>BSCE</td>
-                                        <td>BS Mechanical Engineering</td>
-                                        <td>
-                                            <div class="table-action">
-                                                <a class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
+
+                                <?php
+                                // Loop through the program object arrays to list all the details on the table
+                                foreach($this->programs as $program) {
+                                    // Organization Logo
+                                    $html = '<tr id="' . $program->id . '" onclick="">';
+                                    $html .= '<td><img src="'. PROOT .'public/uploads/logo/'. $program->logo .'" alt="'. $program->id .'" width="30px" height="30px"/></td>';
+                                    
+                                    // Program ID
+                                    $html .= '<td>'. strtoupper($program->id) .'</td>';
+
+                                    // Program Name
+                                    $html .= '<td>'. $program->name .'</td>';
+
+                                    // Row Buttons
+                                    $html .= '<td><div class="table-action"><a href="'.PROOT.'manageprograms/edit_program/'.$program->id.'" class="table-edit"><i class="flaticon-pencil-edit-button"></i></a><a class="table-delete"><i class="flaticon-garbage"></i></a></div></td>';
+
+                                    $html .= '</tr>';
+
+
+                                    
+
+                                    echo $html;
+
+
+                                }
+                                ?>  
                                 </tbody>
                             </table>
                         </div>

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use Core\Controller;
 use Core\Router;
+use App\Models\Programs;
 
 use Core\H;
 
@@ -14,6 +15,11 @@ class ManageschoolController extends Controller {
 
     public function indexAction() {
         $this->view->school = $this->SchoolModel->findById('seng');
+
+        // Pass delare and initialize programs[] property to view object
+        $ProgramsModel = new Programs();
+        $this->view->programs = $ProgramsModel->find();
+
         $this->view->bodyAttr = 'class="ttr-pinned-sidebar ttr-opened-sidebar"';
         $this->view->pageTitle = 'School Information';
         $this->view->render('school/index');
